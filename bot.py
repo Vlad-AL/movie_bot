@@ -1286,7 +1286,17 @@ async def genre_page_switch(callback: types.CallbackQuery):
 @dp.callback_query(lambda c: c.data.startswith("open:"))
 async def open_item(callback: types.CallbackQuery):
     _, item_type, code = callback.data.split(":")
-    
+    user_id = callback.from_user.id
+
+    # Проверка подписки для всех типов
+    if not await is_subscribed(user_id):
+        await callback.message.answer(
+            "Для использования бота подпишитесь на канал @kinonawe4er",
+            reply_markup=subscribe_keyboard()
+        )
+        await callback.answer()
+        return
+
     if item_type == "movie":
         movie = movies[code]  # создаем movie первым!
 
@@ -1299,7 +1309,7 @@ async def open_item(callback: types.CallbackQuery):
             return
 
         hashtags = " ".join(f"#{g.replace(' ', '_')}" for g in movie.get('genres', []))
-        
+
         await callback.message.answer_video(
             video=movie["video"],
             caption=(
@@ -1307,7 +1317,7 @@ async def open_item(callback: types.CallbackQuery):
                 f"<i>{movie.get('description', '')}</i>\n\n"
                 f"<u>Жанр:</u> {hashtags}\n\n"
                 f"<u>Страна:</u> {movie.get('country', '')}\n"
-                f"<u>Режиссер:</u> {movie.get('director', '')}\n\n"
+                f"<u>Режиссер:</u> {movie.get('director', '')}</u>\n\n"
                 f"Смотреть бесплатно фильмы и сериалы 👉🏻 @kinonawe4er_bot\n"
                 f"Наш канал @kinonawe4er ✨"
             ),
@@ -1315,8 +1325,9 @@ async def open_item(callback: types.CallbackQuery):
         )
     else:  # сериал
         await send_serial_card(callback.message, code)
-    
+
     await callback.answer()
+
 
 
 
