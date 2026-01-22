@@ -4,6 +4,7 @@ from aiogram.filters import CommandObject
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 TOKEN = "8425155912:AAEg3-V9hNc8nugIAvTyywxc4dfUSMxWLG4"
+CHANNEL_USERNAME = "@kinonawe4er"
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
@@ -103,7 +104,7 @@ movies = {
         "description": "В центре романтической истории времён Второй мировой войны — молодая девушка, живущая вместе со свекровью в оккупированной фашистами Франции. Нелюбимый муж ушёл на поле боя, и героиня влюбляется в немецкого офицера. Их объединяет любовь к музыке: она играет на фортепиано, а немец — бывший композитор.",
         "country": "США, Франция, Бельгия",
         "director": "Сол Дибб",
-        "genres": ["триллер", "драма", "мелодрама"]    
+        "genres": ["триллер", "драма", "мелодрама", "военный"]    
     },
     "014": {
         "title": "Тоннель в лето, выход прощаний",
@@ -166,7 +167,7 @@ movies = {
         "description": "1942 год, Великобритания. Они — лучшие из лучших. Отпетые авантюристы и первоклассные спецы, привыкшие действовать в одиночку. Но когда на кону стоит судьба всего мира, им приходится объединиться в сверхсекретное боевое подразделение и отправиться на выполнение дерзкой миссии против нацистов.",
         "country": "США, Турция, Великобритания",
         "director": "Гай Ричи",
-        "genres": ["боевик", "история"]    
+        "genres": ["боевик", "история", "военный"]    
     },
     "024": {
         "title": "Иллюзия контроля",
@@ -202,7 +203,7 @@ movies = {
         "description": "Захватывающая криминальная драма о жизни Джордана Белфорта, биржевого мошенника, который стремился к богатству и власти. Фильм исследует темы коррупции, алчности и разрушительного влияния финансов на общество.",
         "country": "США",
         "director": "Мартин Скорсезе",
-        "genres": ["криминал", "комедия"]    
+        "genres": ["криминал", "биография", "комедия"]    
     },
     "028": {
         "title": "Загадочная история Бенджамина Баттона",
@@ -240,6 +241,24 @@ movies = {
         "director": "Кристофер Нолан",
         "genres": ["научнаяфантастика", "драма"]    
     },
+    "039": {
+        "title": "Остров проклятых",
+        "year": 2009,
+        "video": "BAACAgIAAxkBAAIGwmlyrlTkfd7zopp-7CWqrT6Ihj9oAAJzkQACk1iZSw_Tcgn-HCUMOAQ",
+        "description": "Два американских судебных пристава отправляются на один из островов в штате Массачусетс, чтобы расследовать исчезновение пациентки клиники для умалишенных преступников. При проведении расследования им придется столкнуться с паутиной лжи, обрушившимся ураганом и смертельным бунтом обитателей клиники.",
+        "country": "США, Канада",
+        "director": "Мартин Скорсезе",
+        "genres": ["триллер", "драма", "детектив"]    
+    },
+    "039": {
+        "title": "Матрица",
+        "year": 1999,
+        "video": "BAACAgIAAxkBAAIGxmlyr_uCNRe_FeVJK-ImAUDGdPT8AAJ3kQACk1iZS7gZE92G771nOAQ",
+        "description": "Жизнь Томаса Андерсона разделена на две части: днём он — самый обычный офисный работник, получающий нагоняи от начальства, а ночью превращается в хакера по имени Нео, и нет места в сети, куда он бы не смог проникнуть. Но однажды всё меняется. Томас узнаёт ужасающую правду о реальности.",
+        "country": "США",
+        "director": "Вачовски",
+        "genres": ["научнаяфантастика", "боевик"]    
+    },
     "041": {
         "title": "1 + 1",
         "year": 2011,
@@ -248,6 +267,33 @@ movies = {
         "country": "Франция",
         "director": "Оливье Накаш",
         "genres": ["комедия", "драма"]    
+    },
+    "044": {
+        "title": "Время",
+        "year": 2011,
+        "video": "BAACAgIAAxkBAAIGvmlyrQvPXZM0YSUBSHA4AlNAGyCUAAJrkQACk1iZS4T9mpwYowABtjgE",
+        "description": "Человечество перестало стареть после 25 лет, а время стало единственной валютой. Теперь богачи могут жить вечно, а простые люди, чтобы не умереть, вынуждены каждый день бороться за существование, продлевая жизненный цикл.\nРабочий из гетто Уилл Салас привык считать каждую секунду. Однажды он спасает от банды грабителей времени богатого Генри Хэмилтона и получает от него 116 лет жизни, но вскоре щедрый подарок оборачивается ловушкой.",
+        "country": "США",
+        "director": "Эндрю Никкол",
+        "genres": ["боевик", "мелодрама", "фантастика"]    
+    },
+    "045": {
+        "title": "Черный лебедь",
+        "year": 2010,
+        "video": "BAACAgIAAxkBAAIGxGlyr5TjSfFcesVc-kssb8qyWSBIAAJ2kQACk1iZS1QoDpxbNYsQOAQ",
+        "description": "У примы балетного театра неожиданно появляется опасная конкурентка, способная отобрать у неё все партии. Соперничество усиливается по мере приближения ответственного выступления.",
+        "country": "США",
+        "director": "Даррен Аронофски",
+        "genres": ["триллер", "драма", "ужасы"]    
+    },
+    "046": {
+        "title": "Искупление",
+        "year": 2007,
+        "video": "BAACAgIAAxkBAAIGwGlyrcC9xRq6a28iy-iQ_0QNRVfHAAJxkQACk1iZS5PfvyzvhjCZOAQ",
+        "description": "Действие фильма начинается в 1935 году и разворачивается на фоне Второй мировой войны. Талантливая тринадцатилетняя писательница Бриони Таллис бесповоротно меняет ход нескольких жизней, когда обвиняет любовника старшей сестры в преступлении.",
+        "country": "Великобритания, США",
+        "director": "Джо Райт",
+        "genres": ["драма", "мелодрама", "детектив", "военный"]    
     },
 }
 
@@ -259,7 +305,7 @@ series = {
         "poster": "AgACAgIAAxkBAAIFFmlyTYbeE_aciTdJTMKNxQjlzYhpAALlEmsbk1iRS7Xo4rDBJIlNAQADAgADeQADOAQ",
         "country": "США",
         "director": "Шонда Раймс",
-        "genres": ["драма"],
+        "genres": ["драма", "биография"],
         "episodes": [
             {
                 "video": "BAACAgIAAxkBAAIFP2lyUgpeSIUksrlYTYIS-mUl6RTUAAIbkgACk1iRS72dqA69ayiAOAQ",
@@ -833,513 +879,739 @@ series = {
                 "video": "BAACAgIAAxkBAAIFd2lyWlI_HEqbjFSHp5GI5jqWB45fAAJCkwACTp-RS6NIku6_Hkh7OAQ",
             },
             {
-                "video": "",
+                "video": "BAACAgIAAxkBAAIGOWlynQ0aGUAjQ_3HYwIx-RQhd9-fAAJ2lAACTp-RS-3VZK47dBMcOAQ",
             },
-            
+            {
+                "video": "BAACAgIAAxkBAAIGO2lynuISlPBdErDvgI4exsCuGzxbAAJ6lAACTp-RSyi3-8uXnqW8OAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGPWlynvTlKBUXSGz3N5o12yOf8l3vAAKFlAACTp-RS5t19wM9qn4GOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGP2lynxtbMa69kFRHl2tvR_WpRlvoAAKhlAACTp-RS__isoG-LAjjOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGQWlynyn_KEPZsu_AXNfMeQ53x_8dAAIllQACOr-RS4jypnCta1ctOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGQ2lynzbk7vrvOCUBYcCTqbRJW44_AAJAlQACOr-RS_Fn0JshOxK1OAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGRWlyn0HbdV-Sk9p19GJsSg2Y4_9xAAIHhwACyu0pSI0d6OuGF-cOOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGR2lyn5-Fp6ExTDEpNpAsij0D6yyqAAJnlQACOr-RS69rNbBAA1M4OAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGSWlyn6r6lEr6SKHy3i1LiE4LIyQBAAKJlQACOr-RS7ohmFb_MhnvOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGS2lyn7e3uzTnWPQqk4-xiZeVhbjYAAKalQACOr-RS7m_EgFsKoUxOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGTWlyn8PpQf2O076XJHy4TumveJTlAAK2lQACOr-RS7IHW-Sp8PiWOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGT2lyn87VIPi_5gJHP3kD6UWOxCUKAAL6lQACOr-RSxqOYs4faQpVOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGUWlyn9iWLYwtLLWbAkly8rHyYQPDAAISlgACOr-RS9ZHNpSkgC7bOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGU2lyn-MhrOmhw__zfP3H5TQ3VfHQAAIflgACOr-RS3lWdJZoxCAqOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGVWlyn-4zXt-QBHqLpSqbXA226Z4NAAK1hQACCIDYShObRUvJ-jgzOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGV2lyoBqUE68JA5zLt29oLBcwCigbAAIjlgACOr-RS4ZZVjCHfeRiOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGWWlyoFMZ33SBbqablhc8kY6Ks-BgAAIolgACOr-RSyr835fG3HTtOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGW2lyoGB8bYgy6g1rEGFULRr84wiuAAItlgACOr-RS2Q4wOiePoovOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGXWlyoGqkuJn3SM51FZ9v_YGpnGuxAAIxlgACOr-RS7onbK-r6dPROAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGX2lyoJndoXUukzRxjwNRN3emElrTAAJNlgACOr-RS-1KIuoEz-LnOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGYWlyoKnKLk6mQ9Mj9chavLpq3A7nAAJelgACOr-RSzXVgLAq1bkuOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGY2lyoLMDHWxEnUkNg8GOEIvaPNy4AAJnlgACOr-RSz2430A7z988OAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGZWlyoMp-FLAiqYnq2Fko_XEeAfrcAAJtlgACOr-RS9OY6-OQdOUvOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGZ2lyoOQXMJoHUZNHosZXsE-fJuR3AAKElgACOr-RS2YZ5_b1Bt7kOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGaWlyoO7aE9vcA-v3AmAfRYFS3yQhAAKelgACOr-RS3YoRgN1EpkaOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGa2lyoPmpilNv1525US7GSxOm37v9AAKwlgACOr-RS5o2Mcx6GwwzOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGbWlyoQKvnkDcqMbnpewAAV9IhmEizAACv5YAAjq_kUtwWWh_RhQUQjgE",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGb2lyoQ4xKtKFSUSRNZl4Ld_-sayGAALRlgACOr-RS-6qZe8KPNJSOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGcWlyoR3mXZhpBDFPbT9C9PGgkKrzAALplgACOr-RS--_g8rtSFQQOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGc2lyoSjzXGAMRxzMkzyhZSGow5c8AALxlgACOr-RS2y1lb1-oHhCOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGdWlyoTPeYTvBbIlYAel_oyCa7JJXAAKolQACTp-RS5Y0j2qBzFa2OAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGd2lyoT022uvZeEJ_j2sGM1iBm-QYAAKulQACTp-RS8OyVV2EXzXnOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGeWlyoUj8tu3bzthUZdgFIeqS2Om0AAKxlQACTp-RSzIh1dW8IHNWOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGe2lyoVLROa7Wjl39Fbgh7xjhryj-AAL7lgACOr-RS9joX2QStCgOOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGfWlyoVqUKHV3ktNok_1Qkb7QPZazAAIDlwACOr-RS-OPVjQuS-aLOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGf2lyoWVy8cqGYKQlmZ3p9gtmvgF0AALAlQACTp-RS9b--GpWCdO3OAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGgWlyoW4e8FlrmO3PtmIU-GnXg3DEAALtlQACTp-RS4nEcpipoSbaOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGg2lyoXgP4N5GlZLjC25C5OWxMmYCAAOWAAJOn5FL3ZWI2xVCmwQ4BA",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGhWlyoZAP91DmCu0oFXmpgdniQyuYAAIQlgACTp-RS_eMzVbbxV_XOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGh2lyoazYfMAtkeIkQ35S2ewf_qa4AAIUlwACOr-RS-oLZAABFV5RyTgE",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGiWlyocD0pZowXRyWGBNwS2DMhUVJAAIjlwACOr-RS0pfmSiEpw7eOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGi2lyocrRnlMf6wGuk5zK5zG6ZEF9AALSmgACEU9hSa5YBaZL7UUwOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGjWlyoegP6j87LqrFWctUIQtOn8C7AAIrlwACOr-RS9Cn81H9_38zOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGj2lyofJf77nvUQm70e2u7t13Ttl0AAI0lgACTp-RS2vFUut4hqNVOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGkWlyofyIvxzrnucppnJ0t8jO-pq1AAIilgACTp-RSzRGh8yWd4eNOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGk2lyogR2ZHDZL2_9yZcStBwEXdGjAAI2lwACOr-RS87_Pxh4wVU7OAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGlWlyogsTyLBjdnTIM3clMdL0ioMPAAI3lwACOr-RS8S0vJePZr8QOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGl2lyohL7uXr_1BmcZP0xSGrH_4iXAAI5lwACOr-RS8cO2GfasfhtOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGmWlyoiSO641TYSTlPSvUacTi_EcTAAIblgACTp-RS1496IUuZRw_OAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGm2lyojD1cjW1JeLYeY0_fdkHjMPlAAI-lgACTp-RS0ThbyJfAAH80DgE",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGnWlyolRAjbQkQe8ZmRkrEmufXo_EAAJOlgACTp-RSxnDcvvgvwGkOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGn2lyomBEutPzBgsEaX4BCT8TBhs7AAJelgACTp-RS0dmgznnZBTTOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGoWlyomyiosZZe_E8OhhOQDOww2pYAAJglgACTp-RS7iY_z3ls1ITOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGo2lyonpEd0ls5D2bh2SbK8XG79AFAAI9lwACOr-RS3dSH5vS3gEmOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGpWlyooOpiD65ENMxdfP9_aILoKPMAAJ7lgACTp-RS5LEorMEv5m1OAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGp2lyooxwDjtEE2jUOn1tCiXhgRIjAAKElgACTp-RS-xwY76HQ_O9OAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGqWlyopUH5a3sQNCSNE5dvkdB51i3AAKilgACTp-RSzSJSrV73r52OAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGq2lyop2o37UgthQiRrRj7rrBLMA-AAKolgACTp-RSxCxXPbzr6lGOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGrWlyoqUSuhV823lUiIAUgx4AAfp3BAACR5cAAjq_kUth36_xroqEJTgE",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGr2lyoq6GEbcr3RkDbt1Cv0D1tw5RAALClgACTp-RS6TOIE5eUMEfOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGsWlyorbQHY8QfrPTu0yaergSA6zoAALNlgACTp-RS7rRre7vzwTjOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGs2lyosE6jcBk0UixQlSNBOm-VwcRAALmlgACTp-RS6hQt4kyrWJnOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGtWlyosxY59x_0obbaysQiOhExiaUAALslgACTp-RSzr3vPlsmpRFOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGt2lyotkPl0K4V1-fyVX9ZUUo0ceuAAI_lwACOr-RSxV4K0FJpqRSOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGuWlyoubXZO_nMP_Sqs1pzB3UWdJEAALulgACTp-RS0P3iQZ9GRoSOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIGu2lyovBtPaQTGKswBpUnlXE4v9bsAALylgACTp-RS65EGkn9Pu28OAQ",
+            },
         ]
     }
 }
 
-# def has_only_warning(item: dict) -> bool:
-#     return "warning" in item and len(item.keys()) == 1
+def subscribe_keyboard():
+    keyboard = InlineKeyboardMarkup(
+        inline_keyboard=[
+            [
+                InlineKeyboardButton(text="📍 Подписаться", url=f"https://t.me/{CHANNEL_USERNAME[1:]}"),
+                InlineKeyboardButton(text="🔎 Проверить", callback_data="check_sub")
+            ]
+        ]
+    )
+    return keyboard
 
-# def normalize(text: str) -> str:
-#     return text.lower().replace("ё", "е").replace(" ", "")
+async def is_subscribed(user_id: int):
+    try:
+        member = await bot.get_chat_member(chat_id=CHANNEL_USERNAME, user_id=user_id)
+        return member.status not in ("left", "kicked")
+    except:
+        return False
 
-# def search_movies(query: str):
-#     query = normalize(query.strip())
-#     results = []
+def has_only_warning(item: dict) -> bool:
+    return "warning" in item and len(item.keys()) == 1
 
-#     for code, movie in movies.items():
-#         title = normalize(movie.get("title", ""))
-#         if query in title:
-#             results.append(("movie", code, movie))
+def normalize(text: str) -> str:
+    return text.lower().replace("ё", "е").replace(" ", "")
 
-#     return results
+def search_movies(query: str):
+    query = normalize(query.strip())
+    results = []
 
-# def search_series(query: str):
-#     query = normalize(query.strip())
-#     results = []
+    for code, movie in movies.items():
+        title = normalize(movie.get("title", ""))
+        if query in title:
+            results.append(("movie", code, movie))
 
-#     for code, serial in series.items():
-#         title = normalize(serial.get("title", ""))
-#         if query in title:
-#             results.append(("series", code, serial))
+    return results
 
-#     return results
+def search_series(query: str):
+    query = normalize(query.strip())
+    results = []
 
-# def search_by_code(query: str):
-#     query = query.strip().lower()
+    for code, serial in series.items():
+        title = normalize(serial.get("title", ""))
+        if query in title:
+            results.append(("series", code, serial))
 
-#     if query in movies:
-#         return [("movie", query, movies[query])]
+    return results
 
-#     if query in series:
-#         return [("series", query, series[query])]
+def search_by_code(query: str):
+    query = query.strip().lower()
 
-#     return []
+    if query in movies:
+        return [("movie", query, movies[query])]
 
-# def search_by_title(query: str):
-#     query = normalize(query)
-#     results = []
+    if query in series:
+        return [("series", query, series[query])]
 
-#     for code, movie in movies.items():
-#         if query in normalize(movie.get("title", "")):
-#             results.append(("movie", code, movie))
+    return []
 
-#     for code, serial in series.items():
-#         if query in normalize(serial.get("title", "")):
-#             results.append(("series", code, serial))
+def search_by_title(query: str):
+    query = normalize(query)
+    results = []
 
-#     return results
+    for code, movie in movies.items():
+        if query in normalize(movie.get("title", "")):
+            results.append(("movie", code, movie))
 
-# def search_all(query: str):
-#     by_code = search_by_code(query)
-#     if by_code:
-#         return by_code
+    for code, serial in series.items():
+        if query in normalize(serial.get("title", "")):
+            results.append(("series", code, serial))
 
-#     return search_by_title(query)
+    return results
 
+def search_all(query: str):
+    by_code = search_by_code(query)
+    if by_code:
+        return by_code
 
-# def search_results_keyboard(results):
-#     keyboard = []
-
-#     for item_type, code, item in results:
-#         emoji = "🎬" if item_type == "movie" else "📺"
-#         keyboard.append([
-#             InlineKeyboardButton(
-#                 text=f"{emoji} {item['title']}",
-#                 callback_data=f"open:{item_type}:{code}"
-#             )
-#         ])
-
-#     return InlineKeyboardMarkup(inline_keyboard=keyboard)
-
-
-
-
-# ITEMS_PER_PAGE = 6
-
-# # --- Получаем все жанры ---
-# def get_all_genres():
-#     genres = set()
-#     for movie in movies.values():
-#         genres.update(movie.get("genres", []))
-#     for serial in series.values():
-#         genres.update(serial.get("genres", []))
-#     return sorted(genres)
+    return search_by_title(query)
 
 
-# # --- Кнопки для жанров ---
-# def genres_keyboard():
-#     keyboard = []
-#     for genre in get_all_genres():
-#         keyboard.append([
-#             InlineKeyboardButton(
-#                 text=genre.capitalize(),
-#                 callback_data=f"genre:{genre}"
-#             )
-#         ])
-#     return InlineKeyboardMarkup(inline_keyboard=keyboard)
+def search_results_keyboard(results):
+    keyboard = []
+
+    for item_type, code, item in results:
+        emoji = "🎬" if item_type == "movie" else "📺"
+        keyboard.append([
+            InlineKeyboardButton(
+                text=f"{emoji} {item['title']}",
+                callback_data=f"open:{item_type}:{code}"
+            )
+        ])
+
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
 
-# # --- Фильтруем по жанру ---
-
-# def find_by_genre(genre: str):
-#     results = []
-
-#     for code, movie in movies.items():
-#         if genre in movie.get("genres", []):
-#             results.append(("movie", code, movie))
-
-#     for code, serial in series.items():
-#         if genre in serial.get("genres", []):
-#             results.append(("series", code, serial))
-
-#     return results
-
-# # --- Получаем страницу ---
-# def genre_page(genre: str, page: int):
-#     items = find_by_genre(genre)
-#     total_pages = (len(items) + ITEMS_PER_PAGE - 1) // ITEMS_PER_PAGE
-#     start = page * ITEMS_PER_PAGE
-#     end = start + ITEMS_PER_PAGE
-#     return items[start:end], total_pages
 
 
-# # --- Кнопки фильмов/сериалов с пагинацией ---
-# def genre_keyboard(genre: str, page: int, total_pages: int, items):
-#     keyboard = []
+ITEMS_PER_PAGE = 6
 
-#     for item_type, code, item in items:
-#         emoji = "🎬" if item_type == "movie" else "📺"
-#         keyboard.append([
-#             InlineKeyboardButton(
-#                 text=f"{emoji} {item['title']}",
-#                 callback_data=f"open:{item_type}:{code}"
-#             )
-#         ])
-
-#     nav = []
-#     if page > 0:
-#         nav.append(InlineKeyboardButton(text="⬅️", callback_data=f"genre_page:{genre}:{page-1}"))
-#     nav.append(InlineKeyboardButton(text=f"{page+1}/{total_pages}", callback_data="noop"))
-#     if page < total_pages - 1:
-#         nav.append(InlineKeyboardButton(text="➡️", callback_data=f"genre_page:{genre}:{page+1}"))
-
-#     keyboard.append(nav)
-#     return InlineKeyboardMarkup(inline_keyboard=keyboard)
+# --- Получаем все жанры ---
+def get_all_genres():
+    genres = set()
+    for movie in movies.values():
+        genres.update(movie.get("genres", []))
+    for serial in series.values():
+        genres.update(serial.get("genres", []))
+    return sorted(genres)
 
 
-# # --- Хендлер нажатия на жанр ---
-# @dp.callback_query(lambda c: c.data.startswith("genre:"))
-# async def genre_selected(callback: types.CallbackQuery):
-#     genre = callback.data.split(":")[1]
-#     items, total_pages = genre_page(genre, 0)
-
-#     if not items:
-#         await callback.message.answer(f"<b>❌ Ничего не найдено\n\n@kinonawe4er - все наши фильмы и сериалы</b>",
-#         parse_mode="HTML")
-#         await callback.answer()
-#         return
-
-#     await callback.message.edit_text(
-#         f"<b>🎭 Жанр: {genre.capitalize()}</b>",
-#         reply_markup=genre_keyboard(genre, 0, total_pages, items),
-#         parse_mode="HTML"
-#     )
-#     await callback.answer()
+# --- Кнопки для жанров ---
+def genres_keyboard():
+    keyboard = []
+    for genre in get_all_genres():
+        keyboard.append([
+            InlineKeyboardButton(
+                text=genre.capitalize(),
+                callback_data=f"genre:{genre}"
+            )
+        ])
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
 
-# # --- Хендлер переключения страниц жанра ---
-# @dp.callback_query(lambda c: c.data.startswith("genre_page:"))
-# async def genre_page_switch(callback: types.CallbackQuery):
-#     _, genre, page = callback.data.split(":")
-#     page = int(page)
-#     items, total_pages = genre_page(genre, page)
+# --- Фильтруем по жанру ---
 
-#     await callback.message.edit_reply_markup(
-#         reply_markup=genre_keyboard(genre, page, total_pages, items)
-#     )
-#     await callback.answer()
+def find_by_genre(genre: str):
+    results = []
+
+    for code, movie in movies.items():
+        if genre in movie.get("genres", []):
+            results.append(("movie", code, movie))
+
+    for code, serial in series.items():
+        if genre in serial.get("genres", []):
+            results.append(("series", code, serial))
+
+    return results
+
+# --- Получаем страницу ---
+def genre_page(genre: str, page: int):
+    items = find_by_genre(genre)
+    total_pages = (len(items) + ITEMS_PER_PAGE - 1) // ITEMS_PER_PAGE
+    start = page * ITEMS_PER_PAGE
+    end = start + ITEMS_PER_PAGE
+    return items[start:end], total_pages
 
 
-# # --- Хендлер открытия фильма/сериала по кнопке ---
-# @dp.callback_query(lambda c: c.data.startswith("open:"))
-# async def open_item(callback: types.CallbackQuery):
-#     _, item_type, code = callback.data.split(":")
+# --- Кнопки фильмов/сериалов с пагинацией ---
+def genre_keyboard(genre: str, page: int, total_pages: int, items):
+    keyboard = []
+
+    for item_type, code, item in items:
+        emoji = "🎬" if item_type == "movie" else "📺"
+        keyboard.append([
+            InlineKeyboardButton(
+                text=f"{emoji} {item['title']}",
+                callback_data=f"open:{item_type}:{code}"
+            )
+        ])
+
+    nav = []
+    if page > 0:
+        nav.append(InlineKeyboardButton(text="⬅️", callback_data=f"genre_page:{genre}:{page-1}"))
+    nav.append(InlineKeyboardButton(text=f"{page+1}/{total_pages}", callback_data="noop"))
+    if page < total_pages - 1:
+        nav.append(InlineKeyboardButton(text="➡️", callback_data=f"genre_page:{genre}:{page+1}"))
+
+    keyboard.append(nav)
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
+
+
+# --- Хендлер нажатия на жанр ---
+@dp.callback_query(lambda c: c.data.startswith("genre:"))
+async def genre_selected(callback: types.CallbackQuery):
+    genre = callback.data.split(":")[1]
+    items, total_pages = genre_page(genre, 0)
+
+    if not items:
+        await callback.message.answer(f"<b>❌ Ничего не найдено\n\n@kinonawe4er - все наши фильмы и сериалы</b>\n\n<b>/genres - сортировка по жанрам</b>",
+        parse_mode="HTML")
+        await callback.answer()
+        return
+
+    await callback.message.edit_text(
+        f"<b>🎭 Жанр: {genre.capitalize()}</b>",
+        reply_markup=genre_keyboard(genre, 0, total_pages, items),
+        parse_mode="HTML"
+    )
+    await callback.answer()
+
+
+# --- Хендлер переключения страниц жанра ---
+@dp.callback_query(lambda c: c.data.startswith("genre_page:"))
+async def genre_page_switch(callback: types.CallbackQuery):
+    _, genre, page = callback.data.split(":")
+    page = int(page)
+    items, total_pages = genre_page(genre, page)
+
+    await callback.message.edit_reply_markup(
+        reply_markup=genre_keyboard(genre, page, total_pages, items)
+    )
+    await callback.answer()
+
+
+# --- Хендлер открытия фильма/сериала по кнопке ---
+@dp.callback_query(lambda c: c.data.startswith("open:"))
+async def open_item(callback: types.CallbackQuery):
+    _, item_type, code = callback.data.split(":")
     
-#     if item_type == "movie":
-#         movie = movies[code]  # создаем movie первым!
+    if item_type == "movie":
+        movie = movies[code]  # создаем movie первым!
 
-#         if has_only_warning(movie):
-#             await callback.message.answer(
-#                 f"<b>{movie['warning']}</b>",
-#                 parse_mode="HTML"
-#             )
-#             await callback.answer()
-#             return
+        if has_only_warning(movie):
+            await callback.message.answer(
+                f"<b>{movie['warning']}</b>",
+                parse_mode="HTML"
+            )
+            await callback.answer()
+            return
 
-#         hashtags = " ".join(f"#{g.replace(' ', '_')}" for g in movie.get('genres', []))
+        hashtags = " ".join(f"#{g.replace(' ', '_')}" for g in movie.get('genres', []))
         
-#         await callback.message.answer_video(
-#             video=movie["video"],
-#             caption=(
-#                 f"<b>⭐️ фильм «{movie['title']}», {movie['year']}</b>\n\n"
-#                 f"<i>{movie.get('description', '')}</i>\n\n"
-#                 f"<u>Жанр:</u> {hashtags}\n\n"
-#                 f"<u>Страна:</u> {movie.get('country', '')}\n"
-#                 f"<u>Режиссер:</u> {movie.get('director', '')}\n\n"
-#                 f"Смотреть бесплатно фильмы и сериалы 👉🏻 @kinonawe4er_bot\n"
-#                 f"Наш канал @kinonawe4er ✨"
-#             ),
-#             parse_mode="HTML"
-#         )
-#     else:  # сериал
-#         await send_serial_card(callback.message, code)
+        await callback.message.answer_video(
+            video=movie["video"],
+            caption=(
+                f"<b>⭐️ фильм «{movie['title']}», {movie['year']}</b>\n\n"
+                f"<i>{movie.get('description', '')}</i>\n\n"
+                f"<u>Жанр:</u> {hashtags}\n\n"
+                f"<u>Страна:</u> {movie.get('country', '')}\n"
+                f"<u>Режиссер:</u> {movie.get('director', '')}\n\n"
+                f"Смотреть бесплатно фильмы и сериалы 👉🏻 @kinonawe4er_bot\n"
+                f"Наш канал @kinonawe4er ✨"
+            ),
+            parse_mode="HTML"
+        )
+    else:  # сериал
+        await send_serial_card(callback.message, code)
     
-#     await callback.answer()
+    await callback.answer()
 
 
 
-# def serial_start_keyboard(code: str):
-#     return InlineKeyboardMarkup(
-#         inline_keyboard=[[
-#             InlineKeyboardButton(
-#                 text="📋 ВЫБРАТЬ СЕРИЮ",
-#                 callback_data=f"menu:{code}:0"
-#             )
-#         ]]
-#     )
+def serial_start_keyboard(code: str):
+    return InlineKeyboardMarkup(
+        inline_keyboard=[[
+            InlineKeyboardButton(
+                text="📋 ВЫБРАТЬ СЕРИЮ",
+                callback_data=f"menu:{code}:0"
+            )
+        ]]
+    )
 
-# async def send_serial_card(message: types.Message, code: str):
-#     serial = series[code]
-#     hashtags = " ".join(f"#{g.replace(' ', '_')}" for g in serial.get("genres", []))
-#     text = (
-#         f"<b>⭐️ «{serial['title']}», {serial['year']}</b>\n\n"
-#         f"<i>{serial['description']}</i>\n\n"
-#         f"<u>Жанр:</u> {hashtags}\n\n"
-#         f"<u>Страна:</u> {serial['country']}\n"
-#         f"<u>Режиссер:</u> {serial['director']}\n\n"
-#     )
+async def send_serial_card(message: types.Message, code: str):
+    serial = series[code]
+    hashtags = " ".join(f"#{g.replace(' ', '_')}" for g in serial.get("genres", []))
+    text = (
+        f"<b>⭐️ «{serial['title']}», {serial['year']}</b>\n\n"
+        f"<i>{serial['description']}</i>\n\n"
+        f"<u>Жанр:</u> {hashtags}\n\n"
+        f"<u>Страна:</u> {serial['country']}\n"
+        f"<u>Режиссер:</u> {serial['director']}\n\n"
+    )
 
-#     await message.answer_photo(
-#         photo=serial["poster"],
-#         caption=text,
-#         parse_mode="HTML",
-#         reply_markup=serial_start_keyboard(code)
-#     )
-
-
-# def episode_keyboard(code: str, episode: int, total: int):
-#     row = []
-
-#     if episode > 0:
-#         row.append(
-#             InlineKeyboardButton(text="⬅️ пред", callback_data=f"prev:{code}:{episode}")
-#         )
-
-#     row.append(
-#         InlineKeyboardButton(text="ВЫБРАТЬ СЕРИЮ", callback_data=f"menu:{code}:0")
-#     )
-
-#     if episode < total - 1:
-#         row.append(
-#             InlineKeyboardButton(text="след ➡️", callback_data=f"next:{code}:{episode}")
-#         )
-
-#     return InlineKeyboardMarkup(inline_keyboard=[row])
+    await message.answer_photo(
+        photo=serial["poster"],
+        caption=text,
+        parse_mode="HTML",
+        reply_markup=serial_start_keyboard(code)
+    )
 
 
-# def series_menu_keyboard(code: str, total: int, page: int = 0):
-#     per_page = 10
-#     start = page * per_page
-#     end = min(start + per_page, total)
+def episode_keyboard(code: str, episode: int, total: int):
+    row = []
 
-#     keyboard = []
-#     row = []
+    if episode > 0:
+        row.append(
+            InlineKeyboardButton(text="⬅️ пред", callback_data=f"prev:{code}:{episode}")
+        )
 
-#     for i in range(start, end):
-#         row.append(
-#             InlineKeyboardButton(
-#                 text=str(i + 1),
-#                 callback_data=f"ep:{code}:{i}"
-#             )
-#         )
-#         if len(row) == 5:
-#             keyboard.append(row)
-#             row = []
+    row.append(
+        InlineKeyboardButton(text="ВЫБРАТЬ СЕРИЮ", callback_data=f"menu:{code}:0")
+    )
 
-#     if row:
-#         keyboard.append(row)
+    if episode < total - 1:
+        row.append(
+            InlineKeyboardButton(text="след ➡️", callback_data=f"next:{code}:{episode}")
+        )
 
-#     nav = []
-#     if page > 0:
-#         nav.append(
-#             InlineKeyboardButton(text="⬅️", callback_data=f"page:{code}:{page-1}")
-#         )
-
-#     if end < total:
-#         nav.append(
-#             InlineKeyboardButton(text="➡️", callback_data=f"page:{code}:{page+1}")
-#         )
-
-#     keyboard.append(nav)
-#     return InlineKeyboardMarkup(inline_keyboard=keyboard)
+    return InlineKeyboardMarkup(inline_keyboard=[row])
 
 
+def series_menu_keyboard(code: str, total: int, page: int = 0):
+    per_page = 10
+    start = page * per_page
+    end = min(start + per_page, total)
 
-# async def send_episode(target, code: str, episode_index: int):
-#     serial = series[code]
-#     total = len(serial["episodes"])
-#     episode = serial["episodes"][episode_index]
+    keyboard = []
+    row = []
+
+    for i in range(start, end):
+        row.append(
+            InlineKeyboardButton(
+                text=str(i + 1),
+                callback_data=f"ep:{code}:{i}"
+            )
+        )
+        if len(row) == 5:
+            keyboard.append(row)
+            row = []
+
+    if row:
+        keyboard.append(row)
+
+    nav = []
+    if page > 0:
+        nav.append(
+            InlineKeyboardButton(text="⬅️", callback_data=f"page:{code}:{page-1}")
+        )
+
+    if end < total:
+        nav.append(
+            InlineKeyboardButton(text="➡️", callback_data=f"page:{code}:{page+1}")
+        )
+
+    keyboard.append(nav)
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
+
+
+
+async def send_episode(target, code: str, episode_index: int):
+    serial = series[code]
+    total = len(serial["episodes"])
+    episode = serial["episodes"][episode_index]
     
-#     caption = (
-#         f"<b>⭐️ «{serial['title']}», {serial['year']}</b>\n\n"
-#         f"серия {episode_index + 1} из {total}\n\n"
-#         f"Смотреть бесплатно фильмы и сериалы 👉🏻 @kinonawe4er_bot\n"
-#         f"Наш канал @kinonawe4er ✨"
-#     )
+    caption = (
+        f"<b>⭐️ «{serial['title']}», {serial['year']}</b>\n\n"
+        f"серия {episode_index + 1} из {total}\n\n"
+        f"Смотреть бесплатно фильмы и сериалы 👉🏻 @kinonawe4er_bot\n"
+        f"Наш канал @kinonawe4er ✨"
+    )
 
-#     keyboard = episode_keyboard(code, episode_index, total)
+    keyboard = episode_keyboard(code, episode_index, total)
 
-#     if isinstance(target, types.CallbackQuery):
-#         await target.message.edit_media(
-#             media=types.InputMediaVideo(
-#                 media=episode["video"],
-#                 caption=caption,
-#                 parse_mode="HTML"
-#             ),
-#             reply_markup=keyboard
-#         )
-#     else:
-#         await target.answer_video(
-#             video=episode["video"],
-#             caption=caption,
-#             parse_mode="HTML",
-#             reply_markup=keyboard
-#         )
+    if isinstance(target, types.CallbackQuery):
+        await target.message.edit_media(
+            media=types.InputMediaVideo(
+                media=episode["video"],
+                caption=caption,
+                parse_mode="HTML"
+            ),
+            reply_markup=keyboard
+        )
+    else:
+        await target.answer_video(
+            video=episode["video"],
+            caption=caption,
+            parse_mode="HTML",
+            reply_markup=keyboard
+        )
 
-# # Функция для поиска фильма по коду или названию
-# def find_movie(query: str):
-#     query = normalize(query.strip())
+# Функция для поиска фильма по коду или названию
+def find_movie(query: str):
+    query = normalize(query.strip())
 
-#     # Сначала ищем по коду
-#     for code, movie in movies.items():
-#         if query == code.lower():
-#             return movie
+    # Сначала ищем по коду
+    for code, movie in movies.items():
+        if query == code.lower():
+            return movie
 
-#     # Потом ищем по названию
-#     for movie in movies.values():
-#         title = normalize(movie.get("title", ""))
-#         if query in title:
-#             return movie
+    # Потом ищем по названию
+    for movie in movies.values():
+        title = normalize(movie.get("title", ""))
+        if query in title:
+            return movie
 
-#     return None
+    return None
 
-# def find_series(query: str):
-#     query = normalize(query.strip())
+def find_series(query: str):
+    query = normalize(query.strip())
 
-#     for code, serial in series.items():
+    for code, serial in series.items():
 
-#         if query == str(code).lower():
-#             return code
+        if query == str(code).lower():
+            return code
 
-#         title = normalize(serial.get("title", ""))
-#         if query in title:
-#             return code
+        title = normalize(serial.get("title", ""))
+        if query in title:
+            return code
 
-#     return None
+    return None
 
-# # # Основной хендлер сообщений
+# # Основной хендлер сообщений
 
-# @dp.message()
-# async def handle_message(message: types.Message):
-#     query = message.text.strip().lower()  # приведение к нижнему регистру
+@dp.message()
+async def handle_message(message: types.Message):
+    query = message.text.strip().lower()  # приведение к нижнему регистру
 
-#     if query == "/start":
-#         await message.answer(
-#             "<b>Для просмотра введите название или код, которые указаны в канале https://t.me/kinonawe4er</b>\n\n"
-#             "<b>Например: «Фокус» или же его код «001»</b>\n\n"
-#             "<b>/genres - сортировка по жанрам</b>",
-#             parse_mode="HTML"
-#         )
-#         return
+    if query == "/start":
+        await message.answer(
+            "<b>Для просмотра введите название или код, которые указаны в канале https://t.me/kinonawe4er</b>\n\n"
+            "<b>Например: «Фокус» или же его код «001»</b>\n\n"
+            "<b>/genres - сортировка по жанрам</b>",
+            parse_mode="HTML",
+            disable_web_page_preview=True
+        )
+        return
     
-#     if query == "/genres":
-#         await message.answer(
-#             "<b>🎭 Выберите жанр:</b>",
-#             reply_markup=genres_keyboard(),
-#             parse_mode="HTML"
-#         )
-#         return
+    if query == "/genres":
+        await message.answer(
+            "<b>🎭 Выберите жанр:</b>",
+            reply_markup=genres_keyboard(),
+            parse_mode="HTML"
+        )
+        return
+    
+    user_id = message.from_user.id
+    if not await is_subscribed(user_id):
+        await message.answer(
+            "Для использования бота подпишитесь на канал @kinonawe4er",
+            reply_markup=subscribe_keyboard()
+        )
+        return
+    
+    results = search_all(message.text)
+    if not results:
+        await message.answer("❌ Ничего не найдено")
+        return
 
-#     results = search_all(query)
+    results = search_all(query)
 
-#     if not results:
-#         await message.answer(f"<b>❌ Ничего не найдено\n\n@kinonawe4er - все наши фильмы и сериалы</b>",
-#         parse_mode="HTML")
-#         return
+    if not results:
+        await message.answer(f"<b>❌ Ничего не найдено\n\n@kinonawe4er - все наши фильмы и сериалы</b>\n\n<b>/genres - сортировка по жанрам</b>",
+        parse_mode="HTML")
+        return
 
-#     # один результат — открываем сразу
-#     if len(results) == 1:
-#         item_type, code, _ = results[0]
+    # один результат — открываем сразу
+    if len(results) == 1:
+        item_type, code, _ = results[0]
 
-#         if item_type == "movie":
-#             movie = movies[code]
+        if item_type == "movie":
+            movie = movies[code]
 
-#             if has_only_warning(movie):
-#                 await message.answer(
-#                     f"<b>{movie['warning']}</b>",
-#                     parse_mode="HTML"
-#                 )
-#                 return
+            if has_only_warning(movie):
+                await message.answer(
+                    f"<b>{movie['warning']}</b>",
+                    parse_mode="HTML"
+                )
+                return
 
-#             hashtags = " ".join(f"#{g.replace(' ', '_')}" for g in movie.get("genres", []))
+            hashtags = " ".join(f"#{g.replace(' ', '_')}" for g in movie.get("genres", []))
 
-#             await message.answer_video(
-#                 video=movie["video"],
-#                 caption=f"<b>⭐️ фильм «{movie['title']}», {movie['year']}</b>\n\n"
-#                         f"<i>{movie['description']}</i>\n\n"
-#                         f"<u>Жанр:</u> {hashtags}\n\n"
-#                         f"<u>Страна:</u> {movie['country']}\n"
-#                         f"<u>Режиссер:</u> {movie['director']}\n\n"
-#                         f"Смотреть бесплатно фильмы и сериалы 👉🏻 @kinonawe4er_bot\n"
-#                         f"Наш канал @kinonawe4er ✨",
-#                 parse_mode="HTML"
-#             )
-#         else:
-#             await send_serial_card(message, code)
+            await message.answer_video(
+                video=movie["video"],
+                caption=f"<b>⭐️ фильм «{movie['title']}», {movie['year']}</b>\n\n"
+                        f"<i>{movie['description']}</i>\n\n"
+                        f"<u>Жанр:</u> {hashtags}\n\n"
+                        f"<u>Страна:</u> {movie['country']}\n"
+                        f"<u>Режиссер:</u> {movie['director']}\n\n"
+                        f"Смотреть бесплатно фильмы и сериалы 👉🏻 @kinonawe4er_bot\n"
+                        f"Наш канал @kinonawe4er ✨",
+                parse_mode="HTML"
+            )
+        else:
+            await send_serial_card(message, code)
 
-#         return
+        return
 
-#     # несколько результатов — выбор
-#     await message.answer(
-#         "<b>🔍 Найдено несколько вариантов:</b>",
-#         reply_markup=search_results_keyboard(results),
-#         parse_mode="HTML"
-#     )
+    # несколько результатов — выбор
+    await message.answer(
+        "<b>🔍 Найдено несколько вариантов:</b>",
+        reply_markup=search_results_keyboard(results),
+        parse_mode="HTML"
+    )
     
 
 
 
-# @dp.callback_query()
-# async def handle_callbacks(callback: types.CallbackQuery):
-#     data = callback.data.split(":")
-#     action = data[0]
+@dp.callback_query()
+async def handle_callbacks(callback: types.CallbackQuery):
+    data = callback.data.split(":")
+    action = data[0]
 
-#     # открыть меню серий
-#     if action == "series_menu":
-#         _, code, page = data
-#         total = len(series[code]["episodes"])
-#         await callback.message.edit_reply_markup(
-#             reply_markup=series_menu_keyboard(code, total, int(page))
-#         )
+    # открыть меню серий
+    if action == "series_menu":
+        _, code, page = data
+        total = len(series[code]["episodes"])
+        await callback.message.edit_reply_markup(
+            reply_markup=series_menu_keyboard(code, total, int(page))
+        )
 
-#     if action in ("prev", "next"):
-#         _, code, episode = data
-#         episode = int(episode)
+    if action in ("prev", "next"):
+        _, code, episode = data
+        episode = int(episode)
 
-#         if action == "prev":
-#             episode -= 1
-#         else:
-#             episode += 1
+        if action == "prev":
+            episode -= 1
+        else:
+            episode += 1
 
-#         await send_episode(callback, code, episode)
+        await send_episode(callback, code, episode)
 
-#         await callback.answer()
-#         return
+        await callback.answer()
+        return
 
 
 
-#     # перелистывание страниц
-#     elif action == "page":
-#         _, code, page = data
-#         total = len(series[code]["episodes"])
-#         await callback.message.edit_reply_markup(
-#             reply_markup=series_menu_keyboard(code, total, int(page))
-#         )
+    # перелистывание страниц
+    elif action == "page":
+        _, code, page = data
+        total = len(series[code]["episodes"])
+        await callback.message.edit_reply_markup(
+            reply_markup=series_menu_keyboard(code, total, int(page))
+        )
 
-#     # выбор серии → ВКЛЮЧАЕМ ВИДЕО
-#     elif action == "ep":
-#         _, code, episode = data
-#         await send_episode(callback, code, int(episode))
+    # выбор серии → ВКЛЮЧАЕМ ВИДЕО
+    elif action == "ep":
+        _, code, episode = data
+        await send_episode(callback, code, int(episode))
 
-#     # назад к карточке сериала
-#     elif action == "serial":
-#         _, code = data
-#         await callback.message.delete()
-#         await send_serial_card(callback.message, code)
+    # назад к карточке сериала
+    elif action == "serial":
+        _, code = data
+        await callback.message.delete()
+        await send_serial_card(callback.message, code)
 
-#     elif action == "menu":
-#         _, code, page = data
-#         total = len(series[code]["episodes"])
+    elif action == "menu":
+        _, code, page = data
+        total = len(series[code]["episodes"])
 
-#         await callback.message.edit_reply_markup(
-#             reply_markup=series_menu_keyboard(code, total, int(page))
-#     )
+        await callback.message.edit_reply_markup(
+            reply_markup=series_menu_keyboard(code, total, int(page))
+    )
 
-#     await callback.answer()
+    await callback.answer()
 
 # Загрузка видосов
 @dp.message()
@@ -1348,10 +1620,10 @@ async def get_file_id(message: types.Message):
         await message.answer(message.video.file_id)
 
 # Загрузка фото
-# @dp.message()
-# async def get_photo_id(message: types.Message):
-#     if message.photo:
-#         await message.answer(message.photo[-1].file_id)
+@dp.message()
+async def get_photo_id(message: types.Message):
+    if message.photo:
+        await message.answer(message.photo[-1].file_id)
 
 # Запуск бота
 async def main():
