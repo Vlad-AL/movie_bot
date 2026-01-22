@@ -832,517 +832,520 @@ series = {
             {
                 "video": "BAACAgIAAxkBAAIFd2lyWlI_HEqbjFSHp5GI5jqWB45fAAJCkwACTp-RS6NIku6_Hkh7OAQ",
             },
+            {
+                "video": "",
+            },
             
         ]
     }
 }
 
-def has_only_warning(item: dict) -> bool:
-    return "warning" in item and len(item.keys()) == 1
+# def has_only_warning(item: dict) -> bool:
+#     return "warning" in item and len(item.keys()) == 1
 
-def normalize(text: str) -> str:
-    return text.lower().replace("ё", "е").replace(" ", "")
+# def normalize(text: str) -> str:
+#     return text.lower().replace("ё", "е").replace(" ", "")
 
-def search_movies(query: str):
-    query = normalize(query.strip())
-    results = []
+# def search_movies(query: str):
+#     query = normalize(query.strip())
+#     results = []
 
-    for code, movie in movies.items():
-        title = normalize(movie.get("title", ""))
-        if query in title:
-            results.append(("movie", code, movie))
+#     for code, movie in movies.items():
+#         title = normalize(movie.get("title", ""))
+#         if query in title:
+#             results.append(("movie", code, movie))
 
-    return results
+#     return results
 
-def search_series(query: str):
-    query = normalize(query.strip())
-    results = []
+# def search_series(query: str):
+#     query = normalize(query.strip())
+#     results = []
 
-    for code, serial in series.items():
-        title = normalize(serial.get("title", ""))
-        if query in title:
-            results.append(("series", code, serial))
+#     for code, serial in series.items():
+#         title = normalize(serial.get("title", ""))
+#         if query in title:
+#             results.append(("series", code, serial))
 
-    return results
+#     return results
 
-def search_by_code(query: str):
-    query = query.strip().lower()
+# def search_by_code(query: str):
+#     query = query.strip().lower()
 
-    if query in movies:
-        return [("movie", query, movies[query])]
+#     if query in movies:
+#         return [("movie", query, movies[query])]
 
-    if query in series:
-        return [("series", query, series[query])]
+#     if query in series:
+#         return [("series", query, series[query])]
 
-    return []
+#     return []
 
-def search_by_title(query: str):
-    query = normalize(query)
-    results = []
+# def search_by_title(query: str):
+#     query = normalize(query)
+#     results = []
 
-    for code, movie in movies.items():
-        if query in normalize(movie.get("title", "")):
-            results.append(("movie", code, movie))
+#     for code, movie in movies.items():
+#         if query in normalize(movie.get("title", "")):
+#             results.append(("movie", code, movie))
 
-    for code, serial in series.items():
-        if query in normalize(serial.get("title", "")):
-            results.append(("series", code, serial))
+#     for code, serial in series.items():
+#         if query in normalize(serial.get("title", "")):
+#             results.append(("series", code, serial))
 
-    return results
+#     return results
 
-def search_all(query: str):
-    by_code = search_by_code(query)
-    if by_code:
-        return by_code
+# def search_all(query: str):
+#     by_code = search_by_code(query)
+#     if by_code:
+#         return by_code
 
-    return search_by_title(query)
-
-
-def search_results_keyboard(results):
-    keyboard = []
-
-    for item_type, code, item in results:
-        emoji = "🎬" if item_type == "movie" else "📺"
-        keyboard.append([
-            InlineKeyboardButton(
-                text=f"{emoji} {item['title']}",
-                callback_data=f"open:{item_type}:{code}"
-            )
-        ])
-
-    return InlineKeyboardMarkup(inline_keyboard=keyboard)
+#     return search_by_title(query)
 
 
+# def search_results_keyboard(results):
+#     keyboard = []
+
+#     for item_type, code, item in results:
+#         emoji = "🎬" if item_type == "movie" else "📺"
+#         keyboard.append([
+#             InlineKeyboardButton(
+#                 text=f"{emoji} {item['title']}",
+#                 callback_data=f"open:{item_type}:{code}"
+#             )
+#         ])
+
+#     return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
 
-ITEMS_PER_PAGE = 6
-
-# --- Получаем все жанры ---
-def get_all_genres():
-    genres = set()
-    for movie in movies.values():
-        genres.update(movie.get("genres", []))
-    for serial in series.values():
-        genres.update(serial.get("genres", []))
-    return sorted(genres)
 
 
-# --- Кнопки для жанров ---
-def genres_keyboard():
-    keyboard = []
-    for genre in get_all_genres():
-        keyboard.append([
-            InlineKeyboardButton(
-                text=genre.capitalize(),
-                callback_data=f"genre:{genre}"
-            )
-        ])
-    return InlineKeyboardMarkup(inline_keyboard=keyboard)
+# ITEMS_PER_PAGE = 6
+
+# # --- Получаем все жанры ---
+# def get_all_genres():
+#     genres = set()
+#     for movie in movies.values():
+#         genres.update(movie.get("genres", []))
+#     for serial in series.values():
+#         genres.update(serial.get("genres", []))
+#     return sorted(genres)
 
 
-# --- Фильтруем по жанру ---
-
-def find_by_genre(genre: str):
-    results = []
-
-    for code, movie in movies.items():
-        if genre in movie.get("genres", []):
-            results.append(("movie", code, movie))
-
-    for code, serial in series.items():
-        if genre in serial.get("genres", []):
-            results.append(("series", code, serial))
-
-    return results
-
-# --- Получаем страницу ---
-def genre_page(genre: str, page: int):
-    items = find_by_genre(genre)
-    total_pages = (len(items) + ITEMS_PER_PAGE - 1) // ITEMS_PER_PAGE
-    start = page * ITEMS_PER_PAGE
-    end = start + ITEMS_PER_PAGE
-    return items[start:end], total_pages
+# # --- Кнопки для жанров ---
+# def genres_keyboard():
+#     keyboard = []
+#     for genre in get_all_genres():
+#         keyboard.append([
+#             InlineKeyboardButton(
+#                 text=genre.capitalize(),
+#                 callback_data=f"genre:{genre}"
+#             )
+#         ])
+#     return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
 
-# --- Кнопки фильмов/сериалов с пагинацией ---
-def genre_keyboard(genre: str, page: int, total_pages: int, items):
-    keyboard = []
+# # --- Фильтруем по жанру ---
 
-    for item_type, code, item in items:
-        emoji = "🎬" if item_type == "movie" else "📺"
-        keyboard.append([
-            InlineKeyboardButton(
-                text=f"{emoji} {item['title']}",
-                callback_data=f"open:{item_type}:{code}"
-            )
-        ])
+# def find_by_genre(genre: str):
+#     results = []
 
-    nav = []
-    if page > 0:
-        nav.append(InlineKeyboardButton(text="⬅️", callback_data=f"genre_page:{genre}:{page-1}"))
-    nav.append(InlineKeyboardButton(text=f"{page+1}/{total_pages}", callback_data="noop"))
-    if page < total_pages - 1:
-        nav.append(InlineKeyboardButton(text="➡️", callback_data=f"genre_page:{genre}:{page+1}"))
+#     for code, movie in movies.items():
+#         if genre in movie.get("genres", []):
+#             results.append(("movie", code, movie))
 
-    keyboard.append(nav)
-    return InlineKeyboardMarkup(inline_keyboard=keyboard)
+#     for code, serial in series.items():
+#         if genre in serial.get("genres", []):
+#             results.append(("series", code, serial))
 
+#     return results
 
-# --- Хендлер нажатия на жанр ---
-@dp.callback_query(lambda c: c.data.startswith("genre:"))
-async def genre_selected(callback: types.CallbackQuery):
-    genre = callback.data.split(":")[1]
-    items, total_pages = genre_page(genre, 0)
-
-    if not items:
-        await callback.message.answer(f"<b>❌ Ничего не найдено\n\n@kinonawe4er - все наши фильмы и сериалы</b>",
-        parse_mode="HTML")
-        await callback.answer()
-        return
-
-    await callback.message.edit_text(
-        f"<b>🎭 Жанр: {genre.capitalize()}</b>",
-        reply_markup=genre_keyboard(genre, 0, total_pages, items),
-        parse_mode="HTML"
-    )
-    await callback.answer()
+# # --- Получаем страницу ---
+# def genre_page(genre: str, page: int):
+#     items = find_by_genre(genre)
+#     total_pages = (len(items) + ITEMS_PER_PAGE - 1) // ITEMS_PER_PAGE
+#     start = page * ITEMS_PER_PAGE
+#     end = start + ITEMS_PER_PAGE
+#     return items[start:end], total_pages
 
 
-# --- Хендлер переключения страниц жанра ---
-@dp.callback_query(lambda c: c.data.startswith("genre_page:"))
-async def genre_page_switch(callback: types.CallbackQuery):
-    _, genre, page = callback.data.split(":")
-    page = int(page)
-    items, total_pages = genre_page(genre, page)
+# # --- Кнопки фильмов/сериалов с пагинацией ---
+# def genre_keyboard(genre: str, page: int, total_pages: int, items):
+#     keyboard = []
 
-    await callback.message.edit_reply_markup(
-        reply_markup=genre_keyboard(genre, page, total_pages, items)
-    )
-    await callback.answer()
+#     for item_type, code, item in items:
+#         emoji = "🎬" if item_type == "movie" else "📺"
+#         keyboard.append([
+#             InlineKeyboardButton(
+#                 text=f"{emoji} {item['title']}",
+#                 callback_data=f"open:{item_type}:{code}"
+#             )
+#         ])
+
+#     nav = []
+#     if page > 0:
+#         nav.append(InlineKeyboardButton(text="⬅️", callback_data=f"genre_page:{genre}:{page-1}"))
+#     nav.append(InlineKeyboardButton(text=f"{page+1}/{total_pages}", callback_data="noop"))
+#     if page < total_pages - 1:
+#         nav.append(InlineKeyboardButton(text="➡️", callback_data=f"genre_page:{genre}:{page+1}"))
+
+#     keyboard.append(nav)
+#     return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
 
-# --- Хендлер открытия фильма/сериала по кнопке ---
-@dp.callback_query(lambda c: c.data.startswith("open:"))
-async def open_item(callback: types.CallbackQuery):
-    _, item_type, code = callback.data.split(":")
+# # --- Хендлер нажатия на жанр ---
+# @dp.callback_query(lambda c: c.data.startswith("genre:"))
+# async def genre_selected(callback: types.CallbackQuery):
+#     genre = callback.data.split(":")[1]
+#     items, total_pages = genre_page(genre, 0)
+
+#     if not items:
+#         await callback.message.answer(f"<b>❌ Ничего не найдено\n\n@kinonawe4er - все наши фильмы и сериалы</b>",
+#         parse_mode="HTML")
+#         await callback.answer()
+#         return
+
+#     await callback.message.edit_text(
+#         f"<b>🎭 Жанр: {genre.capitalize()}</b>",
+#         reply_markup=genre_keyboard(genre, 0, total_pages, items),
+#         parse_mode="HTML"
+#     )
+#     await callback.answer()
+
+
+# # --- Хендлер переключения страниц жанра ---
+# @dp.callback_query(lambda c: c.data.startswith("genre_page:"))
+# async def genre_page_switch(callback: types.CallbackQuery):
+#     _, genre, page = callback.data.split(":")
+#     page = int(page)
+#     items, total_pages = genre_page(genre, page)
+
+#     await callback.message.edit_reply_markup(
+#         reply_markup=genre_keyboard(genre, page, total_pages, items)
+#     )
+#     await callback.answer()
+
+
+# # --- Хендлер открытия фильма/сериала по кнопке ---
+# @dp.callback_query(lambda c: c.data.startswith("open:"))
+# async def open_item(callback: types.CallbackQuery):
+#     _, item_type, code = callback.data.split(":")
     
-    if item_type == "movie":
-        movie = movies[code]  # создаем movie первым!
+#     if item_type == "movie":
+#         movie = movies[code]  # создаем movie первым!
 
-        if has_only_warning(movie):
-            await callback.message.answer(
-                f"<b>{movie['warning']}</b>",
-                parse_mode="HTML"
-            )
-            await callback.answer()
-            return
+#         if has_only_warning(movie):
+#             await callback.message.answer(
+#                 f"<b>{movie['warning']}</b>",
+#                 parse_mode="HTML"
+#             )
+#             await callback.answer()
+#             return
 
-        hashtags = " ".join(f"#{g.replace(' ', '_')}" for g in movie.get('genres', []))
+#         hashtags = " ".join(f"#{g.replace(' ', '_')}" for g in movie.get('genres', []))
         
-        await callback.message.answer_video(
-            video=movie["video"],
-            caption=(
-                f"<b>⭐️ фильм «{movie['title']}», {movie['year']}</b>\n\n"
-                f"<i>{movie.get('description', '')}</i>\n\n"
-                f"<u>Жанр:</u> {hashtags}\n\n"
-                f"<u>Страна:</u> {movie.get('country', '')}\n"
-                f"<u>Режиссер:</u> {movie.get('director', '')}\n\n"
-                f"Смотреть бесплатно фильмы и сериалы 👉🏻 @kinonawe4er_bot\n"
-                f"Наш канал @kinonawe4er ✨"
-            ),
-            parse_mode="HTML"
-        )
-    else:  # сериал
-        await send_serial_card(callback.message, code)
+#         await callback.message.answer_video(
+#             video=movie["video"],
+#             caption=(
+#                 f"<b>⭐️ фильм «{movie['title']}», {movie['year']}</b>\n\n"
+#                 f"<i>{movie.get('description', '')}</i>\n\n"
+#                 f"<u>Жанр:</u> {hashtags}\n\n"
+#                 f"<u>Страна:</u> {movie.get('country', '')}\n"
+#                 f"<u>Режиссер:</u> {movie.get('director', '')}\n\n"
+#                 f"Смотреть бесплатно фильмы и сериалы 👉🏻 @kinonawe4er_bot\n"
+#                 f"Наш канал @kinonawe4er ✨"
+#             ),
+#             parse_mode="HTML"
+#         )
+#     else:  # сериал
+#         await send_serial_card(callback.message, code)
     
-    await callback.answer()
+#     await callback.answer()
 
 
 
-def serial_start_keyboard(code: str):
-    return InlineKeyboardMarkup(
-        inline_keyboard=[[
-            InlineKeyboardButton(
-                text="📋 ВЫБРАТЬ СЕРИЮ",
-                callback_data=f"menu:{code}:0"
-            )
-        ]]
-    )
+# def serial_start_keyboard(code: str):
+#     return InlineKeyboardMarkup(
+#         inline_keyboard=[[
+#             InlineKeyboardButton(
+#                 text="📋 ВЫБРАТЬ СЕРИЮ",
+#                 callback_data=f"menu:{code}:0"
+#             )
+#         ]]
+#     )
 
-async def send_serial_card(message: types.Message, code: str):
-    serial = series[code]
-    hashtags = " ".join(f"#{g.replace(' ', '_')}" for g in serial.get("genres", []))
-    text = (
-        f"<b>⭐️ «{serial['title']}», {serial['year']}</b>\n\n"
-        f"<i>{serial['description']}</i>\n\n"
-        f"<u>Жанр:</u> {hashtags}\n\n"
-        f"<u>Страна:</u> {serial['country']}\n"
-        f"<u>Режиссер:</u> {serial['director']}\n\n"
-    )
+# async def send_serial_card(message: types.Message, code: str):
+#     serial = series[code]
+#     hashtags = " ".join(f"#{g.replace(' ', '_')}" for g in serial.get("genres", []))
+#     text = (
+#         f"<b>⭐️ «{serial['title']}», {serial['year']}</b>\n\n"
+#         f"<i>{serial['description']}</i>\n\n"
+#         f"<u>Жанр:</u> {hashtags}\n\n"
+#         f"<u>Страна:</u> {serial['country']}\n"
+#         f"<u>Режиссер:</u> {serial['director']}\n\n"
+#     )
 
-    await message.answer_photo(
-        photo=serial["poster"],
-        caption=text,
-        parse_mode="HTML",
-        reply_markup=serial_start_keyboard(code)
-    )
-
-
-def episode_keyboard(code: str, episode: int, total: int):
-    row = []
-
-    if episode > 0:
-        row.append(
-            InlineKeyboardButton(text="⬅️ пред", callback_data=f"prev:{code}:{episode}")
-        )
-
-    row.append(
-        InlineKeyboardButton(text="ВЫБРАТЬ СЕРИЮ", callback_data=f"menu:{code}:0")
-    )
-
-    if episode < total - 1:
-        row.append(
-            InlineKeyboardButton(text="след ➡️", callback_data=f"next:{code}:{episode}")
-        )
-
-    return InlineKeyboardMarkup(inline_keyboard=[row])
+#     await message.answer_photo(
+#         photo=serial["poster"],
+#         caption=text,
+#         parse_mode="HTML",
+#         reply_markup=serial_start_keyboard(code)
+#     )
 
 
-def series_menu_keyboard(code: str, total: int, page: int = 0):
-    per_page = 10
-    start = page * per_page
-    end = min(start + per_page, total)
+# def episode_keyboard(code: str, episode: int, total: int):
+#     row = []
 
-    keyboard = []
-    row = []
+#     if episode > 0:
+#         row.append(
+#             InlineKeyboardButton(text="⬅️ пред", callback_data=f"prev:{code}:{episode}")
+#         )
 
-    for i in range(start, end):
-        row.append(
-            InlineKeyboardButton(
-                text=str(i + 1),
-                callback_data=f"ep:{code}:{i}"
-            )
-        )
-        if len(row) == 5:
-            keyboard.append(row)
-            row = []
+#     row.append(
+#         InlineKeyboardButton(text="ВЫБРАТЬ СЕРИЮ", callback_data=f"menu:{code}:0")
+#     )
 
-    if row:
-        keyboard.append(row)
+#     if episode < total - 1:
+#         row.append(
+#             InlineKeyboardButton(text="след ➡️", callback_data=f"next:{code}:{episode}")
+#         )
 
-    nav = []
-    if page > 0:
-        nav.append(
-            InlineKeyboardButton(text="⬅️", callback_data=f"page:{code}:{page-1}")
-        )
-
-    if end < total:
-        nav.append(
-            InlineKeyboardButton(text="➡️", callback_data=f"page:{code}:{page+1}")
-        )
-
-    keyboard.append(nav)
-    return InlineKeyboardMarkup(inline_keyboard=keyboard)
+#     return InlineKeyboardMarkup(inline_keyboard=[row])
 
 
+# def series_menu_keyboard(code: str, total: int, page: int = 0):
+#     per_page = 10
+#     start = page * per_page
+#     end = min(start + per_page, total)
 
-async def send_episode(target, code: str, episode_index: int):
-    serial = series[code]
-    total = len(serial["episodes"])
-    episode = serial["episodes"][episode_index]
+#     keyboard = []
+#     row = []
+
+#     for i in range(start, end):
+#         row.append(
+#             InlineKeyboardButton(
+#                 text=str(i + 1),
+#                 callback_data=f"ep:{code}:{i}"
+#             )
+#         )
+#         if len(row) == 5:
+#             keyboard.append(row)
+#             row = []
+
+#     if row:
+#         keyboard.append(row)
+
+#     nav = []
+#     if page > 0:
+#         nav.append(
+#             InlineKeyboardButton(text="⬅️", callback_data=f"page:{code}:{page-1}")
+#         )
+
+#     if end < total:
+#         nav.append(
+#             InlineKeyboardButton(text="➡️", callback_data=f"page:{code}:{page+1}")
+#         )
+
+#     keyboard.append(nav)
+#     return InlineKeyboardMarkup(inline_keyboard=keyboard)
+
+
+
+# async def send_episode(target, code: str, episode_index: int):
+#     serial = series[code]
+#     total = len(serial["episodes"])
+#     episode = serial["episodes"][episode_index]
     
-    caption = (
-        f"<b>⭐️ «{serial['title']}», {serial['year']}</b>\n\n"
-        f"серия {episode_index + 1} из {total}\n\n"
-        f"Смотреть бесплатно фильмы и сериалы 👉🏻 @kinonawe4er_bot\n"
-        f"Наш канал @kinonawe4er ✨"
-    )
+#     caption = (
+#         f"<b>⭐️ «{serial['title']}», {serial['year']}</b>\n\n"
+#         f"серия {episode_index + 1} из {total}\n\n"
+#         f"Смотреть бесплатно фильмы и сериалы 👉🏻 @kinonawe4er_bot\n"
+#         f"Наш канал @kinonawe4er ✨"
+#     )
 
-    keyboard = episode_keyboard(code, episode_index, total)
+#     keyboard = episode_keyboard(code, episode_index, total)
 
-    if isinstance(target, types.CallbackQuery):
-        await target.message.edit_media(
-            media=types.InputMediaVideo(
-                media=episode["video"],
-                caption=caption,
-                parse_mode="HTML"
-            ),
-            reply_markup=keyboard
-        )
-    else:
-        await target.answer_video(
-            video=episode["video"],
-            caption=caption,
-            parse_mode="HTML",
-            reply_markup=keyboard
-        )
+#     if isinstance(target, types.CallbackQuery):
+#         await target.message.edit_media(
+#             media=types.InputMediaVideo(
+#                 media=episode["video"],
+#                 caption=caption,
+#                 parse_mode="HTML"
+#             ),
+#             reply_markup=keyboard
+#         )
+#     else:
+#         await target.answer_video(
+#             video=episode["video"],
+#             caption=caption,
+#             parse_mode="HTML",
+#             reply_markup=keyboard
+#         )
 
-# Функция для поиска фильма по коду или названию
-def find_movie(query: str):
-    query = normalize(query.strip())
+# # Функция для поиска фильма по коду или названию
+# def find_movie(query: str):
+#     query = normalize(query.strip())
 
-    # Сначала ищем по коду
-    for code, movie in movies.items():
-        if query == code.lower():
-            return movie
+#     # Сначала ищем по коду
+#     for code, movie in movies.items():
+#         if query == code.lower():
+#             return movie
 
-    # Потом ищем по названию
-    for movie in movies.values():
-        title = normalize(movie.get("title", ""))
-        if query in title:
-            return movie
+#     # Потом ищем по названию
+#     for movie in movies.values():
+#         title = normalize(movie.get("title", ""))
+#         if query in title:
+#             return movie
 
-    return None
+#     return None
 
-def find_series(query: str):
-    query = normalize(query.strip())
+# def find_series(query: str):
+#     query = normalize(query.strip())
 
-    for code, serial in series.items():
+#     for code, serial in series.items():
 
-        if query == str(code).lower():
-            return code
+#         if query == str(code).lower():
+#             return code
 
-        title = normalize(serial.get("title", ""))
-        if query in title:
-            return code
+#         title = normalize(serial.get("title", ""))
+#         if query in title:
+#             return code
 
-    return None
+#     return None
 
-# # Основной хендлер сообщений
+# # # Основной хендлер сообщений
 
-@dp.message()
-async def handle_message(message: types.Message):
-    query = message.text.strip().lower()  # приведение к нижнему регистру
+# @dp.message()
+# async def handle_message(message: types.Message):
+#     query = message.text.strip().lower()  # приведение к нижнему регистру
 
-    if query == "/start":
-        await message.answer(
-            "<b>Для просмотра введите название или код, которые указаны в канале https://t.me/kinonawe4er</b>\n\n"
-            "<b>Например: «Фокус» или же его код «001»</b>\n\n"
-            "<b>/genres - сортировка по жанрам</b>",
-            parse_mode="HTML"
-        )
-        return
+#     if query == "/start":
+#         await message.answer(
+#             "<b>Для просмотра введите название или код, которые указаны в канале https://t.me/kinonawe4er</b>\n\n"
+#             "<b>Например: «Фокус» или же его код «001»</b>\n\n"
+#             "<b>/genres - сортировка по жанрам</b>",
+#             parse_mode="HTML"
+#         )
+#         return
     
-    if query == "/genres":
-        await message.answer(
-            "<b>🎭 Выберите жанр:</b>",
-            reply_markup=genres_keyboard(),
-            parse_mode="HTML"
-        )
-        return
+#     if query == "/genres":
+#         await message.answer(
+#             "<b>🎭 Выберите жанр:</b>",
+#             reply_markup=genres_keyboard(),
+#             parse_mode="HTML"
+#         )
+#         return
 
-    results = search_all(query)
+#     results = search_all(query)
 
-    if not results:
-        await message.answer(f"<b>❌ Ничего не найдено\n\n@kinonawe4er - все наши фильмы и сериалы</b>",
-        parse_mode="HTML")
-        return
+#     if not results:
+#         await message.answer(f"<b>❌ Ничего не найдено\n\n@kinonawe4er - все наши фильмы и сериалы</b>",
+#         parse_mode="HTML")
+#         return
 
-    # один результат — открываем сразу
-    if len(results) == 1:
-        item_type, code, _ = results[0]
+#     # один результат — открываем сразу
+#     if len(results) == 1:
+#         item_type, code, _ = results[0]
 
-        if item_type == "movie":
-            movie = movies[code]
+#         if item_type == "movie":
+#             movie = movies[code]
 
-            if has_only_warning(movie):
-                await message.answer(
-                    f"<b>{movie['warning']}</b>",
-                    parse_mode="HTML"
-                )
-                return
+#             if has_only_warning(movie):
+#                 await message.answer(
+#                     f"<b>{movie['warning']}</b>",
+#                     parse_mode="HTML"
+#                 )
+#                 return
 
-            hashtags = " ".join(f"#{g.replace(' ', '_')}" for g in movie.get("genres", []))
+#             hashtags = " ".join(f"#{g.replace(' ', '_')}" for g in movie.get("genres", []))
 
-            await message.answer_video(
-                video=movie["video"],
-                caption=f"<b>⭐️ фильм «{movie['title']}», {movie['year']}</b>\n\n"
-                        f"<i>{movie['description']}</i>\n\n"
-                        f"<u>Жанр:</u> {hashtags}\n\n"
-                        f"<u>Страна:</u> {movie['country']}\n"
-                        f"<u>Режиссер:</u> {movie['director']}\n\n"
-                        f"Смотреть бесплатно фильмы и сериалы 👉🏻 @kinonawe4er_bot\n"
-                        f"Наш канал @kinonawe4er ✨",
-                parse_mode="HTML"
-            )
-        else:
-            await send_serial_card(message, code)
+#             await message.answer_video(
+#                 video=movie["video"],
+#                 caption=f"<b>⭐️ фильм «{movie['title']}», {movie['year']}</b>\n\n"
+#                         f"<i>{movie['description']}</i>\n\n"
+#                         f"<u>Жанр:</u> {hashtags}\n\n"
+#                         f"<u>Страна:</u> {movie['country']}\n"
+#                         f"<u>Режиссер:</u> {movie['director']}\n\n"
+#                         f"Смотреть бесплатно фильмы и сериалы 👉🏻 @kinonawe4er_bot\n"
+#                         f"Наш канал @kinonawe4er ✨",
+#                 parse_mode="HTML"
+#             )
+#         else:
+#             await send_serial_card(message, code)
 
-        return
+#         return
 
-    # несколько результатов — выбор
-    await message.answer(
-        "<b>🔍 Найдено несколько вариантов:</b>",
-        reply_markup=search_results_keyboard(results),
-        parse_mode="HTML"
-    )
+#     # несколько результатов — выбор
+#     await message.answer(
+#         "<b>🔍 Найдено несколько вариантов:</b>",
+#         reply_markup=search_results_keyboard(results),
+#         parse_mode="HTML"
+#     )
     
 
 
 
-@dp.callback_query()
-async def handle_callbacks(callback: types.CallbackQuery):
-    data = callback.data.split(":")
-    action = data[0]
+# @dp.callback_query()
+# async def handle_callbacks(callback: types.CallbackQuery):
+#     data = callback.data.split(":")
+#     action = data[0]
 
-    # открыть меню серий
-    if action == "series_menu":
-        _, code, page = data
-        total = len(series[code]["episodes"])
-        await callback.message.edit_reply_markup(
-            reply_markup=series_menu_keyboard(code, total, int(page))
-        )
+#     # открыть меню серий
+#     if action == "series_menu":
+#         _, code, page = data
+#         total = len(series[code]["episodes"])
+#         await callback.message.edit_reply_markup(
+#             reply_markup=series_menu_keyboard(code, total, int(page))
+#         )
 
-    if action in ("prev", "next"):
-        _, code, episode = data
-        episode = int(episode)
+#     if action in ("prev", "next"):
+#         _, code, episode = data
+#         episode = int(episode)
 
-        if action == "prev":
-            episode -= 1
-        else:
-            episode += 1
+#         if action == "prev":
+#             episode -= 1
+#         else:
+#             episode += 1
 
-        await send_episode(callback, code, episode)
+#         await send_episode(callback, code, episode)
 
-        await callback.answer()
-        return
+#         await callback.answer()
+#         return
 
 
 
-    # перелистывание страниц
-    elif action == "page":
-        _, code, page = data
-        total = len(series[code]["episodes"])
-        await callback.message.edit_reply_markup(
-            reply_markup=series_menu_keyboard(code, total, int(page))
-        )
+#     # перелистывание страниц
+#     elif action == "page":
+#         _, code, page = data
+#         total = len(series[code]["episodes"])
+#         await callback.message.edit_reply_markup(
+#             reply_markup=series_menu_keyboard(code, total, int(page))
+#         )
 
-    # выбор серии → ВКЛЮЧАЕМ ВИДЕО
-    elif action == "ep":
-        _, code, episode = data
-        await send_episode(callback, code, int(episode))
+#     # выбор серии → ВКЛЮЧАЕМ ВИДЕО
+#     elif action == "ep":
+#         _, code, episode = data
+#         await send_episode(callback, code, int(episode))
 
-    # назад к карточке сериала
-    elif action == "serial":
-        _, code = data
-        await callback.message.delete()
-        await send_serial_card(callback.message, code)
+#     # назад к карточке сериала
+#     elif action == "serial":
+#         _, code = data
+#         await callback.message.delete()
+#         await send_serial_card(callback.message, code)
 
-    elif action == "menu":
-        _, code, page = data
-        total = len(series[code]["episodes"])
+#     elif action == "menu":
+#         _, code, page = data
+#         total = len(series[code]["episodes"])
 
-        await callback.message.edit_reply_markup(
-            reply_markup=series_menu_keyboard(code, total, int(page))
-    )
+#         await callback.message.edit_reply_markup(
+#             reply_markup=series_menu_keyboard(code, total, int(page))
+#     )
 
-    await callback.answer()
+#     await callback.answer()
 
 # Загрузка видосов
-# @dp.message()
-# async def get_file_id(message: types.Message):
-#     if message.video:
-#         await message.answer(message.video.file_id)
+@dp.message()
+async def get_file_id(message: types.Message):
+    if message.video:
+        await message.answer(message.video.file_id)
 
 # Загрузка фото
 # @dp.message()
