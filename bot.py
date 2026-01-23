@@ -1288,45 +1288,64 @@ async def open_item(callback: types.CallbackQuery):
     _, item_type, code = callback.data.split(":")
     user_id = callback.from_user.id
 
-    # Проверка подписки для всех типов
-    if not await is_subscribed(user_id):
-        await callback.message.answer(
-            "Для использования бота подпишитесь на канал @kinonawe4er",
-            reply_markup=subscribe_keyboard()
-        )
-        await callback.answer()
-        return
-
     if item_type == "movie":
-        movie = movies[code]  # создаем movie первым!
-
-        if has_only_warning(movie):
+        if not await is_subscribed(user_id):
             await callback.message.answer(
-                f"<b>{movie['warning']}</b>",
-                parse_mode="HTML"
+                "Для использования бота подпишитесь на канал @kinonawe4er",
+                reply_markup=subscribe_keyboard()
             )
             await callback.answer()
             return
 
-        hashtags = " ".join(f"#{g.replace(' ', '_')}" for g in movie.get('genres', []))
+        movie = movies[code]
+        if has_only_warning(movie):
+            await callback.message.answer(f"<b>{movie['warning']}</b>", parse_mode="HTML")
+            await callback.answer()
+            return
 
+        hashtags = " ".join(f"#{g.replace(' ', '_')}" for g in movie.get('genres', []))
         await callback.message.answer_video(
             video=movie["video"],
             caption=(
                 f"<b>⭐️ фильм «{movie['title']}», {movie['year']}</b>\n\n"
                 f"<i>{movie.get('description', '')}</i>\n\n"
                 f"<u>Жанр:</u> {hashtags}\n\n"
-                f"<u>Страна:</u> {movie.get('country', '')}\n"
-                f"<u>Режиссер:</u> {movie.get('director', '')}</u>\n\n"
+                f"<u>Страна:</u> {movie.get('country')}</u>\n"
+                f"<u>Режиссер:</u> {movie.get('director')}</u>\n\n"
                 f"Смотреть бесплатно фильмы и сериалы 👉🏻 @kinonawe4er_bot\n"
                 f"Наш канал @kinonawe4er ✨"
             ),
             parse_mode="HTML"
         )
     else:  # сериал
-        await send_serial_card(callback.message, code)
+        serial = series[code]
+        hashtags = " ".join(f"#{g.replace(' ', '_')}" for g in serial.get("genres", []))
+        text = (
+            f"<b>⭐️ «{serial['title']}», {serial['year']}</b>\n\n"
+            f"<i>{serial['description']}</i>\n\n"
+            f"<u>Жанр:</u> {hashtags}\n\n"
+            f"<u>Страна:</u> {serial['country']}\n"
+            f"<u>Режиссер:</u> {serial['director']}</u>\n\n"
+        )
+
+        if not await is_subscribed(user_id):
+            # Показываем постер + кнопки подписки и проверки
+            keyboard = InlineKeyboardMarkup(inline_keyboard=[
+                [InlineKeyboardButton(text="📍 Подписаться", url=f"https://t.me/{CHANNEL_USERNAME[1:]}")],
+                [InlineKeyboardButton(text="🔎 Проверить", callback_data=f"check_sub:{code}:0")]
+            ])
+            await callback.message.answer_photo(
+                photo=serial["poster"],
+                caption=text,
+                parse_mode="HTML",
+                reply_markup=keyboard
+            )
+        else:
+            # Если подписан — показываем карточку сериала с кнопкой выбора серии
+            await send_serial_card(callback.message, code)
 
     await callback.answer()
+
 
 
 
