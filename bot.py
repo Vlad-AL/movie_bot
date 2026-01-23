@@ -1088,11 +1088,18 @@ series = {
     }
 }
 
-def subscribe_keyboard():
+def subscribe_keyboard(action: str):
     return InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(text="📍 Подписаться", url="https://t.me/kinonawe4er")],
-        [InlineKeyboardButton(text="🔎 Проверить", callback_data="check_sub")]
+        [InlineKeyboardButton(
+            text="📍 Подписаться",
+            url="https://t.me/kinonawe4er"
+        )],
+        [InlineKeyboardButton(
+            text="🔎 Проверить",
+            callback_data=action
+        )]
     ])
+
 
 def has_only_warning(item: dict) -> bool:
     return "warning" in item and len(item.keys()) == 1
@@ -1277,6 +1284,31 @@ async def genre_page_switch(callback: types.CallbackQuery):
     )
     await callback.answer()
 
+@dp.callback_query(lambda c: c.data.startswith("check_movie:"))
+async def check_movie(callback: types.CallbackQuery):
+    _, code = callback.data.split(":")
+    user_id = callback.from_user.id
+
+    if not await is_subscribed(user_id):
+        await callback.answer("❌ Вы ещё не подписались", show_alert=True)
+        return
+
+    movie = movies[code]
+
+    hashtags = " ".join(f"#{g.replace(' ', '_')}" for g in movie.get("genres", []))
+
+    await callback.message.answer_video(
+        video=movie["video"],
+        caption=(
+            f"<b>⭐️ фильм «{movie['title']}», {movie['year']}</b>\n\n"
+            f"<i>{movie.get('description', '')}</i>\n\n"
+            f"<u>Жанр:</u> {hashtags}"
+        ),
+        parse_mode="HTML"
+    )
+
+    await callback.answer()
+
 
 # --- Хендлер открытия фильма/сериала по кнопке ---
 @dp.callback_query(lambda c: c.data.startswith("open:"))
@@ -1285,13 +1317,17 @@ async def open_item(callback: types.CallbackQuery):
     user_id = callback.from_user.id
     
     if item_type == "movie":
-        if not await is_subscribed(user_id):
-            await callback.message.answer(
-                "Для просмотра фильма подпишитесь на канал @kinonawe4er",
-                reply_markup=subscribe_keyboard()
-            )
-            await callback.answer()
-            return
+        if item_type == "movie":
+            if not await is_subscribed(callback.from_user.id):
+                await callback.message.answer(
+                    "Для просмотра фильма подпишитесь на канал @kinonawe4er",
+                    reply_markup=subscribe_keyboard(
+                        action=f"check_movie:{code}"
+                    )
+                )
+                await callback.answer()
+                return
+
         movie = movies[code]  # создаем movie первым!
 
         if has_only_warning(movie):
@@ -1410,18 +1446,32 @@ def series_menu_keyboard(code: str, total: int, page: int = 0):
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
 
+@dp.callback_query(lambda c: c.data.startswith("check_episode:"))
+async def check_episode(callback: types.CallbackQuery):
+    _, code, episode = callback.data.split(":")
+    user_id = callback.from_user.id
+
+    if not await is_subscribed(user_id):
+        await callback.answer("❌ Вы ещё не подписались", show_alert=True)
+        return
+
+    await send_episode(callback, code, int(episode))
+    await callback.answer()
+
+
 
 async def send_episode(target, code: str, episode_index: int):
     user_id = target.from_user.id if isinstance(target, types.CallbackQuery) else target.chat.id
 
     if not await is_subscribed(user_id):
-        keyboard = InlineKeyboardMarkup(inline_keyboard=[
-            [InlineKeyboardButton(text="📍 Подписаться", url="https://t.me/kinonawe4er")],
-            [InlineKeyboardButton(
-                text="🔎 Проверить",
-                callback_data=f"check_sub:{code}:{episode_index}"
-            )]
-        ])
+        await target.message.answer(
+            "Для просмотра серии подпишитесь на канал @kinonawe4er",
+            reply_markup=subscribe_keyboard(
+                action=f"check_episode:{code}:{episode_index}"
+            )
+        )
+        return
+
 
         await target.message.answer(
             "Для просмотра серии подпишитесь на канал @kinonawe4er",
