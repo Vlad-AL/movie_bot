@@ -1546,8 +1546,8 @@ async def handle_message(message: types.Message):
 
     if query == "/start":
         await message.answer(
-            "<b>Для просмотра введите название или код, которые указаны в канале https://t.me/kinonawe4er</b>\n\n"
-            "<b>Например: «Фокус» или же его код «001»</b>\n\n"
+            "<b>Для просмотра введите название ИЛИ код, которые указаны в канале https://t.me/kinonawe4er</b>\n\n"
+            "<b>Например: «Фокус» ИЛИ же его код «001»</b>\n\n"
             "<b>/genres - сортировка по жанрам</b>",
             parse_mode="HTML",
             disable_web_page_preview=True
