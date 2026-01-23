@@ -1324,12 +1324,12 @@ async def open_item(callback: types.CallbackQuery):
             f"<b>⭐️ «{serial['title']}», {serial['year']}</b>\n\n"
             f"<i>{serial['description']}</i>\n\n"
             f"<u>Жанр:</u> {hashtags}\n\n"
-            f"<u>Страна:</u> {serial['country']}\n"
+            f"<u>Страна:</u> {serial['country']}</u>\n"
             f"<u>Режиссер:</u> {serial['director']}</u>\n\n"
         )
 
         if not await is_subscribed(user_id):
-            # Показываем постер + кнопки подписки и проверки
+            # Показываем постер + кнопки подписки/проверки
             keyboard = InlineKeyboardMarkup(inline_keyboard=[
                 [InlineKeyboardButton(text="📍 Подписаться", url=f"https://t.me/{CHANNEL_USERNAME[1:]}")],
                 [InlineKeyboardButton(text="🔎 Проверить", callback_data=f"check_sub:{code}:0")]
@@ -1341,7 +1341,7 @@ async def open_item(callback: types.CallbackQuery):
                 reply_markup=keyboard
             )
         else:
-            # Если подписан — показываем карточку сериала с кнопкой выбора серии
+            # Пользователь подписан — отправляем карточку сериала с кнопкой выбора серии
             await send_serial_card(callback.message, code)
 
     await callback.answer()
@@ -1360,6 +1360,7 @@ def serial_start_keyboard(code: str):
         ]]
     )
 
+# --- Отправка карточки сериала ---
 async def send_serial_card(message: types.Message, code: str):
     serial = series[code]
     hashtags = " ".join(f"#{g.replace(' ', '_')}" for g in serial.get("genres", []))
@@ -1367,8 +1368,8 @@ async def send_serial_card(message: types.Message, code: str):
         f"<b>⭐️ «{serial['title']}», {serial['year']}</b>\n\n"
         f"<i>{serial['description']}</i>\n\n"
         f"<u>Жанр:</u> {hashtags}\n\n"
-        f"<u>Страна:</u> {serial['country']}\n"
-        f"<u>Режиссер:</u> {serial['director']}\n\n"
+        f"<u>Страна:</u> {serial['country']}</u>\n"
+        f"<u>Режиссер:</u> {serial['director']}</u>\n\n"
     )
 
     await message.answer_photo(
@@ -1443,7 +1444,7 @@ async def send_episode(target, code: str, episode_index: int):
     # Проверяем подписку
     if not await check_subscription(user_id):
         keyboard = InlineKeyboardMarkup(inline_keyboard=[
-            [InlineKeyboardButton(text="📍 Подписаться", url="https://t.me/kinonawe4er")],
+            [InlineKeyboardButton(text="📍 Подписаться", url=f"https://t.me/{CHANNEL_USERNAME[1:]}")],
             [InlineKeyboardButton(text="🔎 Проверить", callback_data=f"check_sub:{code}:{episode_index}")]
         ])
         await target.message.answer(
@@ -1452,13 +1453,12 @@ async def send_episode(target, code: str, episode_index: int):
         )
         return
 
-    # Если подписан — показываем видео
+    # Если подписан — показываем видео серии
     serial = series[code]
     total = len(serial["episodes"])
     episode = serial["episodes"][episode_index]
 
     caption = f"<b>⭐️ «{serial['title']}», {serial['year']}</b>\nСерия {episode_index+1} из {total}"
-
     keyboard = episode_keyboard(code, episode_index, total)
 
     if isinstance(target, types.CallbackQuery):
