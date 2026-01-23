@@ -4,7 +4,6 @@ from aiogram.filters import CommandObject
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 TOKEN = "8425155912:AAEg3-V9hNc8nugIAvTyywxc4dfUSMxWLG4"
-CHANNEL_USERNAME = "@kinonawe4er"
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
@@ -1080,24 +1079,6 @@ series = {
     }
 }
 
-def subscribe_keyboard():
-    keyboard = InlineKeyboardMarkup(
-        inline_keyboard=[
-            [
-                InlineKeyboardButton(text="📍 Подписаться", url=f"https://t.me/{CHANNEL_USERNAME[1:]}"),
-                InlineKeyboardButton(text="🔎 Проверить", callback_data="check_sub")
-            ]
-        ]
-    )
-    return keyboard
-
-async def is_subscribed(user_id: int):
-    try:
-        member = await bot.get_chat_member(chat_id=CHANNEL_USERNAME, user_id=user_id)
-        return member.status not in ("left", "kicked")
-    except:
-        return False
-
 def has_only_warning(item: dict) -> bool:
     return "warning" in item and len(item.keys()) == 1
 
@@ -1286,67 +1267,37 @@ async def genre_page_switch(callback: types.CallbackQuery):
 @dp.callback_query(lambda c: c.data.startswith("open:"))
 async def open_item(callback: types.CallbackQuery):
     _, item_type, code = callback.data.split(":")
-    user_id = callback.from_user.id
-
+    
     if item_type == "movie":
-        if not await is_subscribed(user_id):
+        movie = movies[code]  # создаем movie первым!
+
+        if has_only_warning(movie):
             await callback.message.answer(
-                "Для использования бота подпишитесь на канал @kinonawe4er",
-                reply_markup=subscribe_keyboard()
+                f"<b>{movie['warning']}</b>",
+                parse_mode="HTML"
             )
             await callback.answer()
             return
 
-        movie = movies[code]
-        if has_only_warning(movie):
-            await callback.message.answer(f"<b>{movie['warning']}</b>", parse_mode="HTML")
-            await callback.answer()
-            return
-
         hashtags = " ".join(f"#{g.replace(' ', '_')}" for g in movie.get('genres', []))
+        
         await callback.message.answer_video(
             video=movie["video"],
             caption=(
                 f"<b>⭐️ фильм «{movie['title']}», {movie['year']}</b>\n\n"
                 f"<i>{movie.get('description', '')}</i>\n\n"
                 f"<u>Жанр:</u> {hashtags}\n\n"
-                f"<u>Страна:</u> {movie.get('country')}</u>\n"
-                f"<u>Режиссер:</u> {movie.get('director')}</u>\n\n"
+                f"<u>Страна:</u> {movie.get('country', '')}\n"
+                f"<u>Режиссер:</u> {movie.get('director', '')}\n\n"
                 f"Смотреть бесплатно фильмы и сериалы 👉🏻 @kinonawe4er_bot\n"
                 f"Наш канал @kinonawe4er ✨"
             ),
             parse_mode="HTML"
         )
     else:  # сериал
-        serial = series[code]
-        hashtags = " ".join(f"#{g.replace(' ', '_')}" for g in serial.get("genres", []))
-        text = (
-            f"<b>⭐️ «{serial['title']}», {serial['year']}</b>\n\n"
-            f"<i>{serial['description']}</i>\n\n"
-            f"<u>Жанр:</u> {hashtags}\n\n"
-            f"<u>Страна:</u> {serial['country']}</u>\n"
-            f"<u>Режиссер:</u> {serial['director']}</u>\n\n"
-        )
-
-        if not await is_subscribed(user_id):
-            # Показываем постер + кнопки подписки/проверки
-            keyboard = InlineKeyboardMarkup(inline_keyboard=[
-                [InlineKeyboardButton(text="📍 Подписаться", url=f"https://t.me/{CHANNEL_USERNAME[1:]}")],
-                [InlineKeyboardButton(text="🔎 Проверить", callback_data=f"check_sub:{code}:0")]
-            ])
-            await callback.message.answer_photo(
-                photo=serial["poster"],
-                caption=text,
-                parse_mode="HTML",
-                reply_markup=keyboard
-            )
-        else:
-            # Пользователь подписан — отправляем карточку сериала с кнопкой выбора серии
-            await send_serial_card(callback.message, code)
-
+        await send_serial_card(callback.message, code)
+    
     await callback.answer()
-
-
 
 
 
@@ -1360,7 +1311,6 @@ def serial_start_keyboard(code: str):
         ]]
     )
 
-# --- Отправка карточки сериала ---
 async def send_serial_card(message: types.Message, code: str):
     serial = series[code]
     hashtags = " ".join(f"#{g.replace(' ', '_')}" for g in serial.get("genres", []))
@@ -1368,8 +1318,8 @@ async def send_serial_card(message: types.Message, code: str):
         f"<b>⭐️ «{serial['title']}», {serial['year']}</b>\n\n"
         f"<i>{serial['description']}</i>\n\n"
         f"<u>Жанр:</u> {hashtags}\n\n"
-        f"<u>Страна:</u> {serial['country']}</u>\n"
-        f"<u>Режиссер:</u> {serial['director']}</u>\n\n"
+        f"<u>Страна:</u> {serial['country']}\n"
+        f"<u>Режиссер:</u> {serial['director']}\n\n"
     )
 
     await message.answer_photo(
@@ -1439,26 +1389,17 @@ def series_menu_keyboard(code: str, total: int, page: int = 0):
 
 
 async def send_episode(target, code: str, episode_index: int):
-    user_id = target.from_user.id if isinstance(target, types.CallbackQuery) else target.chat.id
-
-    # Проверяем подписку
-    if not await check_subscription(user_id):
-        keyboard = InlineKeyboardMarkup(inline_keyboard=[
-            [InlineKeyboardButton(text="📍 Подписаться", url=f"https://t.me/{CHANNEL_USERNAME[1:]}")],
-            [InlineKeyboardButton(text="🔎 Проверить", callback_data=f"check_sub:{code}:{episode_index}")]
-        ])
-        await target.message.answer(
-            "Для просмотра этой серии подпишитесь на канал @kinonawe4er",
-            reply_markup=keyboard
-        )
-        return
-
-    # Если подписан — показываем видео серии
     serial = series[code]
     total = len(serial["episodes"])
     episode = serial["episodes"][episode_index]
+    
+    caption = (
+        f"<b>⭐️ «{serial['title']}», {serial['year']}</b>\n\n"
+        f"серия {episode_index + 1} из {total}\n\n"
+        f"Смотреть бесплатно фильмы и сериалы 👉🏻 @kinonawe4er_bot\n"
+        f"Наш канал @kinonawe4er ✨"
+    )
 
-    caption = f"<b>⭐️ «{serial['title']}», {serial['year']}</b>\nСерия {episode_index+1} из {total}"
     keyboard = episode_keyboard(code, episode_index, total)
 
     if isinstance(target, types.CallbackQuery):
@@ -1477,18 +1418,6 @@ async def send_episode(target, code: str, episode_index: int):
             parse_mode="HTML",
             reply_markup=keyboard
         )
-
-
-
-@dp.callback_query(lambda c: c.data.startswith("check_sub:"))
-async def check_subscription_callback(callback: types.CallbackQuery):
-    _, code, episode_index = callback.data.split(":")
-    await send_episode(callback, code, int(episode_index))
-
-async def check_subscription(user_id):
-    chat_id = "@kinonawe4er"  # твой канал
-    member = await bot.get_chat_member(chat_id, user_id)
-    return member.status != "left"
 
 # Функция для поиска фильма по коду или названию
 def find_movie(query: str):
@@ -1543,19 +1472,6 @@ async def handle_message(message: types.Message):
             reply_markup=genres_keyboard(),
             parse_mode="HTML"
         )
-        return
-    
-    user_id = message.from_user.id
-    if not await is_subscribed(user_id):
-        await message.answer(
-            "Для использования бота подпишитесь на канал @kinonawe4er",
-            reply_markup=subscribe_keyboard()
-        )
-        return
-    
-    results = search_all(message.text)
-    if not results:
-        await message.answer("❌ Ничего не найдено")
         return
 
     results = search_all(query)
