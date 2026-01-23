@@ -1088,11 +1088,15 @@ series = {
     }
 }
 
-def subscribe_keyboard():
+def subscribe_keyboard_movie(code: str):
     return InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton(text="📍 Подписаться", url="https://t.me/kinonawe4er")],
-        [InlineKeyboardButton(text="🔎 Проверить", callback_data="check_sub")]
+        [InlineKeyboardButton(
+            text="🔎 Проверить",
+            callback_data=f"check_movie:{code}"
+        )]
     ])
+
 
 def has_only_warning(item: dict) -> bool:
     return "warning" in item and len(item.keys()) == 1
@@ -1288,7 +1292,7 @@ async def open_item(callback: types.CallbackQuery):
         if not await is_subscribed(user_id):
             await callback.message.answer(
                 "Для просмотра фильма подпишитесь на канал @kinonawe4er",
-                reply_markup=subscribe_keyboard()
+                reply_markup=subscribe_keyboard_movie(code)
             )
             await callback.answer()
             return
@@ -1322,6 +1326,44 @@ async def open_item(callback: types.CallbackQuery):
     
     await callback.answer()
 
+@dp.callback_query(lambda c: c.data.startswith("check_movie:"))
+async def check_movie_callback(callback: types.CallbackQuery):
+    _, code = callback.data.split(":")
+    user_id = callback.from_user.id
+
+    if not await is_subscribed(user_id):
+        await callback.answer("❌ Вы ещё не подписались", show_alert=True)
+        return
+
+    movie = movies.get(code)
+    if not movie:
+        await callback.answer("❌ Фильм не найден", show_alert=True)
+        return
+
+    if has_only_warning(movie):
+        await callback.message.answer(
+            f"<b>{movie['warning']}</b>",
+            parse_mode="HTML"
+        )
+        return
+
+    hashtags = " ".join(f"#{g.replace(' ', '_')}" for g in movie.get("genres", []))
+
+    await callback.message.answer_video(
+        video=movie["video"],
+        caption=(
+            f"<b>⭐️ фильм «{movie['title']}», {movie['year']}</b>\n\n"
+            f"<i>{movie.get('description', '')}</i>\n\n"
+            f"<u>Жанр:</u> {hashtags}\n\n"
+            f"<u>Страна:</u> {movie.get('country', '')}\n"
+            f"<u>Режиссер:</u> {movie.get('director', '')}\n\n"
+            f"Смотреть бесплатно фильмы и сериалы 👉🏻 @kinonawe4er_bot\n"
+            f"Наш канал @kinonawe4er ✨"
+        ),
+        parse_mode="HTML"
+    )
+
+    await callback.answer("✅ Подписка подтверждена")
 
 
 def serial_start_keyboard(code: str):
@@ -1535,7 +1577,7 @@ async def handle_message(message: types.Message):
             if not await is_subscribed(message.from_user.id):
                 await message.answer(
                     "Для просмотра фильма подпишитесь на канал @kinonawe4er",
-                    reply_markup=subscribe_keyboard()
+                        reply_markup=subscribe_keyboard_movie(code)
                 )
                 return
             movie = movies[code]
