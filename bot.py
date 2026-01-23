@@ -1421,9 +1421,8 @@ def series_menu_keyboard(code: str, total: int, page: int = 0):
 async def send_episode(target, code: str, episode_index: int):
     user_id = target.from_user.id if isinstance(target, types.CallbackQuery) else target.chat.id
 
-    # Проверка подписки
-    member = await bot.get_chat_member("@kinonawe4er", user_id)
-    if member.status == "left":  # не подписан
+    # Проверяем подписку
+    if not await check_subscription(user_id):
         keyboard = InlineKeyboardMarkup(inline_keyboard=[
             [InlineKeyboardButton(text="📍 Подписаться", url="https://t.me/kinonawe4er")],
             [InlineKeyboardButton(text="🔎 Проверить", callback_data=f"check_sub:{code}:{episode_index}")]
@@ -1438,13 +1437,8 @@ async def send_episode(target, code: str, episode_index: int):
     serial = series[code]
     total = len(serial["episodes"])
     episode = serial["episodes"][episode_index]
-    
-    caption = (
-        f"<b>⭐️ «{serial['title']}», {serial['year']}</b>\n\n"
-        f"Серия {episode_index + 1} из {total}\n\n"
-        f"Смотреть бесплатно фильмы и сериалы 👉🏻 @kinonawe4er_bot\n"
-        f"Наш канал @kinonawe4er ✨"
-    )
+
+    caption = f"<b>⭐️ «{serial['title']}», {serial['year']}</b>\nСерия {episode_index+1} из {total}"
 
     keyboard = episode_keyboard(code, episode_index, total)
 
@@ -1464,6 +1458,7 @@ async def send_episode(target, code: str, episode_index: int):
             parse_mode="HTML",
             reply_markup=keyboard
         )
+
 
 
 @dp.callback_query(lambda c: c.data.startswith("check_sub:"))
