@@ -1550,18 +1550,17 @@ def find_series(query: str):
 
 @dp.message()
 async def handle_message(message: types.Message):
-    query = message.text.strip().lower()  # приведение к нижнему регистру
+    query = message.text.strip()
 
+    # --- команды ---
     if query == "/start":
         await message.answer(
-            "<b>Для просмотра введите название или код, которые указаны в канале https://t.me/kinonawe4er</b>\n\n"
-            "<b>Например: «Фокус» или же его код «001»</b>\n\n"
+            "<b>Для просмотра введите название или код</b>\n\n"
             "<b>/genres - сортировка по жанрам</b>",
-            parse_mode="HTML",
-            disable_web_page_preview=True
+            parse_mode="HTML"
         )
         return
-    
+
     if query == "/genres":
         await message.answer(
             "<b>🎭 Выберите жанр:</b>",
@@ -1570,57 +1569,61 @@ async def handle_message(message: types.Message):
         )
         return
 
+    # --- поиск ---
     results = search_all(query)
 
     if not results:
-        await message.answer(f"<b>❌ Ничего не найдено\n\n@kinonawe4er - все наши фильмы и сериалы</b>\n\n<b>/genres - сортировка по жанрам</b>",
-        parse_mode="HTML")
+        await message.answer(
+            "<b>❌ Ничего не найдено</b>\n\n<b>/genres - сортировка по жанрам</b>",
+            parse_mode="HTML"
+        )
         return
 
-    # один результат — открываем сразу
+    # --- ОДИН РЕЗУЛЬТАТ ---
     if len(results) == 1:
         item_type, code, _ = results[0]
 
-        if item_type == "movie":
-            if not await is_subscribed(message.from_user.id):
-                await message.answer(
-                    "Для просмотра фильма подпишитесь на канал @kinonawe4er",
-                    reply_markup=subscribe_keyboard()
+        # 🔒 проверка подписки ТУТ
+        if not await is_subscribed(message.from_user.id):
+            await message.answer(
+                "Для просмотра подпишитесь на канал @kinonawe4er",
+                reply_markup=subscribe_keyboard(
+                    action=f"check_movie:{code}" if item_type == "movie" else f"check_serial:{code}"
                 )
-                return
+            )
+            return
+
+        # 🎬 фильм
+        if item_type == "movie":
             movie = movies[code]
 
             if has_only_warning(movie):
-                await message.answer(
-                    f"<b>{movie['warning']}</b>",
-                    parse_mode="HTML"
-                )
+                await message.answer(f"<b>{movie['warning']}</b>", parse_mode="HTML")
                 return
 
             hashtags = " ".join(f"#{g.replace(' ', '_')}" for g in movie.get("genres", []))
 
             await message.answer_video(
                 video=movie["video"],
-                caption=f"<b>⭐️ фильм «{movie['title']}», {movie['year']}</b>\n\n"
-                        f"<i>{movie['description']}</i>\n\n"
-                        f"<u>Жанр:</u> {hashtags}\n\n"
-                        f"<u>Страна:</u> {movie['country']}\n"
-                        f"<u>Режиссер:</u> {movie['director']}\n\n"
-                        f"Смотреть бесплатно фильмы и сериалы 👉🏻 @kinonawe4er_bot\n"
-                        f"Наш канал @kinonawe4er ✨",
+                caption=(
+                    f"<b>⭐️ фильм «{movie['title']}», {movie['year']}</b>\n\n"
+                    f"<u>Жанр:</u> {hashtags}"
+                ),
                 parse_mode="HTML"
             )
-        else:
-            await send_serial_card(message, code)
+            return
 
+        # 📺 сериал (БЕЗ проверки подписки)
+        await send_serial_card(message, code)
         return
 
-    # несколько результатов — выбор
+    # --- НЕСКОЛЬКО РЕЗУЛЬТАТОВ ---
     await message.answer(
         "<b>🔍 Найдено несколько вариантов:</b>",
         reply_markup=search_results_keyboard(results),
         parse_mode="HTML"
     )
+
     
 
 
