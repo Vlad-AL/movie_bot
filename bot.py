@@ -1465,6 +1465,7 @@ async def send_episode(target, code: str, episode_index: int):
             reply_markup=keyboard
         )
 
+
 @dp.callback_query(lambda c: c.data.startswith("check_sub:"))
 async def check_subscription_callback(callback: types.CallbackQuery):
     _, code, episode_index = callback.data.split(":")
