@@ -1,8 +1,8 @@
 import asyncio
 import sqlite3
 from aiogram import Bot, Dispatcher, types
-from aiogram.filters import CommandObject
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.filters import Command
 
 db = sqlite3.connect("users.db")
 cursor = db.cursor()
@@ -13,6 +13,19 @@ CREATE TABLE IF NOT EXISTS users (
 )
 """)
 db.commit()
+
+def add_user(user_id: int):
+    cursor.execute(
+        "INSERT OR IGNORE INTO users (user_id) VALUES (?)",
+        (user_id,)
+    )
+    db.commit()
+
+
+def get_users_count() -> int:
+    cursor.execute("SELECT COUNT(*) FROM users")
+    return cursor.fetchone()[0]
+
 
 TOKEN = "8425155912:AAEg3-V9hNc8nugIAvTyywxc4dfUSMxWLG4"
 
@@ -1437,6 +1450,15 @@ async def genre_page_switch(callback: types.CallbackQuery):
     await callback.answer()
 
 
+@dp.message(Command("stats"))
+async def stats_cmd(message: types.Message):
+    if message.from_user.id != 666877639:  # твой id
+        return
+
+    count = get_users_count()
+    await message.answer(f"👥 Всего пользователей: {count}")
+
+
 # --- Хендлер открытия фильма/сериала по кнопке ---
 @dp.callback_query(lambda c: c.data.startswith("open:"))
 async def open_item(callback: types.CallbackQuery):
@@ -1698,6 +1720,8 @@ def find_series(query: str):
 @dp.message()
 async def handle_message(message: types.Message):
     query = message.text.strip().lower()  # приведение к нижнему регистру
+
+    add_user(message.from_user.id)
 
     if query == "/start":
         await message.answer(
