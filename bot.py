@@ -249,6 +249,42 @@ movies = {
         "director": "Кристофер Нолан",
         "genres": ["научнаяфантастика", "драма"]    
     },
+    # "035": {
+    #     "title": "Бесславные ублюдки",
+    #     "year": 1,
+    #     "video": "",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
+    # "036": {
+    #     "title": "Люди в черном",
+    #     "year": 1,
+    #     "video": "",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
+    # "037": {
+    #     "title": "Люди в черном 2",
+    #     "year": 1,
+    #     "video": "",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
+    # "038": {
+    #     "title": "Люди в черном 3",
+    #     "year": 1,
+    #     "video": "",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
     "039": {
         "title": "Остров проклятых",
         "year": 2009,
@@ -276,6 +312,24 @@ movies = {
         "director": "Оливье Накаш",
         "genres": ["комедия", "драма"]    
     },
+    # "042": {
+    #     "title": "Третий лишний",
+    #     "year": 1,
+    #     "video": "",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
+    # "042": {
+    #     "title": "Всегда говори «ДА»",
+    #     "year": 1,
+    #     "video": "",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
     "044": {
         "title": "Время",
         "year": 2011,
@@ -303,6 +357,96 @@ movies = {
         "director": "Джо Райт",
         "genres": ["драма", "мелодрама", "детектив", "военный"]    
     },
+    # "047": {
+    #     "title": "Оппенгеймер",
+    #     "year": 1,
+    #     "video": "",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
+    # "048": {
+    #     "title": "Мистер и миссис Смит",
+    #     "year": 1,
+    #     "video": "",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
+    # "049": {
+    #     "title": "Дьявол носит Прада",
+    #     "year": 1,
+    #     "video": "",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
+    # "050": {
+    #     "title": "Малефисента",
+    #     "year": 1,
+    #     "video": "",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
+    # "051": {
+    #     "title": "Малефисента: Владычица тьмы",
+    #     "year": 1,
+    #     "video": "",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
+    # "052": {
+    #     "title": "Зеленая миля",
+    #     "year": 1,
+    #     "video": "",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
+    # "053": {
+    #     "title": "Мальчик в полосатой пижаме",
+    #     "year": 1,
+    #     "video": "",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
+    # "054": {
+    #     "title": "Марсианин",
+    #     "year": 1,
+    #     "video": "",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
+    # "055": {
+    #     "title": "Отряд самоубийц",
+    #     "year": 1,
+    #     "video": "",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
+    # "056": {
+    #     "title": "Круэлла",
+    #     "year": 1,
+    #     "video": "",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
 }
 
 series = {
@@ -1546,8 +1690,9 @@ async def handle_message(message: types.Message):
 
     if query == "/start":
         await message.answer(
-            "<b>Для просмотра введите название ИЛИ код, которые указаны в канале https://t.me/kinonawe4er</b>\n\n"
+            "<b>Для просмотра введите название ИЛИ код</b>\n\n"
             "<b>Например: «Фокус» ИЛИ же его код «001»</b>\n\n"
+            "<b>https://t.me/kinonawe4er - наш канал ✨</b>\n\n"
             "<b>/genres - сортировка по жанрам</b>",
             parse_mode="HTML",
             disable_web_page_preview=True
