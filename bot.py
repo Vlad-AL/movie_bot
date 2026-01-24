@@ -1,7 +1,18 @@
 import asyncio
+import sqlite3
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import CommandObject
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+
+db = sqlite3.connect("users.db")
+cursor = db.cursor()
+
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS users (
+    user_id INTEGER PRIMARY KEY
+)
+""")
+db.commit()
 
 TOKEN = "8425155912:AAEg3-V9hNc8nugIAvTyywxc4dfUSMxWLG4"
 
