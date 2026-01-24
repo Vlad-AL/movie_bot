@@ -1452,7 +1452,7 @@ async def genre_page_switch(callback: types.CallbackQuery):
 
 @dp.message(Command("stats"))
 async def stats_cmd(message: types.Message):
-    if message.from_user.id != 666877638:  # твой id
+    if message.from_user.id != 666877639:  # твой id
         return
 
     count = get_users_count()
