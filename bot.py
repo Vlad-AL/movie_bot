@@ -1715,6 +1715,27 @@ def find_series(query: str):
 
     return None
 
+@dp.message(Command("start"))
+async def cmd_start(message: types.Message):
+    add_user(message.from_user.id)
+    await message.answer(
+        "<b>Для просмотра введите название ИЛИ код</b>\n\n"
+        "<b>Например: «Фокус» ИЛИ же его код «001»</b>\n\n"
+        "<b>https://t.me/kinonawe4er - наш канал ✨</b>\n\n"
+        "<b>/genres - сортировка по жанрам</b>",
+        parse_mode="HTML",
+        disable_web_page_preview=True
+    )
+
+@dp.message(Command("genres"))
+async def cmd_genres(message: types.Message):
+    add_user(message.from_user.id)
+    await message.answer(
+        "<b>🎭 Выберите жанр:</b>",
+        reply_markup=genres_keyboard(),
+        parse_mode="HTML"
+    )
+
 # # Основной хендлер сообщений
 
 @dp.message()
@@ -1722,25 +1743,6 @@ async def handle_message(message: types.Message):
     query = message.text.strip().lower()  # приведение к нижнему регистру
 
     add_user(message.from_user.id)
-
-    if query == "/start":
-        await message.answer(
-            "<b>Для просмотра введите название ИЛИ код</b>\n\n"
-            "<b>Например: «Фокус» ИЛИ же его код «001»</b>\n\n"
-            "<b>https://t.me/kinonawe4er - наш канал ✨</b>\n\n"
-            "<b>/genres - сортировка по жанрам</b>",
-            parse_mode="HTML",
-            disable_web_page_preview=True
-        )
-        return
-    
-    if query == "/genres":
-        await message.answer(
-            "<b>🎭 Выберите жанр:</b>",
-            reply_markup=genres_keyboard(),
-            parse_mode="HTML"
-        )
-        return
 
     results = search_all(query)
 
