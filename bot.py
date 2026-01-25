@@ -10,7 +10,8 @@ cursor = db.cursor()
 
 ADMIN_ID = 666877639
 
-
+def is_admin(user_id: int) -> bool:
+    return user_id == ADMIN_ID
 
 def add_or_update_user(user):
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -85,7 +86,7 @@ def get_all_users(limit: int = 20):
 
 @dp.message(Command("top"))
 async def top_users(message: types.Message):
-    if message.from_user.id != ADMIN_ID:
+    if not is_admin(message.from_user.id):
         return
 
     users = get_top_users()
@@ -98,6 +99,9 @@ async def top_users(message: types.Message):
 
 @dp.message(Command("users"))
 async def show_users(message: types.Message):
+    if not is_admin(message.from_user.id):
+        return
+    
     users = get_all_users()
 
     text = "<b>👥 Все пользователи бота</b>\n\n"
@@ -112,7 +116,7 @@ async def show_users(message: types.Message):
 
 @dp.message(Command("stats"))
 async def stats_cmd(message: types.Message):
-    if message.from_user.id != ADMIN_ID:  # твой id
+    if not is_admin(message.from_user.id):
         return
 
     count = get_users_count()
