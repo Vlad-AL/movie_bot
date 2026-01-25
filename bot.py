@@ -8,18 +8,7 @@ from datetime import datetime
 db = sqlite3.connect("users.db")
 cursor = db.cursor()
 
-cursor.execute("""
-CREATE TABLE IF NOT EXISTS users (
-    user_id INTEGER PRIMARY KEY
-)
-""")
-
-cursor.execute("ALTER TABLE users ADD COLUMN username TEXT")
-cursor.execute("ALTER TABLE users ADD COLUMN first_name TEXT")
-cursor.execute("ALTER TABLE users ADD COLUMN last_name TEXT")
-cursor.execute("ALTER TABLE users ADD COLUMN first_seen TEXT")
-cursor.execute("ALTER TABLE users ADD COLUMN last_seen TEXT")
-cursor.execute("ALTER TABLE users ADD COLUMN requests_count INTEGER DEFAULT 0")
+ADMIN_ID = 666877639
 
 
 
@@ -54,6 +43,14 @@ def add_or_update_user(user):
 
     db.commit()
 
+def get_top_users(limit=10):
+    cursor.execute("""
+        SELECT user_id, messages_count
+        FROM users
+        ORDER BY messages_count DESC
+        LIMIT ?
+    """, (limit,))
+    return cursor.fetchall()
 
 def get_users_count() -> int:
     cursor.execute("SELECT COUNT(*) FROM users")
@@ -74,6 +71,47 @@ async def is_subscribed(user_id: int) -> bool:
         return member.status not in ("left", "kicked")
     except:
         return False
+    
+def get_all_users(limit: int = 20):
+    cursor.execute(
+        "SELECT user_id FROM users ORDER BY user_id DESC LIMIT ?",
+        (limit,)
+    )
+    return cursor.fetchall()
+
+@dp.message(Command("top"))
+async def top_users(message: types.Message):
+    if message.from_user.id != ADMIN_ID:
+        return
+
+    users = get_top_users()
+
+    text = "🏆 <b>Топ активных пользователей</b>\n\n"
+    for i, (uid, count) in enumerate(users, 1):
+        text += f"{i}. <code>{uid}</code> — {count} сообщений\n"
+
+    await message.answer(text, parse_mode="HTML")
+
+@dp.message(Command("users"))
+async def users_list(message: types.Message):
+    if message.from_user.id != ADMIN_ID:
+        return
+
+    users = get_all_users(20)
+
+    text = "👥 <b>Последние пользователи:</b>\n\n"
+    for i, (uid,) in enumerate(users, 1):
+        text += f"{i}. <code>{uid}</code>\n"
+
+    await message.answer(text, parse_mode="HTML")
+
+@dp.message(Command("stats"))
+async def stats_cmd(message: types.Message):
+    if message.from_user.id != ADMIN_ID:  # твой id
+        return
+
+    count = get_users_count()
+    await message.answer(f"👥 Всего пользователей: {count}")
 
 movies = {
     "001": {
@@ -1482,15 +1520,6 @@ async def genre_page_switch(callback: types.CallbackQuery):
         reply_markup=genre_keyboard(genre, page, total_pages, items)
     )
     await callback.answer()
-
-
-@dp.message(Command("stats"))
-async def stats_cmd(message: types.Message):
-    if message.from_user.id != 666877639:  # твой id
-        return
-
-    count = get_users_count()
-    await message.answer(f"👥 Всего пользователей: {count}")
 
 
 # --- Хендлер открытия фильма/сериала по кнопке ---
