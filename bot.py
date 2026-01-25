@@ -3,6 +3,7 @@ import sqlite3
 from aiogram import Bot, Dispatcher, types
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.filters import Command
+from datetime import datetime
 
 db = sqlite3.connect("users.db")
 cursor = db.cursor()
@@ -12,13 +13,45 @@ CREATE TABLE IF NOT EXISTS users (
     user_id INTEGER PRIMARY KEY
 )
 """)
-db.commit()
 
-def add_user(user_id: int):
-    cursor.execute(
-        "INSERT OR IGNORE INTO users (user_id) VALUES (?)",
-        (user_id,)
-    )
+cursor.execute("ALTER TABLE users ADD COLUMN username TEXT")
+cursor.execute("ALTER TABLE users ADD COLUMN first_name TEXT")
+cursor.execute("ALTER TABLE users ADD COLUMN last_name TEXT")
+cursor.execute("ALTER TABLE users ADD COLUMN first_seen TEXT")
+cursor.execute("ALTER TABLE users ADD COLUMN last_seen TEXT")
+cursor.execute("ALTER TABLE users ADD COLUMN requests_count INTEGER DEFAULT 0")
+
+
+
+def add_or_update_user(user):
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    cursor.execute("SELECT user_id FROM users WHERE user_id = ?", (user.id,))
+    exists = cursor.fetchone()
+
+    if exists:
+        cursor.execute("""
+            UPDATE users
+            SET last_seen = ?,
+                requests_count = requests_count + 1
+            WHERE user_id = ?
+        """, (now, user.id))
+    else:
+        cursor.execute("""
+            INSERT INTO users (
+                user_id, username, first_name, last_name,
+                first_seen, last_seen, requests_count
+            )
+            VALUES (?, ?, ?, ?, ?, ?, 1)
+        """, (
+            user.id,
+            user.username,
+            user.first_name,
+            user.last_name,
+            now,
+            now
+        ))
+
     db.commit()
 
 
@@ -26,6 +59,7 @@ def get_users_count() -> int:
     cursor.execute("SELECT COUNT(*) FROM users")
     return cursor.fetchone()[0]
 
+db.commit()
 
 TOKEN = "8425155912:AAEg3-V9hNc8nugIAvTyywxc4dfUSMxWLG4"
 
@@ -1717,7 +1751,7 @@ def find_series(query: str):
 
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
-    add_user(message.from_user.id)
+    add_or_update_user(message.from_user)
     await message.answer(
         "<b>Для просмотра введите название ИЛИ код</b>\n\n"
         "<b>Например: «Фокус» ИЛИ же его код «001»</b>\n\n"
@@ -1729,7 +1763,7 @@ async def cmd_start(message: types.Message):
 
 @dp.message(Command("genres"))
 async def cmd_genres(message: types.Message):
-    add_user(message.from_user.id)
+    add_or_update_user(message.from_user)
     await message.answer(
         "<b>🎭 Выберите жанр:</b>",
         reply_markup=genres_keyboard(),
@@ -1742,7 +1776,7 @@ async def cmd_genres(message: types.Message):
 async def handle_message(message: types.Message):
     query = message.text.strip().lower()  # приведение к нижнему регистру
 
-    add_user(message.from_user.id)
+    add_or_update_user(message.from_user)
 
     results = search_all(query)
 
