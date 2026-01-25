@@ -65,6 +65,10 @@ dp = Dispatcher()
 
 CHANNEL_USERNAME = "@kinonawe4er"
 
+async def send_long_text(message, text, chunk_size=3800):
+    for i in range(0, len(text), chunk_size):
+        await message.answer(text[i:i + chunk_size], parse_mode="HTML")
+
 async def is_subscribed(user_id: int) -> bool:
     try:
         member = await bot.get_chat_member(CHANNEL_USERNAME, user_id)
@@ -93,17 +97,18 @@ async def top_users(message: types.Message):
     await message.answer(text, parse_mode="HTML")
 
 @dp.message(Command("users"))
-async def users_list(message: types.Message):
-    if message.from_user.id != ADMIN_ID:
-        return
+async def show_users(message: types.Message):
+    users = get_all_users()
 
-    users = get_all_users(20)
+    text = "<b>👥 Все пользователи бота</b>\n\n"
+    for i, (uid, count, last_seen) in enumerate(users, 1):
+        text += (
+            f"{i}. <code>{uid}</code>\n"
+            f"   🔹 запросов: {count}\n"
+            f"   🕒 последний визит: {last_seen}\n\n"
+        )
 
-    text = "👥 <b>Последние пользователи:</b>\n\n"
-    for i, (uid,) in enumerate(users, 1):
-        text += f"{i}. <code>{uid}</code>\n"
-
-    await message.answer(text, parse_mode="HTML")
+    await send_long_text(message, text)
 
 @dp.message(Command("stats"))
 async def stats_cmd(message: types.Message):
