@@ -78,10 +78,12 @@ async def is_subscribed(user_id: int) -> bool:
         return False
     
 def get_all_users(limit: int = 20):
-    cursor.execute(
-        "SELECT user_id, requests_count, last_seen FROM users ORDER BY user_id DESC LIMIT ?",
-        (limit,)
-    )
+    cursor.execute("""
+        SELECT user_id, username, first_name, last_name, requests_count, last_seen
+        FROM users
+        ORDER BY last_seen DESC
+        LIMIT ?
+    """, (limit,))
     return cursor.fetchall()
 
 @dp.message(Command("top"))
@@ -105,9 +107,10 @@ async def show_users(message: types.Message):
     users = get_all_users()
 
     text = "<b>👥 Все пользователи бота</b>\n\n"
-    for i, (uid, count, last_seen) in enumerate(users, 1):
+    for i, (uid, username, first_name, last_name, count, last_seen) in enumerate(users, 1):
+        name = f"{first_name or ''} {last_name or ''}".strip() or username or "Неизвестно"
         text += (
-            f"{i}. <code>{uid}</code>\n"
+            f"{i}. {name} (<code>{uid}</code>)\n"
             f"   🔹 запросов: {count}\n"
             f"   🕒 последний визит: {last_seen}\n\n"
         )
