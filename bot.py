@@ -46,9 +46,9 @@ def add_or_update_user(user):
 
 def get_top_users(limit=10):
     cursor.execute("""
-        SELECT user_id, messages_count
+        SELECT user_id, requests_count
         FROM users
-        ORDER BY messages_count DESC
+        ORDER BY requests_count DESC
         LIMIT ?
     """, (limit,))
     return cursor.fetchall()
@@ -79,7 +79,7 @@ async def is_subscribed(user_id: int) -> bool:
     
 def get_all_users(limit: int = 20):
     cursor.execute(
-        "SELECT user_id FROM users ORDER BY user_id DESC LIMIT ?",
+        "SELECT user_id, requests_count, last_seen FROM users ORDER BY user_id DESC LIMIT ?",
         (limit,)
     )
     return cursor.fetchall()
