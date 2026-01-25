@@ -561,6 +561,7 @@ series = {
     "010": {
         "title": "Изобретая Анну",
         "year": 2022,
+        "episode_counter": "9 серий",
         "description": "Анна Делви, также известная как Анна Сорокина, под видом наследницы богатой немецкой семьи проникает в высшее общество Нью-Йорка.",
         "poster": "AgACAgIAAxkBAAIFFmlyTYbeE_aciTdJTMKNxQjlzYhpAALlEmsbk1iRS7Xo4rDBJIlNAQADAgADeQADOAQ",
         "country": "США",
@@ -599,6 +600,7 @@ series = {
     "019": {
         "title": "11/22/63",
         "year": 2016,
+        "episode_counter": "8 серий",
         "description": "Учитель английского языка отправляется в прошлое, чтобы предотвратить убийство Кеннеди, но в результате сильно привязывается к той жизни, которая у него появилась в ушедшей эпохе.",
         "poster": "AgACAgIAAxkBAAIFGGlyTcwlgE7naqzzu676pm6fAUWkAALmEmsbk1iRSw5XXaQ15A__AQADAgADeQADOAQ",
         "country": "США",
@@ -637,6 +639,7 @@ series = {
     "029": {
         "title": "Великолепный век",
         "year": 2011,
+        "episode_counter": "139 серий",
         "description": "Османская империя, XVI век. Девушка Александра попадает в плен к туркам и получает новое имя Хюррем. На её долю выпадает немало испытаний, а позже она становится первой официальной женой султана Сулеймана І.",
         "poster": "AgACAgIAAxkBAAIC9mlxSbmNoUJDub1c3a3lM18fNwWyAAJXDmsb3hGISwVmModBFR_XAQADAgADeQADOAQ",
         "country": "Турция",
@@ -1066,6 +1069,7 @@ series = {
     "030": {
         "title": "Великолепный век: империя Кёсем",
         "year": 2015,
+        "episode_counter": "большинство серий длинные, у нас 88 серий",
         "description": "Спин-офф культового телесериала «Великолепный век». Сериал повествует о жизни Кёсем-султан — одной из самых известных и могущественных представительниц Османской империи.",
         "poster": "AgACAgIAAxkBAAIC-WlxTAR60GoMKlhimBdX4ZDy70X0AAJvDmsb3hGIS2HvCMOEpTeSAQADAgADeQADOAQ",
         "country": "Турция",
@@ -1632,7 +1636,7 @@ async def send_serial_card(message: types.Message, code: str):
     serial = series[code]
     hashtags = " ".join(f"#{g.replace(' ', '_')}" for g in serial.get("genres", []))
     text = (
-        f"<b>⭐️ «{serial['title']}», {serial['year']}</b>\n\n"
+        f"<b>⭐️ «{serial['title']}», {serial['year']}, ({serial['episode_counter']})</b>\n\n"
         f"<i>{serial['description']}</i>\n\n"
         f"<u>Жанр:</u> {hashtags}\n\n"
         f"<u>Страна:</u> {serial['country']}\n"
@@ -1728,7 +1732,7 @@ async def send_episode(target, code: str, episode_index: int):
     episode = serial["episodes"][episode_index]
     
     caption = (
-        f"<b>⭐️ «{serial['title']}», {serial['year']}</b>\n\n"
+        f"<b>⭐️ «{serial['title']}», {serial['year']}, ({serial['episode_counter']})</b>\n\n"
         f"серия {episode_index + 1} из {total}\n\n"
         f"Смотреть бесплатно фильмы и сериалы 👉🏻 @kinonawe4er_bot\n"
         f"Наш канал @kinonawe4er ✨"
