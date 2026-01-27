@@ -8,7 +8,7 @@ from datetime import datetime
 db = sqlite3.connect("users.db")
 cursor = db.cursor()
 
-ADMIN_ID = 666877639
+ADMIN_ID = 666877638
 
 def is_admin(user_id: int) -> bool:
     return user_id == ADMIN_ID
@@ -1817,7 +1817,16 @@ async def cmd_genres(message: types.Message):
 
 # # Основной хендлер сообщений
 
-@dp.message()
+@dp.message(lambda m: m.video and m.from_user.id == ADMIN_ID)
+async def get_video_id(message: types.Message):
+    await message.answer(message.video.file_id)
+
+
+@dp.message(lambda m: m.photo and m.from_user.id == ADMIN_ID)
+async def get_photo_id(message: types.Message):
+    await message.answer(message.photo[-1].file_id)
+
+@dp.message(lambda m: m.text)
 async def handle_message(message: types.Message):
     query = message.text.strip().lower()  # приведение к нижнему регистру
 
@@ -1935,24 +1944,6 @@ async def handle_callbacks(callback: types.CallbackQuery):
     )
 
     await callback.answer()
-
-# Загрузка видосов
-# @dp.message()
-# async def get_file_id(message: types.Message):
-#     if message.from_user.id != ADMIN_ID:
-#         return
-
-#     if message.video:
-#         await message.answer(message.video.file_id)
-
-# Загрузка фото
-# @dp.message()
-# async def get_photo_id(message: types.Message):
-#     if message.from_user.id != ADMIN_ID:
-#         return
-    
-#     if message.photo:
-#         await message.answer(message.photo[-1].file_id)
 
 # Запуск бота
 async def main():
