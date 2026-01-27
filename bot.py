@@ -1946,13 +1946,13 @@ async def get_file_id(message: types.Message):
         await message.answer(message.video.file_id)
 
 # Загрузка фото
-@dp.message()
-async def get_photo_id(message: types.Message):
-    if message.from_user.id != ADMIN_ID:
-        return
+# @dp.message()
+# async def get_photo_id(message: types.Message):
+#     if message.from_user.id != ADMIN_ID:
+#         return
     
-    if message.photo:
-        await message.answer(message.photo[-1].file_id)
+#     if message.photo:
+#         await message.answer(message.photo[-1].file_id)
 
 # Запуск бота
 async def main():
