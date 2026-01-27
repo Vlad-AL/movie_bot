@@ -8,7 +8,7 @@ from datetime import datetime
 db = sqlite3.connect("users.db")
 cursor = db.cursor()
 
-ADMIN_ID = 666877638
+ADMIN_ID = 666877639
 
 def is_admin(user_id: int) -> bool:
     return user_id == ADMIN_ID
