@@ -1937,13 +1937,13 @@ async def handle_callbacks(callback: types.CallbackQuery):
     await callback.answer()
 
 # Загрузка видосов
-@dp.message()
-async def get_file_id(message: types.Message):
-    if message.from_user.id != ADMIN_ID:
-        return
+# @dp.message()
+# async def get_file_id(message: types.Message):
+#     if message.from_user.id != ADMIN_ID:
+#         return
 
-    if message.video:
-        await message.answer(message.video.file_id)
+#     if message.video:
+#         await message.answer(message.video.file_id)
 
 # Загрузка фото
 # @dp.message()
