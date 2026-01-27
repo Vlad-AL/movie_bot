@@ -174,9 +174,6 @@ movies = {
         "director": "Режиссер: Кристофер Лэндон",
         "genres": ["ужасы", "детектив"]    
     },
-    "007": {
-        "warning": "Сериал скоро будет загружен в бот.. ⏳ \n\n@kinonawe4er - все наши фильмы и сериалы"
-    },
     "008": {
         "title": "Экзамен",
         "year": 2009,
@@ -558,6 +555,199 @@ movies = {
 }
 
 series = {
+    "007": {
+        "title": "Любовь, смерть и роботы",
+        "year": 2019,
+        "episode_counter": "45 серий",
+        "description": "В каждой серии отдельный сюжет и своя мини вселенная.",
+        "poster": "AgACAgIAAxkBAAIKqml4-4ehfa2duAbRv0c0S0bOlw9VAAI5C2sbe8zIS0z2lHElrCDJAQADAgADeQADOAQ",
+        "country": "США",
+        "director": "Дэвид Финчер",
+        "genres": ["фантастика"],
+        "episodes": [
+            {
+                "title": "Преимущества Сонни",
+                "video": "BAACAgIAAxkBAAIKTml49aABLadjojcVbdMcuDZ7IrYWAALEkwACe8zAS2twv-KI9PqiOAQ",
+            },
+            {
+                "title": "Три робота",
+                "video": "BAACAgIAAxkBAAIKUGl49cPB6VY9p6eZiOC54L5fR_GbAALFkwACe8zAS7wmBRBu6kP2OAQ",
+            },
+            {
+                "title": "Свидетель",
+                "video": "BAACAgIAAxkBAAIKUml49deIyt_oLs5wOdSizNl4YlL3AALHkwACe8zAS03kYsM3GL0fOAQ",
+            },
+            {
+                "title": "Костюмы",
+                "video": "BAACAgIAAxkBAAIKVGl49ezUbTtzmuHwjGgGKZmJQGDjAALIkwACe8zAS0IRmd-Iv7RPOAQ",
+            },
+            {
+                "title": "Глотатель душ",
+                "video": "BAACAgIAAxkBAAIKVml49f1jCI1h0Dl3DG3FLXdtfhVkAALKkwACe8zAS0W5slxgVPkqOAQ",
+            },
+            {
+                "title": "Когда йогурт захватил мир",
+                "video": "BAACAgIAAxkBAAIKWGl49geEQgrNZB95UDcFpfJQfr9GAALLkwACe8zAS_eJi3cEm8C4OAQ",
+            },
+            {
+                "title": "За разломом орла",
+                "video": "BAACAgIAAxkBAAIKWml49iFCaDfa-STVzwG84RW11nvkAALOkwACe8zAS9O7S7vM6ar4OAQ",
+            },
+            {
+                "title": "Доброй охоты",
+                "video": "BAACAgIAAxkBAAIKXGl49jKZbxyOaHDfD4tGTPOBUay-AALRkwACe8zAS5H2oU8AAbLMPDgE",
+            },
+            {
+                "title": "Свалка",
+                "video": "BAACAgIAAxkBAAIKXml49kDTvsHjKvRhQjYnxU7caC68AALUkwACe8zAS1Z3bqwUcE05OAQ",
+            },
+            {
+                "title": "Оборотни",
+                "video": "BAACAgIAAxkBAAIKYGl49lqxGlFOOCB_VjQ38PdHkRwXAALXkwACe8zAS0ljEGCcfJEZOAQ",
+            },
+            {
+                "title": "Рука помощи",
+                "video": "BAACAgIAAxkBAAIKYml49mUs396Qnd3G_VeKjOrZhvZiAALYkwACe8zASxemx66VvTxvOAQ",
+            },
+            {
+                "title": "Рыбная ночь",
+                "video": "BAACAgIAAxkBAAIKZGl49pOgmjxPvZGd7DdiBxtmzUQoAALbkwACe8zAS1VGREwUdMDfOAQ",
+            },
+            {
+                "title": "Счастливая тринашка",
+                "video": "BAACAgIAAxkBAAIKZml49qabxyQnm6Rx6ND8mmo3IwuqAALdkwACe8zASwmxMPWBZ4hvOAQ",
+            },
+            {
+                "title": "Зима блю",
+                "video": "BAACAgIAAxkBAAIKaGl49rbvflp5GVgtzYAJRWGsE8RYAALfkwACe8zASw3NQuvvMgwuOAQ",
+            },
+            {
+                "title": "Слепое пятно",
+                "video": "BAACAgIAAxkBAAIKaml49sSojSdZj2ml4mXdDZ9sfjMqAALgkwACe8zAS-L9i_uVIzrnOAQ",
+            },
+            {
+                "title": "Ледниковый период",
+                "video": "BAACAgIAAxkBAAIKbGl49tC_QhzSQsuRG5EwFmeSk10bAALikwACe8zASw3P9VPiH2gLOAQ",
+            },
+            {
+                "title": "Исторические альтернативы",
+                "video": "BAACAgIAAxkBAAIKbml49tyaSXUrBaNyoW1Rb2X2Z-mZAALjkwACe8zASx3SVLpRpx9xOAQ",
+            },
+            {
+                "title": "Тайная война",
+                "video": "BAACAgIAAxkBAAIKcGl49viJmKFwrZzksJeCg4gSm2XIAAKCigACe8zISzb-ask-CwWhOAQ",
+            },
+            {
+                "title": "Автоматизированная клиентская служба",
+                "video": "BAACAgIAAxkBAAIKcml49_cG8H6Rehj8Cd7i-N70PASIAAKWigACe8zISxrejB9__2YlOAQ",
+            },
+            {
+                "title": "Лед",
+                "video": "BAACAgIAAxkBAAIKdGl4-AfAp7sJStQ8LTDZEfxdM4ohAAKYigACe8zISyoINno2lbGYOAQ",
+            },
+            {
+                "title": "Звездная команда",
+                "video": "BAACAgIAAxkBAAIKdml4-BjWWf7hzARrLudW4kP9lSHoAAKZigACe8zIS-ABrEZChJfVOAQ",
+            },
+            {
+                "title": "Сноу в пустыне",
+                "video": "BAACAgIAAxkBAAIKeGl4-CfpVnkyEdNqMCQZbgxU4ghBAAKbigACe8zIS2U9gUFChSxbOAQ",
+            },
+            {
+                "title": "Высокая трава",
+                "video": "BAACAgIAAxkBAAIKeml4-DPdXpTnxetm7zYyHj2vBtAQAAKfigACe8zISxu1-rLanhc4OAQ",
+            },
+            {
+                "title": "По всему дому",
+                "video": "BAACAgIAAxkBAAIKfGl4-D2bVqbr5PzYUut7ydZL-Q24AAKgigACe8zIS-8ZITbvFBCxOAQ",
+            },
+            {
+                "title": "Бункер",
+                "video": "BAACAgIAAxkBAAIKfml4-EySkLX7v5FutJJdM2Swa5P7AAKhigACe8zISxt6qZTc8jRpOAQ",
+            },
+            {
+                "title": "Утонувший великан",
+                "video": "BAACAgIAAxkBAAIKgGl4-FoIWf94EZlGwsdLkFQJaq5lAAKiigACe8zIS6Tm1BEFbOH-OAQ",
+            },
+            {
+                "title": "Три робота: Стратегии выхода",
+                "video": "BAACAgIAAxkBAAIKgml4-IMZZ23ecwzHy6r7HbBPyPPIAAKkigACe8zIS51PxKXJ53-lOAQ",
+            },
+            {
+                "title": "Плохая поездка",
+                "video": "BAACAgIAAxkBAAIKhGl4-JVPmdv-znXcGB8r4UvEkWYVAAKligACe8zIS35EIWMhxR39OAQ",
+            },
+            {
+                "title": "Живой пульс машины",
+                "video": "BAACAgIAAxkBAAIKhml4-KyNXXN-wFB3XTrNIEUglM82AAKoigACe8zIS6EtN9GbmHMgOAQ",
+            },
+            {
+                "title": "Ночь мини-мертвецов",
+                "video": "BAACAgIAAxkBAAIKiGl4-LX5iGhPUfKwmMGVeuyT_JzUAAKpigACe8zIS2EJvY-s056EOAQ",
+            },
+            {
+                "title": "Убей, команда, убей",
+                "video": "BAACAgIAAxkBAAIKiml4-MeZTw7v90CdX1zAkkv2de1PAAKrigACe8zIS3v9KBuMzPNTOAQ",
+            },
+            {
+                "title": "Рой",
+                "video": "BAACAgIAAxkBAAIKjGl4-NgH93nTm92hep2K--D2fjBFAAKvigACe8zIS-5iy1IPmcsqOAQ",
+            },
+            {
+                "title": "Крысы Мейсона",
+                "video": "BAACAgIAAxkBAAIKjml4-OT0lHwuEVUhwKyZmbSE6jfRAAKwigACe8zIS9wBHwJ4WjXEOAQ",
+            },
+            {
+                "title": "Погребённые в сводчатых залах",
+                "video": "BAACAgIAAxkBAAIKkGl4-PSjNBP6pQF1ItPG9CFJREWPAAKxigACe8zIS4STi1vZ5uNBOAQ",
+            },
+            {
+                "title": "Хибаро",
+                "video": "BAACAgIAAxkBAAIKkml4-Rg2puSKVXWoQQbMHrkmxnTiAAK1igACe8zIS0_RWVT4covWOAQ",
+            },
+            {
+                "title": "Неудержимые",
+                "video": "BAACAgIAAxkBAAIKlGl4-Sn6kVUnlK20F3c_gy9ijC8bAAK5igACe8zIS4MwHU1SZnRNOAQ",
+            },
+            {
+                "title": "Контакт миниатюрного масштаба",
+                "video": "BAACAgIAAxkBAAIKlml4-TKPfRDVOIOiCEYtmwuhN8QuAAK6igACe8zIS30K2y8fsC5tOAQ",
+            },
+            {
+                "title": "Паучья роза",
+                "video": "BAACAgIAAxkBAAIKmGl4-UAOdULQk-CmEBBm3D0pRwEOAAK7igACe8zISy_CqTR0SNNoOAQ",
+            },
+            {
+                "title": "Четыреста мальчиков",
+                "video": "BAACAgIAAxkBAAIKmml4-U8-DSovzLs1N8FwLv0abPXRAAK9igACe8zIS4cJKg52fv0POAQ",
+            },
+            {
+                "title": "Другая большая штука",
+                "video": "BAACAgIAAxkBAAIKnGl4-Vlq_9tvfr9VfMxmQl08ERRJAAK-igACe8zIS-amSKG_uf13OAQ",
+            },
+            {
+                "title": "Голгофа",
+                "video": "BAACAgIAAxkBAAIKnml4-WZ_xjxyOOOHFbF64R62fJgpAALAigACe8zIS79D9r0lJv5iOAQ",
+            },
+            {
+                "title": "Крик тираннозавра",
+                "video": "BAACAgIAAxkBAAIKoGl4-Xmsy4ypShNTI2ucfbY8CE8oAALBigACe8zIS__E4KZeHOKmOAQ",
+            },
+            {
+                "title": "Как Зик обрёл веру",
+                "video": "BAACAgIAAxkBAAIKoml4-YqrXMMkkU3854hDKkASac-wAALCigACe8zIS_0KB-u-OyHzOAQ",
+            },
+            {
+                "title": "Умные приборы, глупые хозяева",
+                "video": "BAACAgIAAxkBAAIKpGl4-ZJYVimXkcOGdv-hnJRwLc0wAALFigACe8zISygV-wAB8e72eTgE",
+            },
+            {
+                "title": "Ибо он может красться",
+                "video": "BAACAgIAAxkBAAIKpml4-ac2ZFBqylOzYAq72FmecwHZAALHigACe8zISzFgR9IiN8IxOAQ",
+            },
+            
+        ]
+    },
     "010": {
         "title": "Изобретая Анну",
         "year": 2022,
@@ -1729,7 +1919,7 @@ async def send_episode(target, code: str, episode_index: int):
     
     serial = series[code]
     total = len(serial["episodes"])
-    episode = serial["episodes"][episode_index]
+    episode = serial["episodes"][episode_index]['video']
     
     caption = (
         f"<b>⭐️ «{serial['title']}», {serial['year']}, ({serial['episode_counter']})</b>\n\n"
