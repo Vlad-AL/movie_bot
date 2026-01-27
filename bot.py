@@ -1920,10 +1920,11 @@ async def send_episode(target, code: str, episode_index: int):
     serial = series[code]
     total = len(serial["episodes"])
     episode = serial["episodes"][episode_index]
+    episode_title = episode["title"]
     
     caption = (
         f"<b>⭐️ «{serial['title']}», {serial['year']}, ({serial['episode_counter']})</b>\n\n"
-        f"серия {episode_index + 1} из {total}\n\n"
+        f"серия {episode_index + 1} из {total} «{episode_title}»\n\n"
         f"Смотреть бесплатно фильмы и сериалы 👉🏻 @kinonawe4er_bot\n"
         f"Наш канал @kinonawe4er ✨"
     )
