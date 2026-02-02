@@ -2061,18 +2061,24 @@ async def send_episode(
             reply_markup=keyboard
         )
         return
-    
+
     serial = series[code]
     episodes = get_episodes(serial, season)
     total = len(episodes)
     episode = episodes[episode_index]
     episode_title = episode.get("title")
 
-    if episode_title:
-        episode_line = f"серия {episode_index + 1} из {total} «{episode_title}»"
+    # Формируем строку серии с указанием сезона
+    if has_seasons(serial) and season is not None:
+        season_text = f"Сезон {season}, "
     else:
-        episode_line = f"серия {episode_index + 1} из {total}"
-    
+        season_text = ""
+
+    if episode_title:
+        episode_line = f"{season_text}серия {episode_index + 1} из {total} «{episode_title}»"
+    else:
+        episode_line = f"{season_text}серия {episode_index + 1} из {total}"
+
     caption = (
         f"<b>⭐️ «{serial['title']}», {serial['year']}, ({serial['episode_counter']})</b>\n\n"
         f"{episode_line}\n\n"
@@ -2098,6 +2104,7 @@ async def send_episode(
             parse_mode="HTML",
             reply_markup=keyboard
         )
+
 
 @dp.callback_query(lambda c: c.data.startswith("check_sub:"))
 async def check_sub_callback(callback: types.CallbackQuery):
