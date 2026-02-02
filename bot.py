@@ -1936,7 +1936,6 @@ async def send_serial_card(message: types.Message, code: str):
     )
 
 
-# Кнопка выбора серии теперь передает правильный сезон
 def episode_keyboard(code: str, episode_index: int, total: int, season: int | None = None):
     row = []
 
@@ -1958,7 +1957,7 @@ def episode_keyboard(code: str, episode_index: int, total: int, season: int | No
             )
         )
 
-    # К кнопке сезона
+    # Только если сериал имеет сезоны — кнопка к сезонам
     if season is not None:
         row.append(
             InlineKeyboardButton(
