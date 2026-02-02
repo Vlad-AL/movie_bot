@@ -1936,28 +1936,29 @@ async def send_serial_card(message: types.Message, code: str):
     )
 
 
+# Кнопка выбора серии теперь передает правильный сезон
 def episode_keyboard(code: str, episode_index: int, total: int, season: int | None = None):
     row = []
 
-    # Кнопка назад
+    # Назад
     if episode_index > 0:
         row.append(
             InlineKeyboardButton(
                 text="⬅️",
-                callback_data=f"prev:{code}:{season if season is not None else 'None'}:{episode_index}"
+                callback_data=f"prev:{code}:{season if season is not None else -1}:{episode_index}"
             )
         )
 
-    # Кнопка вперед
+    # Вперед
     if episode_index < total - 1:
         row.append(
             InlineKeyboardButton(
                 text="➡️",
-                callback_data=f"next:{code}:{season if season is not None else 'None'}:{episode_index}"
+                callback_data=f"next:{code}:{season if season is not None else -1}:{episode_index}"
             )
         )
 
-    # Кнопка возврата к сезонам (если есть сезоны)
+    # К кнопке сезона
     if season is not None:
         row.append(
             InlineKeyboardButton(
@@ -1970,11 +1971,12 @@ def episode_keyboard(code: str, episode_index: int, total: int, season: int | No
     row.append(
         InlineKeyboardButton(
             text="📋 ВЫБРАТЬ СЕРИЮ",
-            callback_data=f"menu:{code}:{season if season is not None else 0}"
+            callback_data=f"menu:{code}:{season if season is not None else -1}"
         )
     )
 
     return InlineKeyboardMarkup(inline_keyboard=[row])
+
 
 
 
@@ -2226,64 +2228,57 @@ async def handle_callbacks(callback: types.CallbackQuery):
     data = callback.data.split(":")
     action = data[0]
 
-    if action == "menu":
-        _, code, season_page = data
-        season_page = int(season_page)
+    if action in ("menu", "prev", "next", "ep", "page"):
+        code = data[1]
+
+        # Для всех этих действий берем сезон
         season = None
-        # если сериал с сезонами, разбиваем на сезон/страницу
-        if has_seasons(series[code]):
-            season = 0  # можно менять на выбор сезона позже
-        await callback.message.edit_reply_markup(
-            reply_markup=series_menu_keyboard(code, page=0, season=season)
-        )
+        if len(data) > 2:
+            s = data[2]
+            if s not in ("None", "-1"):
+                season = int(s)
 
-    elif action == "page":
-        _, code, season, page = data
-        season = int(season) if int(season) != 0 else None
-        page = int(page)
-        await callback.message.edit_reply_markup(
-            reply_markup=series_menu_keyboard(code, page=page, season=season)
-        )
+        # В зависимости от действия
+        if action == "menu":
+            await callback.message.edit_reply_markup(
+                reply_markup=series_menu_keyboard(code, page=0, season=season)
+            )
 
-    elif action == "ep":
-        _, code, season, episode = data
-        season = int(season) if int(season) != 0 else None
-        episode = int(episode)
-        await send_episode(callback, code, episode, season)
+        elif action in ("prev", "next"):
+            episode = int(data[3])
+            episode = episode - 1 if action == "prev" else episode + 1
+            await send_episode(callback, code, episode, season)
 
+        elif action == "ep":
+            episode = int(data[3])
+            await send_episode(callback, code, episode, season)
 
+        elif action == "page":
+            page = int(data[3])
+            await callback.message.edit_reply_markup(
+                reply_markup=series_menu_keyboard(code, page=page, season=season)
+            )
 
-
-
-    # перелистывание страниц
-    elif action == "page":
-        _, code, page = data
-        total = len(series[code]["episodes"])
-        await callback.message.edit_reply_markup(
-            reply_markup=series_menu_keyboard(code, total, int(page))
-        )
-
-    # выбор серии → ВКЛЮЧАЕМ ВИДЕО
-    elif action == "ep":
-        _, code, season, episode = data
-        season = int(season)
-        season = None if not has_seasons(series[code]) else season
-        await send_episode(callback, code, int(episode), season)
-
-
-    # назад к карточке сериала
     elif action == "serial":
         _, code = data
         await callback.message.delete()
         await send_serial_card(callback.message, code)
 
-    elif action == "menu":
-        _, code, page = data
+    elif action == "seasons":
+        _, code = data
         await callback.message.edit_reply_markup(
-            reply_markup=series_menu_keyboard(code, int(page))
+            reply_markup=seasons_keyboard(code)
+        )
+
+    elif action == "season":
+        _, code, season = data
+        season = int(season)
+        await callback.message.edit_reply_markup(
+            reply_markup=series_menu_keyboard(code, page=0, season=season)
         )
 
     await callback.answer()
+
 
 # Запуск бота
 async def main():
