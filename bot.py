@@ -1936,24 +1936,59 @@ async def send_serial_card(message: types.Message, code: str):
     )
 
 
-def episode_keyboard(code: str, episode: int, total: int):
-    row = []
+def episode_keyboard(code: str, episode_index: int, total: int, season: int | None = None):
+    buttons = []
 
-    if episode > 0:
-        row.append(
-            InlineKeyboardButton(text="⬅️ пред", callback_data=f"prev:{code}:{episode}")
+    # навигация по сериям
+    nav = []
+    if episode_index > 0:
+        nav.append(
+            InlineKeyboardButton(
+                text="⬅️",
+                callback_data=f"episode:{code}:{season}:{episode_index - 1}"
+                if season is not None
+                else f"episode:{code}:{episode_index - 1}"
+            )
         )
 
-    row.append(
-        InlineKeyboardButton(text="ВЫБРАТЬ СЕРИЮ", callback_data=f"menu:{code}:0")
+    nav.append(
+        InlineKeyboardButton(
+            text=f"{episode_index + 1}/{total}",
+            callback_data="ignore"
+        )
     )
 
-    if episode < total - 1:
-        row.append(
-            InlineKeyboardButton(text="след ➡️", callback_data=f"next:{code}:{episode}")
+    if episode_index < total - 1:
+        nav.append(
+            InlineKeyboardButton(
+                text="➡️",
+                callback_data=f"episode:{code}:{season}:{episode_index + 1}"
+                if season is not None
+                else f"episode:{code}:{episode_index + 1}"
+            )
         )
 
-    return InlineKeyboardMarkup(inline_keyboard=[row])
+    buttons.append(nav)
+
+    # 🔹 КНОПКА К СЕЗОНАМ (если есть сезоны)
+    if season is not None:
+        buttons.append([
+            InlineKeyboardButton(
+                text="📂 К сезонам",
+                callback_data=f"seasons:{code}"
+            )
+        ])
+
+    # назад к сериалу
+    buttons.append([
+        InlineKeyboardButton(
+            text="⬅️ К сериалу",
+            callback_data=f"serial:{code}"
+        )
+    ])
+
+    return InlineKeyboardMarkup(inline_keyboard=buttons)
+
 
 
 def series_menu_keyboard(code: str, page: int = 0, season: int | None = None):
