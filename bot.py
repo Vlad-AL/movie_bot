@@ -1996,29 +1996,38 @@ def series_menu_keyboard(code: str, page: int = 0, season: int | None = None):
         row.append(
             InlineKeyboardButton(
                 text=str(i + 1),
-                callback_data=f"ep:{code}:{season or 0}:{i}"
+                callback_data=f"ep:{code}:{season if season is not None else 0}:{i}"
             )
         )
-        if len(row) == 5:
+        if len(row) == 5:  # 5 серий в ряду
             keyboard.append(row)
             row = []
 
     if row:
         keyboard.append(row)
 
+    # Навигация по страницам
     nav = []
     if page > 0:
         nav.append(
-            InlineKeyboardButton(text="⬅️", callback_data=f"page:{code}:{page-1}")
+            InlineKeyboardButton(
+                text="⬅️",
+                callback_data=f"page:{code}:{season if season is not None else 0}:{page-1}"
+            )
         )
-
     if end < total:
         nav.append(
-            InlineKeyboardButton(text="➡️", callback_data=f"page:{code}:{page+1}")
+            InlineKeyboardButton(
+                text="➡️",
+                callback_data=f"page:{code}:{season if season is not None else 0}:{page+1}"
+            )
         )
 
-    keyboard.append(nav)
+    if nav:
+        keyboard.append(nav)
+
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
+
 
 
 
@@ -2217,27 +2226,31 @@ async def handle_callbacks(callback: types.CallbackQuery):
     data = callback.data.split(":")
     action = data[0]
 
-    # открыть меню серий
-    if action == "series_menu":
-        _, code, page = data
-        total = len(series[code]["episodes"])
+    if action == "menu":
+        _, code, season_page = data
+        season_page = int(season_page)
+        season = None
+        # если сериал с сезонами, разбиваем на сезон/страницу
+        if has_seasons(series[code]):
+            season = 0  # можно менять на выбор сезона позже
         await callback.message.edit_reply_markup(
-            reply_markup=series_menu_keyboard(code, total, int(page))
+            reply_markup=series_menu_keyboard(code, page=0, season=season)
         )
 
-    if action in ("prev", "next"):
-        _, code, season_str, episode_index = data
-        episode_index = int(episode_index)
-        season = None if season_str == "None" else int(season_str)
+    elif action == "page":
+        _, code, season, page = data
+        season = int(season) if int(season) != 0 else None
+        page = int(page)
+        await callback.message.edit_reply_markup(
+            reply_markup=series_menu_keyboard(code, page=page, season=season)
+        )
 
-        if action == "prev":
-            episode_index -= 1
-        else:
-            episode_index += 1
+    elif action == "ep":
+        _, code, season, episode = data
+        season = int(season) if int(season) != 0 else None
+        episode = int(episode)
+        await send_episode(callback, code, episode, season)
 
-        await send_episode(callback, code, episode_index, season)
-        await callback.answer()
-        return
 
 
 
