@@ -1938,44 +1938,49 @@ async def send_serial_card(message: types.Message, code: str):
 
 def episode_keyboard(code: str, episode_index: int, total: int, season: int | None = None):
     serial = series[code]
-    row = []
 
-    # Кнопка назад
-    if episode_index > 0:
-        row.append(
-            InlineKeyboardButton(
-                text="⬅️",
-                callback_data=f"prev:{code}:{season if season is not None else -1}:{episode_index}"
-            )
-        )
+    # Верхний ряд — кнопки «Выбрать серию» и «К сезонам» (если есть)
+    top_row = []
 
-    # Кнопка к сезонам — только если сериал имеет сезоны
     if has_seasons(serial) and season is not None:
-        row.append(
+        top_row.append(
             InlineKeyboardButton(
                 text="📂 К сезонам",
                 callback_data=f"seasons:{code}"
             )
         )
 
-    # Кнопка выбора серии
-    row.append(
+    top_row.append(
         InlineKeyboardButton(
             text="📋 ВЫБРАТЬ СЕРИЮ",
             callback_data=f"menu:{code}:{season if season is not None else -1}"
         )
     )
 
-    # Кнопка вперед
+    # Нижний ряд — кнопки навигации вперед/назад
+    nav_row = []
+    if episode_index > 0:
+        nav_row.append(
+            InlineKeyboardButton(
+                text="⬅️",
+                callback_data=f"prev:{code}:{season if season is not None else -1}:{episode_index}"
+            )
+        )
     if episode_index < total - 1:
-        row.append(
+        nav_row.append(
             InlineKeyboardButton(
                 text="➡️",
                 callback_data=f"next:{code}:{season if season is not None else -1}:{episode_index}"
             )
         )
 
-    return InlineKeyboardMarkup(inline_keyboard=[row])
+    # Формируем клавиатуру с двумя рядами
+    keyboard = [top_row]
+    if nav_row:
+        keyboard.append(nav_row)
+
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
+
 
 
 
