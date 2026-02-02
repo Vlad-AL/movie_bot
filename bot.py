@@ -1937,57 +1937,45 @@ async def send_serial_card(message: types.Message, code: str):
 
 
 def episode_keyboard(code: str, episode_index: int, total: int, season: int | None = None):
-    buttons = []
+    row = []
 
-    # навигация по сериям
-    nav = []
+    # Кнопка назад
     if episode_index > 0:
-        nav.append(
+        row.append(
             InlineKeyboardButton(
                 text="⬅️",
-                callback_data=f"episode:{code}:{season}:{episode_index - 1}"
-                if season is not None
-                else f"episode:{code}:{episode_index - 1}"
+                callback_data=f"prev:{code}:{season if season is not None else 'None'}:{episode_index}"
             )
         )
 
-    nav.append(
-        InlineKeyboardButton(
-            text=f"{episode_index + 1}/{total}",
-            callback_data="ignore"
-        )
-    )
-
+    # Кнопка вперед
     if episode_index < total - 1:
-        nav.append(
+        row.append(
             InlineKeyboardButton(
                 text="➡️",
-                callback_data=f"episode:{code}:{season}:{episode_index + 1}"
-                if season is not None
-                else f"episode:{code}:{episode_index + 1}"
+                callback_data=f"next:{code}:{season if season is not None else 'None'}:{episode_index}"
             )
         )
 
-    buttons.append(nav)
-
-    # 🔹 КНОПКА К СЕЗОНАМ (если есть сезоны)
+    # Кнопка возврата к сезонам
     if season is not None:
-        buttons.append([
+        row.append(
             InlineKeyboardButton(
                 text="📂 К сезонам",
                 callback_data=f"seasons:{code}"
             )
-        ])
+        )
 
-    # назад к сериалу
-    buttons.append([
+    # Кнопка возврата к карточке сериала
+    row.append(
         InlineKeyboardButton(
             text="⬅️ К сериалу",
             callback_data=f"serial:{code}"
         )
-    ])
+    )
 
-    return InlineKeyboardMarkup(inline_keyboard=buttons)
+    return InlineKeyboardMarkup(inline_keyboard=[row])
+
 
 
 
@@ -2074,7 +2062,7 @@ async def send_episode(
         f"Наш канал @kinonawe4er ✨"
     )
 
-    keyboard = episode_keyboard(code, episode_index, total)
+    keyboard = episode_keyboard(code, episode_index, total, season)
 
     if isinstance(target, types.CallbackQuery):
         await target.message.edit_media(
@@ -2237,16 +2225,19 @@ async def handle_callbacks(callback: types.CallbackQuery):
         )
 
     if action in ("prev", "next"):
-        _, code, season, episode = data
-        season = int(season)
-        season = None if not has_seasons(series[code]) else season
-        episode = int(episode)
+        _, code, season_str, episode_index = data
+        episode_index = int(episode_index)
+        season = None if season_str == "None" else int(season_str)
 
-        episode += -1 if action == "prev" else 1
-        await send_episode(callback, code, episode, season)
+        if action == "prev":
+            episode_index -= 1
+        else:
+            episode_index += 1
 
+        await send_episode(callback, code, episode_index, season)
         await callback.answer()
         return
+
 
 
 
