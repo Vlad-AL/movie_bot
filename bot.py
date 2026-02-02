@@ -1937,9 +1937,10 @@ async def send_serial_card(message: types.Message, code: str):
 
 
 def episode_keyboard(code: str, episode_index: int, total: int, season: int | None = None):
+    serial = series[code]
     row = []
 
-    # Назад
+    # Кнопка назад
     if episode_index > 0:
         row.append(
             InlineKeyboardButton(
@@ -1948,7 +1949,7 @@ def episode_keyboard(code: str, episode_index: int, total: int, season: int | No
             )
         )
 
-    # Вперед
+    # Кнопка вперед
     if episode_index < total - 1:
         row.append(
             InlineKeyboardButton(
@@ -1957,8 +1958,8 @@ def episode_keyboard(code: str, episode_index: int, total: int, season: int | No
             )
         )
 
-    # Только если сериал имеет сезоны — кнопка к сезонам
-    if season is not None:
+    # Кнопка к сезонам — только если сериал имеет сезоны
+    if has_seasons(serial) and season is not None:
         row.append(
             InlineKeyboardButton(
                 text="📂 К сезонам",
@@ -1975,6 +1976,7 @@ def episode_keyboard(code: str, episode_index: int, total: int, season: int | No
     )
 
     return InlineKeyboardMarkup(inline_keyboard=[row])
+
 
 
 
