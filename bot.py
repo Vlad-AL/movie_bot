@@ -1571,6 +1571,48 @@ def subscribe_keyboard_movie(code: str):
         )]
     ])
 
+def seasons_keyboard(code: str):
+    serial = series[code]
+    keyboard = []
+
+    for season_num in sorted(serial["seasons"].keys()):
+        keyboard.append([
+            InlineKeyboardButton(
+                text=f"Сезон {season_num}",
+                callback_data=f"season:{code}:{season_num}"
+            )
+        ])
+
+    keyboard.append([
+        InlineKeyboardButton(
+            text="⬅️ Назад",
+            callback_data=f"serial:{code}"
+        )
+    ])
+
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
+
+@dp.callback_query(lambda c: c.data.startswith("seasons:"))
+async def seasons_menu(callback: types.CallbackQuery):
+    _, code = callback.data.split(":")
+
+    await callback.message.edit_reply_markup(
+        reply_markup=seasons_keyboard(code)
+    )
+
+    await callback.answer()
+
+@dp.callback_query(lambda c: c.data.startswith("season:"))
+async def season_selected(callback: types.CallbackQuery):
+    _, code, season = callback.data.split(":")
+    season = int(season)
+
+    await callback.message.edit_reply_markup(
+        reply_markup=series_menu_keyboard(code, page=0, season=season)
+    )
+
+    await callback.answer()
+
 
 def has_only_warning(item: dict) -> bool:
     return "warning" in item and len(item.keys()) == 1
@@ -2200,11 +2242,6 @@ async def handle_callbacks(callback: types.CallbackQuery):
         await callback.message.edit_reply_markup(
             reply_markup=series_menu_keyboard(code, int(page))
         )
-        total = len(series[code]["episodes"])
-
-        await callback.message.edit_reply_markup(
-            reply_markup=series_menu_keyboard(code, total, int(page))
-    )
 
     await callback.answer()
 
