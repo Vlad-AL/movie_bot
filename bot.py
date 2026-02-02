@@ -1949,15 +1949,6 @@ def episode_keyboard(code: str, episode_index: int, total: int, season: int | No
             )
         )
 
-    # Кнопка вперед
-    if episode_index < total - 1:
-        row.append(
-            InlineKeyboardButton(
-                text="➡️",
-                callback_data=f"next:{code}:{season if season is not None else -1}:{episode_index}"
-            )
-        )
-
     # Кнопка к сезонам — только если сериал имеет сезоны
     if has_seasons(serial) and season is not None:
         row.append(
@@ -1974,6 +1965,15 @@ def episode_keyboard(code: str, episode_index: int, total: int, season: int | No
             callback_data=f"menu:{code}:{season if season is not None else -1}"
         )
     )
+
+    # Кнопка вперед
+    if episode_index < total - 1:
+        row.append(
+            InlineKeyboardButton(
+                text="➡️",
+                callback_data=f"next:{code}:{season if season is not None else -1}:{episode_index}"
+            )
+        )
 
     return InlineKeyboardMarkup(inline_keyboard=[row])
 
