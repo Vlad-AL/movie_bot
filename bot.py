@@ -1957,7 +1957,7 @@ def episode_keyboard(code: str, episode_index: int, total: int, season: int | No
             )
         )
 
-    # Кнопка возврата к сезонам
+    # Кнопка возврата к сезонам (если есть сезоны)
     if season is not None:
         row.append(
             InlineKeyboardButton(
@@ -1966,15 +1966,16 @@ def episode_keyboard(code: str, episode_index: int, total: int, season: int | No
             )
         )
 
-    # Кнопка возврата к карточке сериала
+    # Кнопка выбора серии
     row.append(
         InlineKeyboardButton(
-            text="⬅️ К сериалу",
-            callback_data=f"serial:{code}"
+            text="📋 ВЫБРАТЬ СЕРИЮ",
+            callback_data=f"menu:{code}:{season if season is not None else 0}"
         )
     )
 
     return InlineKeyboardMarkup(inline_keyboard=[row])
+
 
 
 
