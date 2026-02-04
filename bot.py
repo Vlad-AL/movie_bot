@@ -1559,7 +1559,662 @@ series = {
                 "video": "BAACAgIAAxkBAAIGu2lyovBtPaQTGKswBpUnlXE4v9bsAALylgACTp-RS65EGkn9Pu28OAQ",
             },
         ]
-    }
+    },
+    "057": {
+        "title": "Леди-баг и супер-кот",
+        "year": 2015,
+        "episode_counter": "онгоинг",
+        "description": "С виду обычные старшеклассники Эдриан и Маринетт при малейшей угрозе Парижу становятся Леди Баг и Супер-котом. Их миссия — захватить акум (тёмных бабочек), которые превращают людей в суперзлодеев. Когда супергерои объединяются, оба не знают истинной личности другого. Маринетт не знает, что Супер-кот на самом деле Эдриан — парень, в которого она тайно влюблена, а Эдриан, чьё сердце бьётся ради Леди Баг, не знает, что под маской супергероини скрывается милая и ветреная одноклассница.",
+        "poster": "AgACAgIAAxkBAAIKqml4-4ehfa2duAbRv0c0S0bOlw9VAAI5C2sbe8zIS0z2lHElrCDJAQADAgADeQADOAQ",
+        "country": "Франция",
+        "director": "Томас Астрюк",
+        "genres": ["мультфильм", "фантастика", "семейный"],
+        "seasons": {
+            1: {
+                "title" : "Сезон 1",
+                "episodes": [
+                    {
+                        "title": "Непогода",
+                        "video": "BAACAgIAAxkBAAIMf2mAxiLDacrsbUWQM14owvU28AuNAAONAALebQhIGkLQiQTUPts4BA",
+                    },
+                    {
+                        "title": "Злолюстратор",
+                        "video": "BAACAgIAAxkBAAIMgWmAxl7P2CYLyWP5OW3x5Yjk68kBAAIJjQAC3m0ISGyKqp5ZrncCOAQ",
+                    },
+                    {
+                        "title": "Леди Вай-Фай",
+                        "video": "BAACAgIAAxkBAAIMg2mAxr5ETKLDk4K0WyqtLv95ckvUAAISjQAC3m0ISIYPg73pdCpyOAQ",
+                    },
+                    {
+                        "title": "Принцесса ароматов",
+                        "video": "BAACAgIAAxkBAAIMhWmAxvYakziO9RdzSZdqTMxvkt7hAAIYjQAC3m0ISIXbHXreJNWeOAQ",
+                    },
+                    {
+                        "title": "Злой купидон",
+                        "video": "BAACAgIAAxkBAAIMh2mAxz0JFFV1ZEI_t1fWttTWyTnUAAIcjQAC3m0ISAmg8ehgYMoxOAQ",
+                    },
+                    {
+                        "title": "Месье Голубь",
+                        "video": "BAACAgIAAxkBAAIMiWmAx47eajVj1w_55PyDCv9by530AAIhjQAC3m0ISL4AAdLRfCFDqTgE",
+                    },
+                    {
+                        "title": "Пикселятор",
+                        "video": "BAACAgIAAxkBAAIMi2mAx8aJKh9D410uy5a2ioDeZQKlAAImjQAC3m0ISIu6KidxHxgeOAQ",
+                    },
+                    {
+                        "title": "Двойник",
+                        "video": "BAACAgIAAxkBAAIMjWmAx_xBIS3zotxFzXXEmTyUCyFRAAIsjQAC3m0ISHkVoB_sBlnwOAQ",
+                    },
+                    {
+                        "title": "Пузырь",
+                        "video": "BAACAgIAAxkBAAIMj2mAyFfJEIpZrxMngbeaTcwWHWoHAAI5jQAC3m0ISIolEnRLKOmIOAQ",
+                    },
+                    {
+                        "title": "Гипнотизёр",
+                        "video": "BAACAgIAAxkBAAIMkWmAyJbCCvkk60vT3X6_aQvTm9TyAAJBjQAC3m0ISPLUvHrWnIdpOAQ",
+                    },
+                    {
+                        "title": "Роджер-коп",
+                        "video": "BAACAgIAAxkBAAIMk2mAyNmdyxnGBJ3N3rd9XsiN5LjaAAJJjQAC3m0ISBSrfUAefydiOAQ",
+                    },
+                    {
+                        "title": "Игрок",
+                        "video": "BAACAgIAAxkBAAIMlWmAyRGiqMmowY0Lalr47hT1DJ5pAAJPjQAC3m0ISFDWgl_z4ZCnOAQ",
+                    },
+                    {
+                        "title": "Зверочеловек",
+                        "video": "BAACAgIAAxkBAAIMs2mAzeg73n9kilj3kYfC9UyYmAmgAALDjQAC3m0ISDuyT-gkMRjPOAQ",
+                    },
+                    {
+                        "title": "Тёмный рыцарь",
+                        "video": "BAACAgIAAxkBAAIMl2mAyZjRn35sXDGsDM5AplWMNW5mAAJZjQAC3m0ISKdRkAtTrrj9OAQ",
+                    },
+                    {
+                        "title": "Фараон",
+                        "video": "BAACAgIAAxkBAAIMmWmAydaj1r6pfYuFk7bEifZHHIsyAAJijQAC3m0ISHKMKpdrvxdhOAQ",
+                    },
+                    {
+                        "title": "Повелительница времени",
+                        "video": "BAACAgIAAxkBAAIMm2mAyhaF393--d245_lKuhjl2XQDAAJljQAC3m0ISHzHBFxDR9oZOAQ",
+                    },
+                    {
+                        "title": "Страшила",
+                        "video": "BAACAgIAAxkBAAIMnWmAylG39RJF6fcnSs2vE4NXLT4fAAJujQAC3m0ISCl56FUVoZ68OAQ",
+                    },
+                    {
+                        "title": "Кукловод",
+                        "video": "BAACAgIAAxkBAAIMoWmAyqZP4oio9cHvHGFWwgQ5CM8_AAJ1jQAC3m0ISOorihYeq8SvOAQ",
+                    },
+                    {
+                        "title": "Мим",
+                        "video": "BAACAgIAAxkBAAIMo2mAyt_QWyWDidPnNlXWVuzcKOuBAAJ7jQAC3m0ISM3JFIrrWQLSOAQ",
+                    },
+                    {
+                        "title": "Злодей-гитарист",
+                        "video": "BAACAgIAAxkBAAIMpWmAyx-NMpHt9BFt4Da5mBp49E_1AAKBjQAC3m0ISDbOWnPhrQqWOAQ",
+                    },
+                    {
+                        "title": "Рефлекта",
+                        "video": "BAACAgIAAxkBAAIMp2mAy1wEB3UrM27NxW3ukbeDT2twAAKEjQAC3m0ISFJf3ttwOzT5OAQ",
+                    },
+                    {
+                        "title": "Каменное сердце, часть 1",
+                        "video": "BAACAgIAAxkBAAIMqWmAy7Pd-El4TiZusMpVNvMQp6BgAAKRjQAC3m0ISKeYCxv_edJZOAQ",
+                    },
+                    {
+                        "title": "Каменное сердце, часть 2",
+                        "video": "BAACAgIAAxkBAAIMq2mAzRHw09uitKwNag9iKVIzRRUhAAKvjQAC3m0ISHnm5rB63g18OAQ",
+                    },
+                    {
+                        "title": "АнтиБаг",
+                        "video": "BAACAgIAAxkBAAIMrWmAzUY7ja7yMbnABRDv__g0EDHpAAK1jQAC3m0ISOfeUmSaZG5oOAQ",
+                    },
+                    {
+                        "title": "Кунг-Фуд",
+                        "video": "BAACAgIAAxkBAAIMr2mAzXrMvzKzCxIUmRdo8CTGSfIfAAK4jQAC3m0ISIVtEKFFivUpOAQ",
+                    },
+                    {
+                        "title": "Вольпина",
+                        "video": "BAACAgIAAxkBAAIMsWmAzbB60nWX3H-Td915yh3lQmi3AAK_jQAC3m0ISA36QxWT6k_NOAQ",
+                    },
+                ]
+            },
+            2: {
+                "title" : "Сезон 2",
+                "episodes": [
+                    {
+                        "title": "Собиратель",
+                        "video": "BAACAgIAAxkBAAIM8mmCccLB3LMsSYjQo8XYjcd5XagJAAJUjwACYFYYSLeRPagRAAF0MzgE",
+                    },
+                    {
+                        "title": "Королева прайм-тайма",
+                        "video": "BAACAgIAAxkBAAIM9GmCcfSuVjrq2SPjehOWnujug2_qAAJVjwACYFYYSHlt4BtFhIaBOAQ",
+                    },
+                    {
+                        "title": "Лединатор",
+                        "video": "BAACAgIAAxkBAAIM9mmCciVlrka5yKzFrZaf8xsQw0qUAAJWjwACYFYYSHHyBcylaIHROAQ",
+                    },
+                    {
+                        "title": "Гневный мишка",
+                        "video": "BAACAgIAAxkBAAIM-GmCclWZAAFT2fUavzxz3Nf1rk6_iAACV48AAmBWGEhqIzYbty60tzgE",
+                    },
+                    {
+                        "title": "Бунтарка",
+                        "video": "BAACAgIAAxkBAAIM-mmCcoKvDuaHJ7Tzj5AL0VlIHS2cAAJZjwACYFYYSOvwuhxjacxkOAQ",
+                    },
+                    {
+                        "title": "Гигантиан",
+                        "video": "BAACAgIAAxkBAAIM_GmCcrK8CBzMOAnm8elZtzhXJLTYAAJajwACYFYYSISjWb-130CgOAQ",
+                    },
+                    {
+                        "title": "Укол",
+                        "video": "BAACAgIAAxkBAAIM_mmCcuI0jwGBO6q9TBt19PQv4eocAAJbjwACYFYYSCITwU5ErGlAOAQ",
+                    },
+                    {
+                        "title": "Бефана",
+                        "video": "BAACAgIAAxkBAAINAAFpgnMU3nYbSUgHyTe17vqfisq2PwACXY8AAmBWGEimqpvDeLKIajgE",
+                    },
+                    {
+                        "title": "Соловей",
+                        "video": "BAACAgIAAxkBAAINAmmCc0abiz1WS5oLmubqXMxlZh60AAJfjwACYFYYSL09gvOe7HkBOAQ",
+                    },
+                    {
+                        "title": "Горизилла",
+                        "video": "BAACAgIAAxkBAAINBGmCc3l7RQmSskHWurspsxSZD2KLAAJhjwACYFYYSO9ENUuGySd6OAQ",
+                    },
+                    {
+                        "title": "Робостус",
+                        "video": "BAACAgIAAxkBAAINBmmCc6tqMV17KG42YcnBTXlawWXtAAJijwACYFYYSKKYZemIj2s-OAQ",
+                    },
+                    {
+                        "title": "Сапотисы",
+                        "video": "BAACAgIAAxkBAAINCGmCc9lzVzT8lYsKN-TpDZjX3E31AAJjjwACYFYYSHhbpviF4_6UOAQ",
+                    },
+                    {
+                        "title": "Филин",
+                        "video": "BAACAgIAAxkBAAINCmmCdAv1LtwQrHwGB8JnBUj-NebsAAJmjwACYFYYSPjjcJRfMrYEOAQ",
+                    },
+                    {
+                        "title": "Сирена",
+                        "video": "BAACAgIAAxkBAAINDGmCdD3Bq-dOei_Sgnh-5VjCFaCQAAJnjwACYFYYSEr5_980reMwOAQ",
+                    },
+                    {
+                        "title": "Зомбизу",
+                        "video": "BAACAgIAAxkBAAINDmmCdGsjKgX2vyV0pURRqYUr8XpeAAJojwACYFYYSKOST6QTvqv1OAQ",
+                    },
+                    {
+                        "title": "Капитан хардрок",
+                        "video": "BAACAgIAAxkBAAINEGmCdJ3ciGXoQK2UpOtwJfSMKh9JAAJqjwACYFYYSIMkE-0WqNcEOAQ",
+                    },
+                    {
+                        "title": "Мороз",
+                        "video": "BAACAgIAAxkBAAINEmmCdNFC5bUV5H-iGWT11OYn2VDpAAJrjwACYFYYSD2Ubm-Vt49lOAQ",
+                    },
+                    {
+                        "title": "Королева стиля",
+                        "video": "BAACAgIAAxkBAAINFmmCdTmsuS9kUjn8efAl22QJDm5RAAJwjwACYFYYSMqTr5wOx0n5OAQ",
+                    },
+                    {
+                        "title": "Королева ос",
+                        "video": "BAACAgIAAxkBAAINFGmCdQfUCXoUtAQo3ruHZpzzPRH2AAJsjwACYFYYSDiL6zAvm-1iOAQ",
+                    },
+                    {
+                        "title": "Обратитель",
+                        "video": "BAACAgIAAxkBAAINGGmCdWZoGOdfNvGoaNhVR4MqEm-6AAJxjwACYFYYSAgaZdt5nNibOAQ",
+                    },
+                    {
+                        "title": "Ананси",
+                        "video": "BAACAgIAAxkBAAINGmmCdZchlwpH22wJpgPzKHV0fZ1sAAJyjwACYFYYSENRYmexZnstOAQ",
+                    },
+                    {
+                        "title": "Маледиктатор",
+                        "video": "BAACAgIAAxkBAAINHGmCdci1A6WHzGbOVlZjrpVW6JC1AAJ0jwACYFYYSFqV9GX8i4pIOAQ",
+                    },
+                    {
+                        "title": "Сеятель",
+                        "video": "BAACAgIAAxkBAAINHmmCdfr5d6tO5sMGjU4pz4sAAcV37QACdo8AAmBWGEj7PeTnPXQH2DgE",
+                    },
+                    {
+                        "title": "Катализатор",
+                        "video": "BAACAgIAAxkBAAINIGmCdi9FAAHN3R_WtA0cPbmjm_PS7QACeI8AAmBWGEgk68FZDf0MMjgE",
+                    },
+                    {
+                        "title": "Маюра",
+                        "video": "BAACAgIAAxkBAAINImmCdmaE2UsdezRyHuFnGHMlzeTdAAJ7jwACYFYYSCXTnIbQcfsWOAQ",
+                    },
+                    {
+                        "title": "Санта с когтями",
+                        "video": "BAACAgIAAxkBAAINJGmCdqDYfBwuLf019U0ulup0dxiTAAKAjwACYFYYSBpGRBHoyVYuOAQ",
+                    },
+                ]
+            },
+            3: {
+                "title" : "Сезон 3",
+                "episodes": [
+                    {
+                        "title": "Хамелеон",
+                        "video": "BAACAgIAAxkBAAINSGmDJqkObtwIYy2omseCh51H1UXnAAJ0lgACYFYYSARGwBiBYkUFOAQ",
+                    },
+                    {
+                        "title": "Анимаэстро",
+                        "video": "BAACAgIAAxkBAAINSmmDJtzrHhuRFFp6iApkL8iKwCfzAAJ8lgACYFYYSHpdodvwbWIkOAQ",
+                    },
+                    {
+                        "title": "Пекарикс",
+                        "video": "BAACAgIAAxkBAAINTGmDJzLpPTyXghxM_kuF8V5sXvcPAAKClgACYFYYSO5yhvbGs-RkOAQ",
+                    },
+                    {
+                        "title": "Обратительница",
+                        "video": "BAACAgIAAxkBAAINVWmDJ4l7HIcKFp1iIHSuMsRxCjKOAAKIlgACYFYYSE2R5hQUTFGJOAQ",
+                    },
+                    {
+                        "title": "Рефлекдолл",
+                        "video": "BAACAgIAAxkBAAINWWmDJ-FmECLL9qkZvtsWymVPWe9GAAKYlgACYFYYSLbRNKXTOvvxOAQ",
+                    },
+                    {
+                        "title": "Оборотень",
+                        "video": "BAACAgIAAxkBAAINW2mDKDeJJh_LydM6ikkChGZI5h4FAAKklgACYFYYSBntnDS-EwILOAQ",
+                    },
+                    {
+                        "title": "Глушитель",
+                        "video": "BAACAgIAAxkBAAINXWmDKI1tukOU8TTgPHX-4exmDZHkAAKwlgACYFYYSOoE04vqCe8yOAQ",
+                    },
+                    {
+                        "title": "Они-Чан",
+                        "video": "BAACAgIAAxkBAAINX2mDKOL766MmOj8jwHVenUvQRPk5AAK5lgACYFYYSPOKbnMLgYFOOAQ",
+                    },
+                    {
+                        "title": "Талисманка",
+                        "video": "BAACAgIAAxkBAAINYWmDKTjcL6zjNeicr5rO5eNt5ZqwAAK_lgACYFYYSIYT1gEMUDYWOAQ",
+                    },
+                    {
+                        "title": "Обливио",
+                        "video": "BAACAgIAAxkBAAINY2mDKY4sx-J6rY2e-0AeNFkgkogOAALBlgACYFYYSNGoXOek7rx1OAQ",
+                    },
+                    {
+                        "title": "Десперада",
+                        "video": "BAACAgIAAxkBAAINZWmDKeQzAWH-L6uG2IhoIvBVd28VAALLlgACYFYYSIZXenzov59TOAQ",
+                    },
+                    {
+                        "title": "Крис Мастер",
+                        "video": "BAACAgIAAxkBAAINZ2mDKjqcFJDsBSQPkF440w-WxTdjAALTlgACYFYYSIMPhNiUrKizOAQ",
+                    },
+                    {
+                        "title": "Стартрейн",
+                        "video": "BAACAgIAAxkBAAINaWmDKm9WEcfSdZNXXG3qr7IzrOVvAALalgACYFYYSMVGfDru1F2eOAQ",
+                    },
+                    {
+                        "title": "Охотница за квами",
+                        "video": "BAACAgIAAxkBAAINa2mDKsTL1oMPydnGF51oDt3uX-haAALhlgACYFYYSAaFDXbJTR-kOAQ",
+                    },
+                    {
+                        "title": "Пожиратель",
+                        "video": "BAACAgIAAxkBAAINbWmDKvUt-0l0LHQ4_BKBqcOk0lD0AALplgACYFYYSK5qxkGjdukaOAQ",
+                    },
+                    {
+                        "title": "Игрок 2.0",
+                        "video": "BAACAgIAAxkBAAINb2mDK0ufycaoiHgl8UEpgsRyzZcEAAL2lgACYFYYSP2wlacgyF2sOAQ",
+                    },
+                    {
+                        "title": "Непогода 2",
+                        "video": "BAACAgIAAxkBAAINcWmDK31FFzL1IafHHpocbzgMsx2yAAL_lgACYFYYSNegO5VrUKXdOAQ",
+                    },
+                    {
+                        "title": "Икари Годзен",
+                        "video": "BAACAgIAAxkBAAINc2mDK6zgvzMaXnfZU51b0ZaagZ_0AAIBlwACYFYYSHXSY-1u1uZ2OAQ",
+                    },
+                    {
+                        "title": "Таймтэггер",
+                        "video": "BAACAgIAAxkBAAINg2mDMTwWddINdQzfOHugKfsxjpbiAAKPlwACYFYYSN2JyQi3djaWOAQ",
+                    },
+                    {
+                        "title": "Незваный гость",
+                        "video": "BAACAgIAAxkBAAINdWmDLDFVkx410kml3UKrRQYrfI1jAAIQlwACYFYYSOzWkfunSkNeOAQ",
+                    },
+                    {
+                        "title": "Кукловод 2",
+                        "video": "BAACAgIAAxkBAAINd2mDLIejDzg_F2CIs48ax364ETr0AAIdlwACYFYYSIDv4qv7CmFROAQ",
+                    },
+                    {
+                        "title": "Белый кот",
+                        "video": "BAACAgIAAxkBAAINeWmDLN1Ap6D09xgM4zoBJltubGc1AAIilwACYFYYSAf50Rrs594-OAQ",
+                    },
+                    {
+                        "title": "Феликс",
+                        "video": "BAACAgIAAxkBAAINe2mDLTUVkgABECB52jg20KdcHdBYTgACMJcAAmBWGEit-u0R7TGM6DgE",
+                    },
+                    {
+                        "title": "Леди Баг",
+                        "video": "BAACAgIAAxkBAAINfWmDLYpAuHmtcFv45l6agB33QcqFAAI7lwACYFYYSM7vxX4aF4I0OAQ",
+                    },
+                    {
+                        "title": "Сердцеед (Битва талисманов. Часть 1)",
+                        "video": "BAACAgIAAxkBAAINf2mDLbzdxqp1kHZPXC0MnEd2J3sbAAI_lwACYFYYSLAaFK2lDwOjOAQ",
+                    },
+                    {
+                        "title": "Королева талисманов (Битва талисманов. Часть 2)",
+                        "video": "BAACAgIAAxkBAAINgWmDLexcSBh2XDqgKF_cWnDwZH9kAAJGlwACYFYYSO_XODWeSGV7OAQ",
+                    },
+                    
+                ]
+            },
+            3: {
+                "title" : "Сезон 4",
+                "episodes": [
+                    {
+                        "title": "Правда",
+                        "video": "BAACAgIAAxkBAAINummDT6cCJZbDqLWw-JWaVyZPzMawAAKRlgACYFYgSPINmq4Z_OEEOAQ",
+                    },
+                    {
+                        "title": "Ложь",
+                        "video": "BAACAgIAAxkBAAINvGmDUFdyWENW0bRC0WsAAcNNCr94wwACnZYAAmBWIEgAAZjAyjMceys4BA",
+                    },
+                    {
+                        "title": "Банда Тайн",
+                        "video": "BAACAgIAAxkBAAINvmmDUQh-ltHIDjvIDYkWWxMjvFC8AAKmlgACYFYgSPBk4xZdycTSOAQ",
+                    },
+                    {
+                        "title": "Месье Голубь 72",
+                        "video": "BAACAgIAAxkBAAINwGmDUcAuahWvKSdheCWhUlwCq_8kAAK3lgACYFYgSKJhVNhgGnlFOAQ",
+                    },
+                    {
+                        "title": "Псикомик",
+                        "video": "BAACAgIAAxkBAAINymmDUnVqi8FDFVkM7PPfPxLeQ26iAAK_lgACYFYgSCcrGZVbaOwVOAQ",
+                    },
+                    {
+                        "title": "Разъярённый Фу",
+                        "video": "BAACAgIAAxkBAAINzGmDUyQAAUtsZFWoe-nZVgeJ3oWZUQAC1JYAAmBWIEhjdCy1W92UKjgE",
+                    },
+                    {
+                        "title": "Палач душ",
+                        "video": "BAACAgIAAxkBAAINzmmDU9WksMeUqYKCG7NXFRUw9weiAALglgACYFYgSIjRQduckEb_OAQ",
+                    },
+                    {
+                        "title": "Леди Банана",
+                        "video": "BAACAgIAAxkBAAIN1WmDVIakSQKxhUAZ4HQBIDhH3iDEAALtlgACYFYgSPR9AAHH-uqxjTgE",
+                    },
+                    {
+                        "title": "Габриель Агрест",
+                        "video": "BAACAgIAAxkBAAIN3GmDVTifAmup_xoVVAxddcE5trh7AAL1lgACYFYgSCuN14CgUWV_OAQ",
+                    },
+                    {
+                        "title": "Мегапиявка",
+                        "video": "BAACAgIAAxkBAAIN3mmDVejJ7nKVqG07ZkFa4qXkj50YAAIHlwACYFYgSJoqMwQGDliLOAQ",
+                    },
+                    {
+                        "title": "Вина",
+                        "video": "BAACAgIAAxkBAAIN4GmDVph_OTJd6He5lykgP33fu84CAAIQlwACYFYgSCtQH-Mrn-6iOAQ",
+                    },
+                    {
+                        "title": "Крокодоэль",
+                        "video": "BAACAgIAAxkBAAIN4mmDV0qH3zJw8k9ufs3UuypjxfHeAAIblwACYFYgSOlQZQ1Bx_qrOAQ",
+                    },
+                    {
+                        "title": "Оптигами",
+                        "video": "BAACAgIAAxkBAAIN5GmDV_saVE3O6K9F6936s5ed6tAMAAIulwACYFYgSBtQMj_Witk8OAQ",
+                    },
+                    {
+                        "title": "Сенсопузырь",
+                        "video": "BAACAgIAAxkBAAIN5mmDWMFwDnv-hlXd4UrVrcRmbN9JAAI3lwACYFYgSPDu9Q7khm72OAQ",
+                    },
+                    {
+                        "title": "Лединатор 2",
+                        "video": "BAACAgIAAxkBAAIN6GmDWXcOPmlp_tRz9zzpKMT-IiyfAAJAlwACYFYgSOmmqxvoYxiUOAQ",
+                    },
+                    {
+                        "title": "Хак-Сан",
+                        "video": "BAACAgIAAxkBAAIN6mmDWi7Si2C4RZcvo0MRY_StTpkcAAJSlwACYFYgSImNCi6dtM8OOAQ",
+                    },
+                    {
+                        "title": "Плакса",
+                        "video": "BAACAgIAAxkBAAIN7GmDWt884Arz3AvaY8z6necDm1meAAJelwACYFYgSPoHdfymqkpIOAQ",
+                    },
+                    {
+                        "title": "Мечтатель",
+                        "video": "BAACAgIAAxkBAAIN7mmDW5KFhoN5iiGul01tmMqgxl6qAAJmlwACYFYgSPF0Ps3TCEJtOAQ",
+                    },
+                    {
+                        "title": "Простак",
+                        "video": "BAACAgIAAxkBAAIN8GmDXESefIwVsI5YQRilb73n2ok3AAJplwACYFYgSK7hFgFhZ3fwOAQ",
+                    },
+                    {
+                        "title": "Цилинь",
+                        "video": "BAACAgIAAxkBAAIN8mmDXPb2qX9P0x3xF0DAXphEcyWoAAJzlwACYFYgSCjTYDzl5lqlOAQ",
+                    },
+                    {
+                        "title": "Дорогая семья",
+                        "video": "BAACAgIAAxkBAAIN9GmDXaa91rOZ6paUW058c0oYUjiiAAKDlwACYFYgSOh-YCZ5ZvvQOAQ",
+                    },
+                    {
+                        "title": "Эфемер",
+                        "video": "BAACAgIAAxkBAAIN9mmDXl77CAtOgclqunRhGl0AAY7apwACkpcAAmBWIEhNLEqTQoPCfjgE",
+                    },
+                    {
+                        "title": "Куро Неко",
+                        "video": "BAACAgIAAxkBAAIN-GmDXxGwFpMj6IZvW5K8k4Wdho8-AAKolwACYFYgSOoJZSlWyIEVOAQ",
+                    },
+                    {
+                        "title": "Команда Пенальти",
+                        "video": "BAACAgIAAxkBAAIN-mmDX8KKh4N8Ylq_tLTEnOAuMcOzAALClwACYFYgSExg0yGzFrsBOAQ",
+                    },
+                    {
+                        "title": "Риск (Последняя атака Мотылька. Часть 1)",
+                        "video": "BAACAgIAAxkBAAIOBWmDacZDUCIatKl34f_gSfVrCp9KAAKgmAACYFYgSBWXRoFewF38OAQ",
+                    },
+                    {
+                        "title": "Ответный удар (Последняя атака Мотылька. Часть 2)",
+                        "video": "BAACAgIAAxkBAAIOB2mDanrQudhscoIcmYGEmm2ldav4AAK9mAACYFYgSLJqf18p9fR2OAQ",
+                    },
+                    
+                ]
+            },
+            5: {
+                "title" : "Сезон 5",
+                "episodes": [
+                    {
+                        "title": "Эволюция",
+                        "video": "BAACAgIAAxkBAAIOEGmDdq-BdnA0URIfdy_xnzRm9p7wAAITmgACYFYgSEb7xnLoBaWOOAQ",
+                    },
+                    {
+                        "title": "Умножение",
+                        "video": "BAACAgIAAxkBAAIOEmmDdvg0gx_LbEVcSIOOWHD2wTKvAAIdmgACYFYgSNrtc4HLAXXHOAQ",
+                    },
+                    {
+                        "title": "Разрушение",
+                        "video": "BAACAgIAAxkBAAIOFGmDdz_8Z0PTxtaiuZuF6bE3KaW0AAIjmgACYFYgSJK9s4vEGdLyOAQ",
+                    },
+                    {
+                        "title": "Ликование",
+                        "video": "BAACAgIAAxkBAAIOFmmDd4cUu0fs9uWY0zqcpMWz0uFHAAInmgACYFYgSBz4Z0k91kg9OAQ",
+                    },
+                    {
+                        "title": "Иллюзия",
+                        "video": "BAACAgIAAxkBAAIOGGmDd9L2xbOWSJ9YRAa84uoL8LKSAAIzmgACYFYgSOx8jSq2O0YjOAQ",
+                    },
+                    {
+                        "title": "Решимость",
+                        "video": "BAACAgIAAxkBAAIOGmmDeBtY8JE9wrw-lTolYubJ4vwoAAI5mgACYFYgSGbm8_5KZU02OAQ",
+                    },
+                    {
+                        "title": "Страсть",
+                        "video": "BAACAgIAAxkBAAIOHGmDeGVuutiBFUuzvN1zRUH_voLFAAI-mgACYFYgSPG1ancOmKUdOAQ",
+                    },
+                    {
+                        "title": "Воссоединение",
+                        "video": "BAACAgIAAxkBAAIOHmmDeK7piqLc1600o3Jz0X7d-tE1AAJDmgACYFYgSOyJE_bMyYvNOAQ",
+                    },
+                    {
+                        "title": "Восторг",
+                        "video": "BAACAgIAAxkBAAIOIGmDePkSbndCsnZGBySdfIzl2-IYAAJImgACYFYgSIWVvT1PAvicOAQ",
+                    },
+                    {
+                        "title": "Передача (Выбор квами 1)",
+                        "video": "BAACAgIAAxkBAAIOImmDeUXLuMA236GT7o86Bc2GQ3SRAAJPmgACYFYgSJOqs47MD5_iOAQ",
+                    },
+                    {
+                        "title": "Сгорание (Выбор квами 2)",
+                        "video": "BAACAgIAAxkBAAIOJGmDeZCZEgVRdBF1xLbV58NC_8xfAAJTmgACYFYgSPcXWVTNtzAeOAQ",
+                    },
+                    {
+                        "title": "Совершенство",
+                        "video": "BAACAgIAAxkBAAIOJmmDedkEuRtLWHdm_0axqPi42z-JAAJXmgACYFYgSCeNw9cUvWiXOAQ",
+                    },
+                    {
+                        "title": "Перемещение",
+                        "video": "BAACAgIAAxkBAAIOKGmDeiGJkOM4OOLSR1Tk7mmZwzINAAJgmgACYFYgSA4TAeW1qWvkOAQ",
+                    },
+                    {
+                        "title": "Насмешка",
+                        "video": "BAACAgIAAxkBAAIOKmmDemwxsPjH2e3iTKwxdGCqGwjTAAJqmgACYFYgSH9a_syNueSEOAQ",
+                    },
+                    {
+                        "title": "Интуиция",
+                        "video": "BAACAgIAAxkBAAIOLGmDerMaPsXWgGDSwEtiDvymoBm8AAJxmgACYFYgSO51f61Rz8x6OAQ",
+                    },
+                    {
+                        "title": "Защита",
+                        "video": "BAACAgIAAxkBAAIOLmmDev1ohWqqR04CEhB91G2XNkRzAAJ5mgACYFYgSE31-quYBNzQOAQ",
+                    },
+                    {
+                        "title": "Обожание",
+                        "video": "BAACAgIAAxkBAAIOMmmDe0lVyOfuQ2eKFlzbp7Wv0xv5AAKCmgACYFYgSIFozZcET36OOAQ",
+                    },
+                    {
+                        "title": "Эмоция",
+                        "video": "BAACAgIAAxkBAAIONGmDe5VPZZqP0DAJVAW4Bj_tvKJ_AAKWmgACYFYgSJDyW009jrueOAQ",
+                    },
+                    {
+                        "title": "Притворство",
+                        "video": "BAACAgIAAxkBAAIONmmDe-HFK8o9cQ2u9efiIaWOYjCbAAKjmgACYFYgSDlXv7GbdcnXOAQ",
+                    },
+                    {
+                        "title": "Откровение",
+                        "video": "BAACAgIAAxkBAAIOOGmDfC6oMexA842hKwceisQhw551AAKxmgACYFYgSJ5rjJ8Y5C3dOAQ",
+                    },
+                    {
+                        "title": "Противостояние",
+                        "video": "BAACAgIAAxkBAAIOOmmDfHrHTJCEizDgtHXsFSMHJBLwAAK6mgACYFYgSEV3-rNJHWMTOAQ",
+                    },
+                    {
+                        "title": "Сговор",
+                        "video": "BAACAgIAAxkBAAIOPmmDfMWSHh_EsIVELvP3uYVkgoURAALGmgACYFYgSGGLCgkdEjlAOAQ",
+                    },
+                    {
+                        "title": "Революция",
+                        "video": "BAACAgIAAxkBAAIOQGmDfRH66V5tbBA-iTFk8Zy8D5GQAALRmgACYFYgSEzM5jbLO48lOAQ",
+                    },
+                    {
+                        "title": "Воплощение",
+                        "video": "BAACAgIAAxkBAAIOQmmDfVzhYsG0AkUN9QjWHuuM-zv_AALmmgACYFYgSBbgan_Tzyj5OAQ",
+                    },
+                    {
+                        "title": "Устройство (Последний день 1)",
+                        "video": "BAACAgIAAxkBAAIORGmDfal8lcXmKB-pXkR2TVttydjXAAL2mgACYFYgSM-Kn9OisNZEOAQ",
+                    },
+                    {
+                        "title": "Воссоздание (Последний день 2)",
+                        "video": "BAACAgIAAxkBAAIORmmDffqKuWGXvuiieAIjfsO0TKuGAAIFmwACYFYgSKJOsy9cbygCOAQ",
+                    },
+                    {
+                        "title": "Действие",
+                        "video": "BAACAgIAAxkBAAIOSGmDfkFayiebLQQtsZ1KfrJ0p7Z3AAIWmwACYFYgSL-K_ENSM-DJOAQ",
+                    },
+                    
+                ]
+            },
+            6: {
+                "title" : "Сезон 6",
+                "episodes": [
+                    {
+                        "title": "Королева Климата",
+                        "video": "BAACAgIAAxkBAAIOY2mDo7qOCuu7mqOQgeeLuAgJBu8DAALRnwACYFYgSGgTZkRcDanKOAQ",
+                    },
+                    {
+                        "title": "Визуализатор",
+                        "video": "BAACAgIAAxkBAAIOZWmDpAficqgdX-bG4Z8b9K1TZVDBAALZnwACYFYgSGbTjDGfNmhrOAQ",
+                    },
+                    {
+                        "title": "Сублимация",
+                        "video": "BAACAgIAAxkBAAIOZ2mDpFIZLeVAplDs1tVHnllSNDb2AALlnwACYFYgSPjEcKW6uVmiOAQ",
+                    },
+                    {
+                        "title": "Папакоп",
+                        "video": "BAACAgIAAxkBAAIOa2mDpJv0eeAt375X22GskAwSaCNzAALtnwACYFYgSJOUo-dkpuvPOAQ",
+                    },
+                    {
+                        "title": "Битва дедов",
+                        "video": "BAACAgIAAxkBAAIObWmDpOb9Eib-vDvlR_0NMj5-Lgk0AAL2nwACYFYgSKqfGxBzF6ruOAQ",
+                    },
+                    {
+                        "title": "Спящая Сирена",
+                        "video": "BAACAgIAAxkBAAIOb2mDpURev-S0UboLVQphzVnVCqofAAL8nwACYFYgSFkya7hPzzw8OAQ",
+                    },
+                    {
+                        "title": "Каменный Бык",
+                        "video": "BAACAgIAAxkBAAIOcWmDpZEwpVkhvhF55d_SUBLy0BawAAIFoAACYFYgSP7OaHtVINMwOAQ",
+                    },
+                    {
+                        "title": "Вампигами",
+                        "video": "BAACAgIAAxkBAAIOc2mDpcUFJf4IJrE1XydzGuSoqpjoAAIQoAACYFYgSHlcZMrSY_NoOAQ",
+                    },
+                    {
+                        "title": "Месье Агрест",
+                        "video": "BAACAgIAAxkBAAIOdWmDpicLP06WQXOqyaEsZ1u-W-LHAAIZoAACYFYgSEWPlSLOSU2wOAQ",
+                    },
+                    {
+                        "title": "Тёмный замок",
+                        "video": "BAACAgIAAxkBAAIOd2mDpoIcMxtrlr5AuJCn98q2-UyoAAIjoAACYFYgSJg9ebpnHdk8OAQ",
+                    },
+                    {
+                        "title": "Разоблачитель",
+                        "video": "BAACAgIAAxkBAAIOeWmDptDWr-XsX6tUzJ_v2LLLalLfAAIooAACYFYgSHs2HrEzBfEwOAQ",
+                    },
+                    {
+                        "title": "Исцелитель",
+                        "video": "BAACAgIAAxkBAAIOgmmDpygbCdx3azauZ7iMP2UKB6HcAAIroAACYFYgSPMSVSbUUEr1OAQ",
+                    },
+                    {
+                        "title": "Якши Годзен",
+                        "video": "BAACAgIAAxkBAAIOhGmDp4Cg8KXxbFujZSaw74oAAcOvtwACMaAAAmBWIEhhUSFoOAgx5zgE",
+                    },
+                    {
+                        "title": "Памперсайзер",
+                        "video": "BAACAgIAAxkBAAIOimmDrHWnyFlt6ce2OFiTelYYIj4PAAJ7oAACYFYgSK_FltJ2guuOOAQ",
+                    },
+                    {
+                        "title": "Властитель",
+                        "video": "BAACAgIAAxkBAAIOhmmDp8d9IEnHeYmDVktDXIipGIx4AAI2oAACYFYgSJ8VfAzlxAXROAQ",
+                    },
+                    {
+                        "title": "Ноэ",
+                        "video": "BAACAgIAAxkBAAIOiGmDqCIsycgGOqqko3rGhiU8lqGeAAI6oAACYFYgSHAT-gk4yEW4OAQ",
+                    },
+                    
+                ]
+            },
+            7: {
+                "title" : "Спец Эпизоды",
+                "episodes": [
+                    {
+                        "title": "Нью-Йорк",
+                        "video": "BAACAgIAAxkBAAIOm2mDuMKYTTruUFWnYCq8E-sv8mQLAALmoAACYFYgSLRiaHwOIDJgOAQ",
+                    },
+                    {
+                        "title": "Шанхай",
+                        "video": "BAACAgIAAxkBAAIOnWmDuXfKlTvnRynguB2kufXtGXOyAALtoAACYFYgSI_G4uSJjfkjOAQ",
+                    },
+                    {
+                        "title": "Париж",
+                        "video": "BAACAgIAAxkBAAIOn2mDuhGojIQ4JLVMAg0ii7SRzIKxAALzoAACYFYgSNt5ncolSWeBOAQ",
+                    },
+                    {
+                        "title": "Лондон",
+                        "video": "BAACAgIAAxkBAAIOoWmDutUgZaoDbCuFnaIcPMGqLOJVAAL6oAACYFYgSLQCUkt9sHmtOAQ",
+                    },
+                ]
+            },
+        }
+    },
 }
 
 def subscribe_keyboard_movie(code: str):
