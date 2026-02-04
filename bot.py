@@ -2653,8 +2653,23 @@ def series_menu_keyboard(code: str, page: int = 0, season: int | None = None):
     end = min(start + per_page, total)
 
     keyboard = []
-    row = []
 
+    # ---- Заголовок сезона ----
+    if has_seasons(serial) and season is not None:
+        season_data = serial["seasons"][season]
+        season_title = season_data.get("title")
+
+        if season_title:
+            title_text = f"📀 {season_title}"
+        else:
+            title_text = f"📀 Сезон {season}"
+
+        keyboard.append([
+            InlineKeyboardButton(text=title_text, callback_data="noop")
+        ])
+
+    # ---- Кнопки серий ----
+    row = []
     for i in range(start, end):
         row.append(
             InlineKeyboardButton(
@@ -2662,14 +2677,14 @@ def series_menu_keyboard(code: str, page: int = 0, season: int | None = None):
                 callback_data=f"ep:{code}:{season if season is not None else 0}:{i}"
             )
         )
-        if len(row) == 5:  # 5 серий в ряду
+        if len(row) == 5:
             keyboard.append(row)
             row = []
 
     if row:
         keyboard.append(row)
 
-    # Навигация по страницам
+    # ---- Навигация страниц ----
     nav = []
     if page > 0:
         nav.append(
@@ -2690,6 +2705,7 @@ def series_menu_keyboard(code: str, page: int = 0, season: int | None = None):
         keyboard.append(nav)
 
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
+
 
 
 
