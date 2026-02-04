@@ -2233,7 +2233,7 @@ def seasons_keyboard(code: str):
     for season_num in sorted(serial["seasons"].keys()):
         keyboard.append([
             InlineKeyboardButton(
-                text=f"{season_num.title}",
+                text=f"Сезон {season_num}",
                 callback_data=f"season:{code}:{season_num}"
             )
         ])
