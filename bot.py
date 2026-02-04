@@ -2231,9 +2231,17 @@ def seasons_keyboard(code: str):
     keyboard = []
 
     for season_num in sorted(serial["seasons"].keys()):
+        season_data = serial["seasons"][season_num]
+        season_title = season_data.get("title")
+
+        if season_title:
+            text = f"{season_title}"
+        else:
+            text = f"Сезон {season_num}"
+
         keyboard.append([
             InlineKeyboardButton(
-                text=f"Сезон {season_num}",
+                text=text,
                 callback_data=f"season:{code}:{season_num}"
             )
         ])
@@ -2246,6 +2254,7 @@ def seasons_keyboard(code: str):
     ])
 
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
+
 
 @dp.callback_query(lambda c: c.data.startswith("seasons:"))
 async def seasons_menu(callback: types.CallbackQuery):
