@@ -2732,12 +2732,6 @@ async def send_episode(
         else:
             season_text = f"Сезон {season}, "
 
-    # Формируем строку серии с указанием сезона
-    if has_seasons(serial) and season is not None:
-        season_text = f"Сезон {season}, "
-    else:
-        season_text = ""
-
     if episode_title:
         episode_line = f"{season_text}серия {episode_index + 1} из {total} «{episode_title}»"
     else:
