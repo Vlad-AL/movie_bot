@@ -2723,6 +2723,15 @@ async def send_episode(
     episode = episodes[episode_index]
     episode_title = episode.get("title")
 
+    # ---- Название сезона ----
+    season_text = ""
+    if has_seasons(serial) and season is not None:
+        season_title = serial["seasons"][season].get("title")
+        if season_title:
+            season_text = f"{season_title}, "
+        else:
+            season_text = f"Сезон {season}, "
+
     # Формируем строку серии с указанием сезона
     if has_seasons(serial) and season is not None:
         season_text = f"Сезон {season}, "
