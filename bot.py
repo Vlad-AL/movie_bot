@@ -2725,6 +2725,7 @@ def series_menu_keyboard(code: str, page: int = 0, season: int | None = None):
     keyboard = []
     row = []
 
+    # --- КНОПКИ СЕРИЙ ---
     for i in range(start, end):
         row.append(
             InlineKeyboardButton(
@@ -2732,15 +2733,17 @@ def series_menu_keyboard(code: str, page: int = 0, season: int | None = None):
                 callback_data=f"ep:{code}:{season if season is not None else 0}:{i}"
             )
         )
-        if len(row) == 5:  # 5 серий в ряду
+
+        if len(row) == 5:  # 5 в ряд
             keyboard.append(row)
             row = []
 
     if row:
         keyboard.append(row)
 
-    # Навигация по страницам
+    # --- ПАГИНАЦИЯ ---
     nav = []
+
     if page > 0:
         nav.append(
             InlineKeyboardButton(
@@ -2748,6 +2751,7 @@ def series_menu_keyboard(code: str, page: int = 0, season: int | None = None):
                 callback_data=f"page:{code}:{season if season is not None else 0}:{page-1}"
             )
         )
+
     if end < total:
         nav.append(
             InlineKeyboardButton(
@@ -2758,6 +2762,29 @@ def series_menu_keyboard(code: str, page: int = 0, season: int | None = None):
 
     if nav:
         keyboard.append(nav)
+
+    # --- КНОПКИ ВОЗВРАТА ---
+    back_buttons = []
+
+    # если есть сезоны → к сезонам
+    if "seasons" in serial:
+        back_buttons.append(
+            InlineKeyboardButton(
+                text="📀 К сезонам",
+                callback_data=f"seasons:{code}"
+            )
+        )
+
+    # назад к сериалу
+    back_buttons.append(
+        InlineKeyboardButton(
+            text="⬅️ К сериалу",
+            callback_data=f"serial:{code}"
+        )
+    )
+
+    # добавляем внизу
+    keyboard.append(back_buttons)
 
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
