@@ -2778,7 +2778,7 @@ def series_menu_keyboard(code: str, page: int = 0, season: int | None = None):
     # назад к сериалу
     back_buttons.append(
         InlineKeyboardButton(
-            text="⬅️ К сериалу",
+            text="К сериалу",
             callback_data=f"serial:{code}"
         )
     )
