@@ -2215,6 +2215,67 @@ series = {
             },
         }
     },
+    "057": {
+        "title": "Cкажи, что ты видела",
+        "year": 2020,
+        "episode_counter": "16 серий",
+        "description": "После взрыва, устроенного маньяком и унесшего жизнь его невесты, криминальный профайлер уехал в сельскую глушь подальше от людей. Там он знакомится с местной начинающей полицейской, у которой есть способность помнить всё, что она когда-либо видела.",
+        "poster": "AgACAgIAAxkBAAIO52mEdtl6DOA7Q1UbZdbCF_ijYzvtAAI3D2sb24kpSNXfkkNE1shKAQADAgADeQADOAQ",
+        "country": "Южная Корея",
+        "director": "Ли Джун-хён",
+        "genres": ["дорама", "триллер", "детектив", "криминал"],
+        "episodes": [
+            {
+                "video": "BAACAgIAAxkBAAIOx2mEcQ7FqaHk6UhBUNb99GnfxaizAAKkhwAC24kpSATtDrROujXnOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIOyWmEcS07CYnFmQsfH8Yplq4MpQYsAAKlhwAC24kpSLuFAzJaDIZUOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIOy2mEcU5SobysyWBgYnroV6uloE8TAAKohwAC24kpSHZI6pBVDr6aOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIOzWmEcW-w620XVpmWP7CX9iGH5EQXAAKphwAC24kpSBLmFb5Ah-FVOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIOz2mEcY7JZ8UAAeNPpaDNLZvLDY8RIwACqocAAtuJKUjbtZlD-ITo6DgE",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIO0WmEca8MAlMwNe8BHBOfiG8Jo6NiAAKwhwAC24kpSJn_QpufnS5hOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIO02mEcdLcHjfyCJ2gv8Vv1z8qOvKzAAK2hwAC24kpSFF458aiAq9KOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIO1WmEcfOaqvweMAnYrjvBVaUg7s0zAAK8hwAC24kpSDc5J4XQQDCZOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIO12mEchG-h6c5eeiH3wMCRI6UEvPzAALAhwAC24kpSHKzL6mG5rZXOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIO2WmEcjMcT3YSzKT-oGQ0aw5BwlHxAALHhwAC24kpSOgwVLHKFh37OAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIO22mEclnIEAtdUG3yqxIF2WYuTGYCAALJhwAC24kpSEdOK_m0W0zXOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIO3WmEcnrwCsSpY0K3FAZWEDuPlI7wAALMhwAC24kpSPKHFwen0LspOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIO32mEcppmdDCTWBz806-JKHDwPlAzAALQhwAC24kpSAbkRbrsYqd4OAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIO4WmEcrT6seQQ3kPb-Pye3pHw-p4OAALVhwAC24kpSL1wdsFiXo26OAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIO42mEctQlrdGpX2CO7ovm77wUfgLUAALahwAC24kpSD5Nd1aE0RGBOAQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIO5WmEcvLffQTwOrf4txFlvpN8raCyAALbhwAC24kpSHqCUAccqWO8OAQ",
+            },
+            
+        ]
+    },
 }
 
 def subscribe_keyboard_movie(code: str):
