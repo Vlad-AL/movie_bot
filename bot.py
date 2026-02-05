@@ -1,5 +1,6 @@
 import asyncio
 import sqlite3
+import re
 from aiogram import Bot, Dispatcher, types
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.filters import Command
@@ -572,7 +573,7 @@ series = {
         "poster": "AgACAgIAAxkBAAIKqml4-4ehfa2duAbRv0c0S0bOlw9VAAI5C2sbe8zIS0z2lHElrCDJAQADAgADeQADOAQ",
         "country": "США",
         "director": "Дэвид Финчер",
-        "genres": ["фантастика"],
+        "genres": ["фантастика", "мультфильм"],
         "seasons": {
             1: {
                 "title" : "Сезон 1",
@@ -2343,7 +2344,10 @@ def has_only_warning(item: dict) -> bool:
     return "warning" in item and len(item.keys()) == 1
 
 def normalize(text: str) -> str:
-    return text.lower().replace("ё", "е").replace(" ", "")
+    text = text.lower().replace("ё", "е")
+    text = re.sub(r"[^\w\s]", "", text)  # удаляет знаки препинания
+    text = text.replace(" ", "")
+    return text
 
 def has_seasons(serial: dict) -> bool:
     return "seasons" in serial
