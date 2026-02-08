@@ -733,105 +733,105 @@ movies = {
         "director": "Джо и Энтони Руссо",
         "genres": ["фантастика", "боевик"]    
     },
-    "077": {
-        "title": "Человек муравей и оса",
-        "year": 1,
-        "video": "BAACAgIAAxkBAAISPmmIZyJu52gCYQyDcm0ZN-lF-hpLAALtmQACiudJSKSqCPxxCZbPOgQ",
-        "description": "",
-        "country": "",
-        "director": "",
-        "genres": ["фантастика", "боевик"]    
-    },
-    "078": {
-        "title": "Капитан Марвел",
-        "year": 1,
-        "video": "BAACAgIAAxkBAAISTWmIbGKc3xaglmjVqMFa5dtM2qg6AAJAmgACiudJSDlG-KHR5BuMOgQ",
-        "description": "",
-        "country": "",
-        "director": "",
-        "genres": ["фантастика", "боевик"]    
-    },
-    "079": {
-        "title": "Мстители: финал",
-        "year": 1,
-        "video": "BAACAgIAAxkBAAIRlWmHaOogvRtBLdt9DK3ZiLmQyjRzAAIgjwACvv9BSEzovPaIhiSCOgQ",
-        "description": "",
-        "country": "",
-        "director": "",
-        "genres": ["фантастика", "боевик"]    
-    },
-    "080": {
-        "title": "Человек-паук: вдали от дома",
-        "year": 1,
-        "video": "BAACAgIAAxkBAAIST2mIbM9kwuaESp-0PogL947DDTiEAAJFmgACiudJSOS9nSPa7vWIOgQ",
-        "description": "",
-        "country": "",
-        "director": "",
-        "genres": ["фантастика", "боевик"]    
-    },
-    "084": {
-        "title": "Черная вдова",
-        "year": 1,
-        "video": "BAACAgIAAxkBAAISUWmIbT_cKeBdrcqFZa2C4EEQG1zCAAJLmgACiudJSHlaMlVe49sVOgQ",
-        "description": "",
-        "country": "",
-        "director": "",
-        "genres": ["фантастика", "боевик"]    
-    },
-    "085": {
-        "title": "Шан-чи и легенда 10 колец",
-        "year": 1,
-        "video": "BAACAgIAAxkBAAISVWmIbghEJ0RfILOLmv0NlFAAAfw0aQACU5oAAornSUi6O5i6meqVZToE",
-        "description": "",
-        "country": "",
-        "director": "",
-        "genres": ["фантастика", "боевик"]    
-    },
-    "086": {
-        "title": "Вечные",
-        "year": 1,
-        "video": "BAACAgIAAxkBAAISV2mIbyebBSZwQMEeiMnHkgqhCypYAAJmmgACiudJSPizCn7XN4F_OgQ",
-        "description": "",
-        "country": "",
-        "director": "",
-        "genres": ["фантастика", "боевик"]    
-    },
-    "087": {
-        "title": "Человек-паук: нет пути домой",
-        "year": 1,
-        "video": "BAACAgIAAxkBAAISU2mIbZuSMIvbm0gu0jEVjMgC13BiAAJOmgACiudJSJJCn66efnx7OgQ",
-        "description": "",
-        "country": "",
-        "director": "",
-        "genres": ["фантастика", "боевик"]    
-    },
-    "088": {
-        "title": "Доктор Стрэндж в мультивселенной безумия",
-        "year": 1,
-        "video": "BAACAgIAAxkBAAISQmmIZ-V4K5LWUce9v6n83Zi5F6rvAAL6mQACiudJSFQz9wFbbhSCOgQ",
-        "description": "",
-        "country": "",
-        "director": "",
-        "genres": ["фантастика", "боевик"]    
-    },
-    "089": {
-        "title": "Тор: любовь и гром",
-        "year": 1,
-        "video": "BAACAgIAAxkBAAIRfGmHZUwg8j4_bDCA0DJKBltIhSOoAAJ9jAACvv85SI6gPv1yKavGOgQ",
-        "description": "",
-        "country": "",
-        "director": "",
-        "genres": ["фантастика", "боевик"]    
-    },
-    "090": {
-        "title": "Стражи Галактики 3",
-        "year": 1,
-        "video": "BAACAgIAAxkBAAIRgmmHZozfFaDJU9-GzewUxMvX36IRAAIDjwACvv9BSCRoCR69DxQdOgQ",
-        "description": "",
-        "country": "",
-        "director": "",
-        "genres": [""]    
-    },
+    # "077": {
+    #     "title": "Человек муравей и оса",
+    #     "year": 1,
+    #     "video": "BAACAgIAAxkBAAISPmmIZyJu52gCYQyDcm0ZN-lF-hpLAALtmQACiudJSKSqCPxxCZbPOgQ",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": ["фантастика", "боевик"]    
+    # },
+    # "078": {
+    #     "title": "Капитан Марвел",
+    #     "year": 1,
+    #     "video": "BAACAgIAAxkBAAISTWmIbGKc3xaglmjVqMFa5dtM2qg6AAJAmgACiudJSDlG-KHR5BuMOgQ",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": ["фантастика", "боевик"]    
+    # },
+    # "079": {
+    #     "title": "Мстители: финал",
+    #     "year": 1,
+    #     "video": "BAACAgIAAxkBAAIRlWmHaOogvRtBLdt9DK3ZiLmQyjRzAAIgjwACvv9BSEzovPaIhiSCOgQ",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": ["фантастика", "боевик"]    
+    # },
+    # "080": {
+    #     "title": "Человек-паук: вдали от дома",
+    #     "year": 1,
+    #     "video": "BAACAgIAAxkBAAIST2mIbM9kwuaESp-0PogL947DDTiEAAJFmgACiudJSOS9nSPa7vWIOgQ",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": ["фантастика", "боевик"]    
+    # },
+    # "084": {
+    #     "title": "Черная вдова",
+    #     "year": 1,
+    #     "video": "BAACAgIAAxkBAAISUWmIbT_cKeBdrcqFZa2C4EEQG1zCAAJLmgACiudJSHlaMlVe49sVOgQ",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": ["фантастика", "боевик"]    
+    # },
+    # "085": {
+    #     "title": "Шан-чи и легенда 10 колец",
+    #     "year": 1,
+    #     "video": "BAACAgIAAxkBAAISVWmIbghEJ0RfILOLmv0NlFAAAfw0aQACU5oAAornSUi6O5i6meqVZToE",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": ["фантастика", "боевик"]    
+    # },
+    # "086": {
+    #     "title": "Вечные",
+    #     "year": 1,
+    #     "video": "BAACAgIAAxkBAAISV2mIbyebBSZwQMEeiMnHkgqhCypYAAJmmgACiudJSPizCn7XN4F_OgQ",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": ["фантастика", "боевик"]    
+    # },
+    # "087": {
+    #     "title": "Человек-паук: нет пути домой",
+    #     "year": 1,
+    #     "video": "BAACAgIAAxkBAAISU2mIbZuSMIvbm0gu0jEVjMgC13BiAAJOmgACiudJSJJCn66efnx7OgQ",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": ["фантастика", "боевик"]    
+    # },
+    # "088": {
+    #     "title": "Доктор Стрэндж в мультивселенной безумия",
+    #     "year": 1,
+    #     "video": "BAACAgIAAxkBAAISQmmIZ-V4K5LWUce9v6n83Zi5F6rvAAL6mQACiudJSFQz9wFbbhSCOgQ",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": ["фантастика", "боевик"]    
+    # },
+    # "089": {
+    #     "title": "Тор: любовь и гром",
+    #     "year": 1,
+    #     "video": "BAACAgIAAxkBAAIRfGmHZUwg8j4_bDCA0DJKBltIhSOoAAJ9jAACvv85SI6gPv1yKavGOgQ",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": ["фантастика", "боевик"]    
+    # },
+    # "090": {
+    #     "title": "Стражи Галактики 3",
+    #     "year": 1,
+    #     "video": "BAACAgIAAxkBAAIRgmmHZozfFaDJU9-GzewUxMvX36IRAAIDjwACvv9BSCRoCR69DxQdOgQ",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
 }
 
 series = {
