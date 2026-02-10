@@ -826,6 +826,15 @@ movies = {
         "director": "Джеймс Ганн",
         "genres": ["фантастика", "боевик", "комедия"]    
     },
+    "091": {
+        "title": "Тайна 7 сестёр",
+        "year": 2017,
+        "video": "BAACAgIAAxkBAAIUXmmLZaAEfF5eRvBU0WQD3OOWnUQTAAKnnwACUAhZSIqtWjydTjEXOgQ",
+        "description": "В далеком будущем демографический бум приводит к нехватке еды, воды и жилья. Общемировое правительство принимает закон о политике одного ребенка в семье. В это тяжелое время рождаются семь девочек-близнецов, которых скрывает дедушка, так как мать погибла при родах. Названные в честь дней недели, они с детства обучены вести себя как один человек, чтобы хранить свою тайну от окружающих и полицейских, которые проверяют всех на каждом углу улиц. Так девушки и появляются на людях — каждая в свой день. Но однажды Понедельник пропадает.",
+        "country": "Великобритания, Франция, США",
+        "director": "Томми Виркола",
+        "genres": ["триллер", "детектив", "боевик", "криминал"]    
+    },
 }
 
 series = {
@@ -2809,6 +2818,111 @@ series = {
                         "title": "Лондон",
                         "video": "BAACAgIAAxkBAAIOoWmDutUgZaoDbCuFnaIcPMGqLOJVAAL6oAACYFYgSLQCUkt9sHmtOAQ",
                     },
+                ]
+            },
+        }
+    },
+    "081": {
+        "title": "Ванда/Вижн",
+        "year": 2021,
+        "episode_counter": "9 серий",
+        "description": "Ванда и Вижн — молодожены, живущие в идиллическом городке Вествью. Поначалу жизнь героев кажется им идеальной, но постепенно они понимают, что это не так.",
+        "poster": "AgACAgIAAxkBAAIUSmmLYgfU0c8GmV4rynRyyGfMru6sAAKxGGsbUAhZSP87ZnaE3l1JAQADAgADeQADOgQ",
+        "country": "США",
+        "director": "Мэтт Шекман",
+        "genres": ["фантастика", "боевик", "драма", "мелодрама"],
+        "seasons": {
+            1: {
+                "title" : "Сезон 1",
+                "episodes": [
+                    {
+                        "video": "BAACAgIAAxkBAAIUTGmLYqJSXdRi4ub1xXMV36bF-t6yAAJknwACUAhZSPDnoTo1GWSgOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIUTmmLYuCkN2w-vnhizBy9mOvCfUBOAAJmnwACUAhZSDyoO47817srOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIUUGmLYxPFXSnEjHEV1ZFhdxkvZqVYAAJpnwACUAhZSHZdcJgWzpQeOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIUUmmLY0sxgKRhybxuPgR7j2XAdyqQAAJunwACUAhZSEf44SH1hcMzOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIUVGmLY41IHeDGv9-jsTHYU8MooWa9AAJxnwACUAhZSIEs1Iams5pwOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIUVmmLY8tCb5gl37OkG5aiJum-_fMGAAJ5nwACUAhZSOq6Yk_rrqtaOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIUWGmLZAk1PerF_FV3BtE-IiJKMxYpAAKCnwACUAhZSPrvKYM_4YkpOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIUWmmLZFUxImrOnP-Do9vR_3idC8NqAAKLnwACUAhZSN1myU5jQ6BwOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIUXGmLZKqrmr1RUY-IBSEfEJYc3yiEAAKVnwACUAhZSHvlhSNCM4CqOgQ",
+                    },
+                    
+                ]
+            },
+        }
+    },   
+    "082": {
+        "title": "Локи",
+        "year": 2021,
+        "episode_counter": "12 серий",
+        "description": "Локи попадает в таинственную организацию «Управление временными изменениями» после того, как он украл Тессеракт, и путешествует во времени, меняя историю.",
+        "poster": "AgACAgIAAxkBAAIURGmLV01DzsI_DBMTYaLp3u5HDbR8AAIwGGsbUAhZSCe1xQl7AopeAQADAgADeQADOgQ",
+        "country": "США",
+        "director": "Джастин Бенсон",
+        "genres": ["фантастика", "боевик"],
+        "seasons": {
+            1: {
+                "title" : "Сезон 1",
+                "episodes": [
+                    {
+                        "video": "BAACAgIAAxkBAAIULGmLURI3LK7SQIJu46VMlun0DxWvAAI1ngACUAhZSFn4zTMsmHHcOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIULmmLUYSZBJB0PUwBjPtW0HIPLK9bAAI6ngACUAhZSODsqMc_7IsuOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIUMGmLUdbLWGDLoU5e89VKptyF26qLAAI-ngACUAhZSMma3FUYrCLfOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIUMmmLUjDyWZvSGchxioJ5wYThgpK3AAJJngACUAhZSOmfxSGCUdPEOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIUNGmLUo53F0Zhff9S9IgnG0KtI1DPAAJNngACUAhZSLN9EGa2ZNCHOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIUNmmLUuT5OdJl8U1JoSgw_CN5zC-JAAJWngACUAhZSEzqtSbmxFPfOgQ",
+                    },
+                    
+                ]
+            },
+            2: {
+                "title" : "Сезон 2",
+                "episodes": [
+                    {
+                        "video": "BAACAgIAAxkBAAIUOGmLUzZ09zXuneiHM1ZPwtZPqR7VAAJZngACUAhZSHUBfRmYAAFLTDoE",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIUOmmLU5cMDuY5SOtpug6pnOpkz355AAJfngACUAhZSLkCqfj57li8OgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIUPGmLU_qgoIq8udT14Lnm4ZXfC8dqAAJmngACUAhZSJQ5XPpTu9y1OgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIUPmmLVEfCyWoAAeN5WelzUX3-eZzsugACbJ4AAlAIWUhox0F8LCLSxzoE",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIUQGmLVJtc8a-ZpQcLZoJgifG8pS7XAAJvngACUAhZSO6YJ1-r4Ja8OgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIUQmmLVQOhojpgDfFQnsvHSGzc74NOAAJ0ngACUAhZSGlvQ078zkoNOgQ",
+                    },
+                    
                 ]
             },
         }
