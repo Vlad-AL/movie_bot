@@ -226,12 +226,6 @@ movies = {
         "director": "CLAP",
         "genres": ["драма", "аниме"]    
     },
-    "016": {
-        "warning": "Сериал скоро будет загружен в бот.. ⏳ \n\n@kinonawe4er - все наши фильмы и сериалы"
-    },
-    "017": {
-        "warning": "Сериал скоро будет загружен в бот.. ⏳ \n\n@kinonawe4er - все наши фильмы и сериалы"
-    },
     "018": {
         "title": "Иллюзия полёта",
         "year": 2005,
@@ -1417,6 +1411,158 @@ series = {
                     },
                     {
                         "video": "BAACAgIAAxkBAAITjmmIwqa89YlqnE_6j2e_qCoIfFPDAAIToAACiudJSHBGI2GJRpZcOgQ",
+                    },
+                ]
+            },
+        }
+    },
+    "016": {
+        "title": "Душегубы",
+        "year": 2021,
+        "episode_counter": "20 серий",
+        "description": "Старший следователь прокуратуры Леонид Ипатьев попадает в эпицентр охоты на самых опасных маньяков Советского Союза. Его работа — не просто расследования, это противостояние со злом, прячущимся под маской добропорядочности.",
+        "poster": "AgACAgIAAxkBAAIVfmmPKfntazuj9emhb5SvqaE2F7x1AAKJGGsbKTp4SP-r9HBPl-wWAQADAgADeAADOgQ",
+        "country": "Россия",
+        "director": "Давид Ткебучава",
+        "genres": ["детектив", "криминал"],
+        "seasons": {
+            1: {
+                "title" : "Сезон 1",
+                "episodes": [
+                    {
+                        "video": "BAACAgIAAxkBAAIVUGmPJsD0LsZ5vM453GlFLYAM3C8EAAKTkAACKTp4SHcqiHhdqQrzOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVUmmPJto5bB3Ezihqeap35DWdKECxAAKXkAACKTp4SAa1oMimrXXVOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVVGmPJvUO8_zp3_1JOCy-Cqil00LpAAKakAACKTp4SE6veFhp3aIOOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVVmmPJxC_xfG4S59psbLZQHFimc1MAAKfkAACKTp4SKpXvlUXk4oMOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVWGmPJ2ae7Fhw6N8uWcP0rUcl1wKBAAKskAACKTp4SP8IbwMwpQL5OgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVWmmPJ38zczaQrSy9UFnG4apwjbQkAAKtkAACKTp4SN2UsG9h-cmMOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVXGmPJ5uEdXp0BfYB41Y6C34KlIOyAAKwkAACKTp4SMApeJVLzVnrOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVXmmPJ7MWIYKugYCqweODDtHtpNZ2AAKykAACKTp4SCsf65Z6exd1OgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVYGmPJ8kUs4Dt0ZiTh3QgN3z004pmAAKzkAACKTp4SKiorS5OpL5POgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVYmmPJ-LBaokOL7UOgHyXxc4XywAB-AACuJAAAik6eEigjK_b3ciVFjoE",
+                    },
+                ]
+            },
+            2: {
+                "title" : "Сезон 2",
+                "episodes": [
+                    {
+                        "video": "BAACAgIAAxkBAAIVZGmPJ_ivie_Q-hf9t09Rg2ofjvqhAAK5kAACKTp4SFOkUom6N0kdOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVZmmPKBTxDR2GDQPM_CFUc2M7F5qWAAK9kAACKTp4SO8Xaorc3xJ-OgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVbWmPKC_7V0Gmbn39MBW2NghpHyXqAAK-kAACKTp4SFBiXHWArxO3OgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVcGmPKElGLt-YWf2G30vaZxWKxfi9AALAkAACKTp4SAABJCCgZN7I0DoE",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVcmmPKGJTjmy9MOThL-xVKoDOhyPFAALCkAACKTp4SHzAtYFkgjz6OgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVdGmPKHwhP5qvm_H2p9y7nXgXZ9ubAALGkAACKTp4SEPNO5xuSm-VOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVdmmPKJZ1mqAVGCpP0P3HsHofPdDnAALHkAACKTp4SKnnrUTSGBFMOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVeGmPKLDo4vdqMKL8-HPn-aTWQGnxAALJkAACKTp4SA4JKSV4KBJIOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVemmPKMlMNaJ6sg-vwfnSvB1CrXS1AALMkAACKTp4SApL5shkb9gHOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVfGmPKOM3nWdf1UogqzXiI2q8fGtIAALPkAACKTp4SMll4GKThk2dOgQ",
+                    },
+                ]
+            },
+        }
+    },
+    "017": {
+        "title": "Пассажиры",
+        "year": 2020,
+        "episode_counter": "16 серий",
+        "description": "Водитель необычного такси возит души до их места назначения, но чтобы добраться, им сперва нужно признаться, что держит их на Земле.",
+        "poster": "AgACAgIAAxkBAAIVgGmPKwAB-6T1iURCEU3RPJhltlD9uAAClhhrGyk6eEiv5zpDX0B8_QEAAwIAA3gAAzoE",
+        "country": "Россия",
+        "director": "Карен Оганесян",
+        "genres": ["драма", "мистика"],
+        "seasons": {
+            1: {
+                "title" : "Сезон 1",
+                "episodes": [
+                    {
+                        "video": "BAACAgIAAxkBAAIVh2mPOFA1DuMzBwuJ8pS8nbdB_DibAAKLkQACKTp4SG1IRJtgUVAqOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIViWmPOHbNUMvS89JvDTMZBWwqz8CBAAKPkQACKTp4SKj5-8pI7q10OgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVi2mPOJrxDXi7-zsvJ8XIVkAS1irkAAKQkQACKTp4SIFM_v6mXWSUOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVjWmPOMPqEsFCgZQePPFC-VDH4im3AAKSkQACKTp4SEmqj9togHXtOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVj2mPOOumCSEgQA7w4IR-ZkyVLMB0AAKUkQACKTp4SDKibsJexO0SOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVkWmPORGhr6eW1ULCTsdVGx2l4oKOAAKWkQACKTp4SJb9IHPgqxWbOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVk2mPOUHW6t2PePuZgbjLAccv57C3AAKakQACKTp4SJlZatUwD4khOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVlWmPOWvh5DX3L5Nl6KTffpZH4j9uAAKbkQACKTp4SINHlM9rAAFJUToE",
+                    },
+                ]
+            },
+            2: {
+                "title" : "Сезон 2",
+                "episodes": [
+                    {
+                        "video": "BAACAgIAAxkBAAIVl2mPOZ18OveXMr5BU7ENjDaMmSCyAAKckQACKTp4SJhgcVF08uCiOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVmWmPOcePyAu6cp8jYgABExr4wroNoQACnZEAAik6eEgzmVFkVxcU1ToE",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVm2mPOfGYVmGSVQdZeheXfUUvJiYHAAKikQACKTp4SBuxssDuW6CuOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVnWmPOhtwgIjD03lW4fy4G7lWgfI1AAKkkQACKTp4SA-JxE6UPPxVOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVn2mPO8MZ2SAIhUYZuwN1KqlUC9YeAAK6kQACKTp4SMhaAAHZS6DzBToE",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVoWmPO8OMxCVcLQ94E5zk3kfDpv6uAAK8kQACKTp4SEEQQKTSUDqEOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVommPO8N4_zeFmcEUbx5Vw3522rv4AAK9kQACKTp4SFR1EF4kyXXWOgQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIVoGmPO8PDhgVjTe9gyNIeatMOfeixAAK7kQACKTp4SD2eC7c0nQABqDoE",
                     },
                 ]
             },
