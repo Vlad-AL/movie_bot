@@ -2,8 +2,6 @@ import asyncio
 import sqlite3
 import re
 from aiogram import Bot, Dispatcher, types
-from aiohttp import ClientSession
-from aiohttp_socks import ProxyConnector
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.filters import Command
 from datetime import datetime
@@ -64,13 +62,7 @@ db.commit()
 
 TOKEN = "8425155912:AAEg3-V9hNc8nugIAvTyywxc4dfUSMxWLG4"
 
-PROXY_URL = "socks5://144.124.227.90:21074"
-
-connector = ProxyConnector.from_url(PROXY_URL)
-session = ClientSession(connector=connector)
-
-bot = Bot(token=TOKEN, session=session)
-
+bot = Bot(token=TOKEN)
 dp = Dispatcher()
 
 CHANNEL_USERNAME = "@kinonawe4er"
