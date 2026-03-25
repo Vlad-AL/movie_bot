@@ -8,6 +8,8 @@ from datetime import datetime
 import os
 from aiogram import Bot, Dispatcher
 
+print("Бот запущен")
+
 TOKEN = "8425155912:AAFT4AIwrRphrV8g4IenxwxIL2wSRN95uKA"
 
 from aiogram import Bot, Dispatcher
