@@ -6,14 +6,14 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.filters import Command
 from datetime import datetime
 import os
-from dotenv import load_dotenv
+from aiogram import Bot, Dispatcher
 
-load_dotenv()
-TOKEN = os.getenv("8425155912:AAEKch28QIb6dIUTxnl3g9dvkkgtTphsXLI")
+TOKEN = "8425155912:AAFT4AIwrRphrV8g4IenxwxIL2wSRN95uKA"
 
-print("TOKEN:", TOKEN)
+from aiogram import Bot, Dispatcher
 
 bot = Bot(token=TOKEN)
+dp = Dispatcher()
 
 db = sqlite3.connect("users.db")
 cursor = db.cursor()
@@ -69,8 +69,6 @@ def get_users_count() -> int:
 
 db.commit()
 
-
-dp = Dispatcher()
 
 CHANNEL_USERNAME = "@kinonawe4er"
 
