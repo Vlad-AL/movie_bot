@@ -60,7 +60,7 @@ def get_users_count() -> int:
 
 db.commit()
 
-TOKEN = "8425155912:AAEg3-V9hNc8nugIAvTyywxc4dfUSMxWLG4"
+TOKEN = "8425155912:AAEKch28QIb6dIUTxnl3g9dvkkgtTphsXLI"
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
