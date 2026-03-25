@@ -8,6 +8,13 @@ from datetime import datetime
 import os
 from dotenv import load_dotenv
 
+load_dotenv()
+TOKEN = os.getenv("8425155912:AAEKch28QIb6dIUTxnl3g9dvkkgtTphsXLI")
+
+print("TOKEN:", TOKEN)
+
+bot = Bot(token=TOKEN)
+
 db = sqlite3.connect("users.db")
 cursor = db.cursor()
 
@@ -62,10 +69,7 @@ def get_users_count() -> int:
 
 db.commit()
 
-load_dotenv()
-TOKEN = os.getenv("8425155912:AAEKch28QIb6dIUTxnl3g9dvkkgtTphsXLI")
 
-bot = Bot(token=TOKEN)
 dp = Dispatcher()
 
 CHANNEL_USERNAME = "@kinonawe4er"
