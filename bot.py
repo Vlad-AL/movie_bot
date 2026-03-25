@@ -5,6 +5,8 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.filters import Command
 from datetime import datetime
+import os
+from dotenv import load_dotenv
 
 db = sqlite3.connect("users.db")
 cursor = db.cursor()
@@ -60,7 +62,8 @@ def get_users_count() -> int:
 
 db.commit()
 
-TOKEN = "8425155912:AAEKch28QIb6dIUTxnl3g9dvkkgtTphsXLI"
+load_dotenv()
+TOKEN = os.getenv("8425155912:AAEKch28QIb6dIUTxnl3g9dvkkgtTphsXLI")
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
