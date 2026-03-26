@@ -83,10 +83,18 @@ async def send_long_text(message, text, chunk_size=3800):
     for i in range(0, len(text), chunk_size):
         await message.answer(text[i:i + chunk_size])
 
+
+subscribed_cache = {}
+
 async def is_subscribed(user_id: int) -> bool:
+    if user_id in subscribed_cache:
+        return subscribed_cache[user_id]
+
     try:
         member = await bot.get_chat_member(CHANNEL_USERNAME, user_id)
-        return member.status not in ("left", "kicked")
+        result = member.status not in ("left", "kicked")
+        subscribed_cache[user_id] = result
+        return result
     except:
         return False
 
