@@ -86,17 +86,17 @@ async def send_long_text(message, text, chunk_size=3800):
 
 subscribed_cache = {}
 
-async def is_subscribed(user_id: int) -> bool:
-    if user_id in subscribed_cache:
-        return subscribed_cache[user_id]
+# async def is_subscribed(user_id: int) -> bool:
+#     if user_id in subscribed_cache:
+#         return subscribed_cache[user_id]
 
-    try:
-        member = await bot.get_chat_member(CHANNEL_USERNAME, user_id)
-        result = member.status not in ("left", "kicked")
-        subscribed_cache[user_id] = result
-        return result
-    except:
-        return False
+#     try:
+#         member = await bot.get_chat_member(CHANNEL_USERNAME, user_id)
+#         result = member.status not in ("left", "kicked")
+#         subscribed_cache[user_id] = result
+#         return result
+#     except:
+#         return False
 
 @dp.message(Command("top"))
 async def top_users(message: types.Message):
@@ -3439,13 +3439,13 @@ async def open_item(callback: types.CallbackQuery):
     user_id = callback.from_user.id
     
     if item_type == "movie":
-        if not await is_subscribed(user_id):
-            await callback.message.answer(
-                "Для просмотра фильма подпишитесь на канал @kinonawe4er",
-                reply_markup=subscribe_keyboard_movie(code)
-            )
-            await callback.answer()
-            return
+        # if not await is_subscribed(user_id):
+        #     await callback.message.answer(
+        #         "Для просмотра фильма подпишитесь на канал @kinonawe4er",
+        #         reply_markup=subscribe_keyboard_movie(code)
+        #     )
+        #     await callback.answer()
+        #     return
         movie = movies[code]  # создаем movie первым!
 
         if has_only_warning(movie):
@@ -3481,9 +3481,9 @@ async def check_movie_callback(callback: types.CallbackQuery):
     _, code = callback.data.split(":")
     user_id = callback.from_user.id
 
-    if not await is_subscribed(user_id):
-        await callback.answer("❌ Вы ещё не подписались", show_alert=True)
-        return
+    # if not await is_subscribed(user_id):
+    #     await callback.answer("❌ Вы ещё не подписались", show_alert=True)
+    #     return
 
     movie = movies.get(code)
     if not movie:
@@ -3696,20 +3696,20 @@ async def send_episode(
 ):
     user_id = target.from_user.id if isinstance(target, types.CallbackQuery) else target.chat.id
 
-    if not await is_subscribed(user_id):
-        keyboard = InlineKeyboardMarkup(inline_keyboard=[
-            [InlineKeyboardButton(text="📍 Подписаться", url="https://t.me/kinonawe4er")],
-            [InlineKeyboardButton(
-                text="🔎 Проверить",
-                callback_data=f"check_sub:{code}:{episode_index}"
-            )]
-        ])
+    # if not await is_subscribed(user_id):
+    #     keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    #         [InlineKeyboardButton(text="📍 Подписаться", url="https://t.me/kinonawe4er")],
+    #         [InlineKeyboardButton(
+    #             text="🔎 Проверить",
+    #             callback_data=f"check_sub:{code}:{episode_index}"
+    #         )]
+    #     ])
 
-        await target.message.answer(
-            "Для просмотра серии подпишитесь на канал @kinonawe4er",
-            reply_markup=keyboard
-        )
-        return
+    #     await target.message.answer(
+    #         "Для просмотра серии подпишитесь на канал @kinonawe4er",
+    #         reply_markup=keyboard
+    #     )
+    #     return
 
     serial = series[code]
     episodes = get_episodes(serial, season)
@@ -3845,12 +3845,12 @@ async def handle_message(message: types.Message):
         item_type, code, _ = results[0]
 
         if item_type == "movie":
-            if not await is_subscribed(message.from_user.id):
-                await message.answer(
-                    "Для просмотра фильма подпишитесь на канал @kinonawe4er",
-                        reply_markup=subscribe_keyboard_movie(code)
-                )
-                return
+            # if not await is_subscribed(message.from_user.id):
+            #     await message.answer(
+            #         "Для просмотра фильма подпишитесь на канал @kinonawe4er",
+            #             reply_markup=subscribe_keyboard_movie(code)
+            #     )
+            #     return
             movie = movies[code]
 
             if has_only_warning(movie):
