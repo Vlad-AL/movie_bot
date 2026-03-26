@@ -127,14 +127,6 @@ async def stats_cmd(message: types.Message):
     count = get_users_count()
     await message.answer(f"Всего пользователей: {count}")
 
-
-async def main():
-    await dp.start_polling(bot)
-
-
-if __name__ == "__main__":
-    asyncio.run(main())
-
 movies = {
     "001": {
         "title": "Фокус",
