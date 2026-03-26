@@ -7,17 +7,13 @@ from aiogram.filters import Command
 from datetime import datetime
 import os
 from aiogram import Bot, Dispatcher
-from aiogram import executor
-
-print("Бот запущен")
+from aiogram.types import Message
+import asyncio
 
 TOKEN = "8425155912:AAFT4AIwrRphrV8g4IenxwxIL2wSRN95uKA"
 
-from aiogram import Bot, Dispatcher
-
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
-executor.start_polling(dp)
 
 db = sqlite3.connect("users.db")
 cursor = db.cursor()
