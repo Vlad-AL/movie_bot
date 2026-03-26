@@ -5,9 +5,7 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.filters import Command
 from datetime import datetime
-import os
 from aiogram import Bot, Dispatcher
-from aiogram.types import Message
 import asyncio
 
 TOKEN = "8425155912:AAFT4AIwrRphrV8g4IenxwxIL2wSRN95uKA"
@@ -15,8 +13,11 @@ TOKEN = "8425155912:AAFT4AIwrRphrV8g4IenxwxIL2wSRN95uKA"
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
 
-db = sqlite3.connect("users.db")
+db = sqlite3.connect("users.db", check_same_thread=False)
 cursor = db.cursor()
+
+cursor.execute("PRAGMA journal_mode=WAL;")
+cursor.execute("PRAGMA synchronous=NORMAL;")
 
 ADMIN_ID = 666877639
 
@@ -32,8 +33,7 @@ def add_or_update_user(user):
     if exists:
         cursor.execute("""
             UPDATE users
-            SET last_seen = ?,
-                requests_count = requests_count + 1
+            SET last_seen = ?, requests_count = requests_count + 1
             WHERE user_id = ?
         """, (now, user.id))
     else:
@@ -67,22 +67,9 @@ def get_users_count() -> int:
     cursor.execute("SELECT COUNT(*) FROM users")
     return cursor.fetchone()[0]
 
-db.commit()
-
 
 CHANNEL_USERNAME = "@kinonawe4er"
 
-async def send_long_text(message, text, chunk_size=3800):
-    for i in range(0, len(text), chunk_size):
-        await message.answer(text[i:i + chunk_size], parse_mode="HTML")
-
-async def is_subscribed(user_id: int) -> bool:
-    try:
-        member = await bot.get_chat_member(CHANNEL_USERNAME, user_id)
-        return member.status not in ("left", "kicked")
-    except:
-        return False
-    
 def get_all_users(limit: int = 20):
     cursor.execute("""
         SELECT user_id, username, first_name, last_name, requests_count, last_seen
@@ -92,6 +79,17 @@ def get_all_users(limit: int = 20):
     """, (limit,))
     return cursor.fetchall()
 
+async def send_long_text(message, text, chunk_size=3800):
+    for i in range(0, len(text), chunk_size):
+        await message.answer(text[i:i + chunk_size])
+
+async def is_subscribed(user_id: int) -> bool:
+    try:
+        member = await bot.get_chat_member(CHANNEL_USERNAME, user_id)
+        return member.status not in ("left", "kicked")
+    except:
+        return False
+
 @dp.message(Command("top"))
 async def top_users(message: types.Message):
     if not is_admin(message.from_user.id):
@@ -99,29 +97,27 @@ async def top_users(message: types.Message):
 
     users = get_top_users()
 
-    text = "🏆 <b>Топ активных пользователей</b>\n\n"
+    text = "🏆 Топ пользователей\n\n"
     for i, (uid, count) in enumerate(users, 1):
-        text += f"{i}. <code>{uid}</code> — {count} сообщений\n"
+        text += f"{i}. {uid} — {count}\n"
 
-    await message.answer(text, parse_mode="HTML")
+    await message.answer(text)
+
 
 @dp.message(Command("users"))
 async def show_users(message: types.Message):
     if not is_admin(message.from_user.id):
         return
-    
+
     users = get_all_users()
 
-    text = "<b>👥 Все пользователи бота</b>\n\n"
+    text = "👥 Пользователи\n\n"
     for i, (uid, username, first_name, last_name, count, last_seen) in enumerate(users, 1):
-        name = f"{first_name or ''} {last_name or ''}".strip() or username or "Неизвестно"
-        text += (
-            f"{i}. {name} (<code>{uid}</code>)\n"
-            f"   🔹 запросов: {count}\n"
-            f"   🕒 последний визит: {last_seen}\n\n"
-        )
+        name = f"{first_name or ''} {last_name or ''}".strip() or username or "Unknown"
+        text += f"{i}. {name} ({uid}) — {count}\n"
 
     await send_long_text(message, text)
+
 
 @dp.message(Command("stats"))
 async def stats_cmd(message: types.Message):
@@ -129,7 +125,15 @@ async def stats_cmd(message: types.Message):
         return
 
     count = get_users_count()
-    await message.answer(f"👥 Всего пользователей: {count}")
+    await message.answer(f"Всего пользователей: {count}")
+
+
+async def main():
+    await dp.start_polling(bot)
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
 
 movies = {
     "001": {
