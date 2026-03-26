@@ -18,20 +18,6 @@ dp = Dispatcher()
 db = sqlite3.connect("users.db")
 cursor = db.cursor()
 
-cursor.execute("""
-CREATE TABLE IF NOT EXISTS users (
-    user_id INTEGER PRIMARY KEY,
-    username TEXT,
-    first_name TEXT,
-    last_name TEXT,
-    first_seen TIMESTAMP,
-    last_seen TIMESTAMP,
-    requests_count INTEGER
-)
-""")
-db.commit()
-db.close()
-
 ADMIN_ID = 666877639
 
 def is_admin(user_id: int) -> bool:
