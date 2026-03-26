@@ -7,6 +7,7 @@ from aiogram.filters import Command
 from datetime import datetime
 import os
 from aiogram import Bot, Dispatcher
+from aiogram import executor
 
 print("Бот запущен")
 
@@ -16,6 +17,7 @@ from aiogram import Bot, Dispatcher
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
+executor.start_polling(dp)
 
 db = sqlite3.connect("users.db")
 cursor = db.cursor()
