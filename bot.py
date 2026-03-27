@@ -6,10 +6,7 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.filters import Command
 from datetime import datetime
 from aiogram import Bot, Dispatcher
-from collections import defaultdict
 import asyncio
-from functools import lru_cache
-import time
 
 TOKEN = "8425155912:AAFT4AIwrRphrV8g4IenxwxIL2wSRN95uKA"
 
@@ -26,6 +23,49 @@ ADMIN_ID = 666877639
 
 def is_admin(user_id: int) -> bool:
     return user_id == ADMIN_ID
+
+def add_or_update_user(user):
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    cursor.execute("SELECT user_id FROM users WHERE user_id = ?", (user.id,))
+    exists = cursor.fetchone()
+
+    if exists:
+        cursor.execute("""
+            UPDATE users
+            SET last_seen = ?, requests_count = requests_count + 1
+            WHERE user_id = ?
+        """, (now, user.id))
+    else:
+        cursor.execute("""
+            INSERT INTO users (
+                user_id, username, first_name, last_name,
+                first_seen, last_seen, requests_count
+            )
+            VALUES (?, ?, ?, ?, ?, ?, 1)
+        """, (
+            user.id,
+            user.username,
+            user.first_name,
+            user.last_name,
+            now,
+            now
+        ))
+
+    db.commit()
+
+def get_top_users(limit=10):
+    cursor.execute("""
+        SELECT user_id, requests_count
+        FROM users
+        ORDER BY requests_count DESC
+        LIMIT ?
+    """, (limit,))
+    return cursor.fetchall()
+
+def get_users_count() -> int:
+    cursor.execute("SELECT COUNT(*) FROM users")
+    return cursor.fetchone()[0]
 
 
 CHANNEL_USERNAME = "@kinonawe4er"
@@ -44,22 +84,49 @@ async def send_long_text(message, text, chunk_size=3800):
         await message.answer(text[i:i + chunk_size])
 
 
-subscription_cache = {}
-
 async def is_subscribed(user_id: int) -> bool:
-    now = time.time()
-    if user_id in subscription_cache:
-        cached_time, status = subscription_cache[user_id]
-        if now - cached_time < 300:  # 5 минут
-            return status
-    
     try:
         member = await bot.get_chat_member(CHANNEL_USERNAME, user_id)
-        status = member.status not in ("left", "kicked")
-        subscription_cache[user_id] = (now, status)
-        return status
+        return member.status not in ("left", "kicked")
     except:
         return False
+
+@dp.message(Command("top"))
+async def top_users(message: types.Message):
+    if not is_admin(message.from_user.id):
+        return
+
+    users = get_top_users()
+
+    text = "🏆 Топ пользователей\n\n"
+    for i, (uid, count) in enumerate(users, 1):
+        text += f"{i}. {uid} — {count}\n"
+
+    await message.answer(text)
+
+
+@dp.message(Command("users"))
+async def show_users(message: types.Message):
+    if not is_admin(message.from_user.id):
+        return
+
+    users = get_all_users()
+
+    text = "👥 Пользователи\n\n"
+    for i, (uid, username, first_name, last_name, count, last_seen) in enumerate(users, 1):
+        name = f"{first_name or ''} {last_name or ''}".strip() or username or "Unknown"
+        text += f"{i}. {name} ({uid}) — {count}\n"
+
+    await send_long_text(message, text)
+
+
+@dp.message(Command("stats"))
+async def stats_cmd(message: types.Message):
+    if not is_admin(message.from_user.id):
+        return
+
+    count = get_users_count()
+    await message.answer(f"Всего пользователей: {count}")
 
 movies = {
     "001": {
@@ -3236,34 +3303,12 @@ def search_by_title(query: str):
 
     return results
 
-movie_search_index = {}
-series_search_index = {}
-
-for code, movie in movies.items():
-    title_norm = normalize(movie.get("title", ""))
-    movie_search_index[title_norm] = ("movie", code, movie)
-
-for code, serial in series.items():
-    title_norm = normalize(serial.get("title", ""))
-    series_search_index[title_norm] = ("series", code, serial)
-
 def search_all(query: str):
-    query = query.strip().lower()
-    
-    # По точному коду
-    if query in movies:
-        return [("movie", query, movies[query])]
-    if query in series:
-        return [("series", query, series[query])]
+    by_code = search_by_code(query)
+    if by_code:
+        return by_code
 
-    norm_query = normalize(query)
-    
-    if norm_query in movie_search_index:
-        return [movie_search_index[norm_query]]
-    if norm_query in series_search_index:
-        return [series_search_index[norm_query]]
-    
-    return []
+    return search_by_title(query)
 
 
 def search_results_keyboard(results):
@@ -3754,6 +3799,7 @@ def find_series(query: str):
 
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
+    add_or_update_user(message.from_user)
     await message.answer(
         "<b>Для просмотра введите название ИЛИ код</b>\n\n"
         "<b>Например: «Фокус» ИЛИ же его код «001»</b>\n\n"
@@ -3765,6 +3811,7 @@ async def cmd_start(message: types.Message):
 
 @dp.message(Command("genres"))
 async def cmd_genres(message: types.Message):
+    add_or_update_user(message.from_user)
     await message.answer(
         "<b>🎭 Выберите жанр:</b>",
         reply_markup=genres_keyboard(),
@@ -3785,6 +3832,8 @@ async def get_photo_id(message: types.Message):
 @dp.message(lambda m: m.text)
 async def handle_message(message: types.Message):
     query = message.text.strip().lower()  # приведение к нижнему регистру
+
+    add_or_update_user(message.from_user)
 
     results = search_all(query)
 
