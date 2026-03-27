@@ -6,7 +6,10 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.filters import Command
 from datetime import datetime
 from aiogram import Bot, Dispatcher
+from collections import defaultdict
 import asyncio
+from functools import lru_cache
+import time
 
 TOKEN = "8425155912:AAFT4AIwrRphrV8g4IenxwxIL2wSRN95uKA"
 
@@ -41,10 +44,20 @@ async def send_long_text(message, text, chunk_size=3800):
         await message.answer(text[i:i + chunk_size])
 
 
+subscription_cache = {}
+
 async def is_subscribed(user_id: int) -> bool:
+    now = time.time()
+    if user_id in subscription_cache:
+        cached_time, status = subscription_cache[user_id]
+        if now - cached_time < 300:  # 5 минут
+            return status
+    
     try:
         member = await bot.get_chat_member(CHANNEL_USERNAME, user_id)
-        return member.status not in ("left", "kicked")
+        status = member.status not in ("left", "kicked")
+        subscription_cache[user_id] = (now, status)
+        return status
     except:
         return False
 
@@ -3223,12 +3236,34 @@ def search_by_title(query: str):
 
     return results
 
-def search_all(query: str):
-    by_code = search_by_code(query)
-    if by_code:
-        return by_code
+movie_search_index = {}
+series_search_index = {}
 
-    return search_by_title(query)
+for code, movie in movies.items():
+    title_norm = normalize(movie.get("title", ""))
+    movie_search_index[title_norm] = ("movie", code, movie)
+
+for code, serial in series.items():
+    title_norm = normalize(serial.get("title", ""))
+    series_search_index[title_norm] = ("series", code, serial)
+
+def search_all(query: str):
+    query = query.strip().lower()
+    
+    # По точному коду
+    if query in movies:
+        return [("movie", query, movies[query])]
+    if query in series:
+        return [("series", query, series[query])]
+
+    norm_query = normalize(query)
+    
+    if norm_query in movie_search_index:
+        return [movie_search_index[norm_query]]
+    if norm_query in series_search_index:
+        return [series_search_index[norm_query]]
+    
+    return []
 
 
 def search_results_keyboard(results):
