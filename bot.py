@@ -13,71 +13,71 @@ TOKEN = "8425155912:AAFT4AIwrRphrV8g4IenxwxIL2wSRN95uKA"
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
 
-db = sqlite3.connect("users.db", check_same_thread=False)
-cursor = db.cursor()
+# db = sqlite3.connect("users.db", check_same_thread=False)
+# cursor = db.cursor()
 
-cursor.execute("PRAGMA journal_mode=WAL;")
-cursor.execute("PRAGMA synchronous=NORMAL;")
+# cursor.execute("PRAGMA journal_mode=WAL;")
+# cursor.execute("PRAGMA synchronous=NORMAL;")
 
 ADMIN_ID = 666877639
 
 def is_admin(user_id: int) -> bool:
     return user_id == ADMIN_ID
 
-def add_or_update_user(user):
-    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+# def add_or_update_user(user):
+#     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-    cursor.execute("SELECT user_id FROM users WHERE user_id = ?", (user.id,))
-    exists = cursor.fetchone()
+#     cursor.execute("SELECT user_id FROM users WHERE user_id = ?", (user.id,))
+#     exists = cursor.fetchone()
 
-    if exists:
-        cursor.execute("""
-            UPDATE users
-            SET last_seen = ?, requests_count = requests_count + 1
-            WHERE user_id = ?
-        """, (now, user.id))
-    else:
-        cursor.execute("""
-            INSERT INTO users (
-                user_id, username, first_name, last_name,
-                first_seen, last_seen, requests_count
-            )
-            VALUES (?, ?, ?, ?, ?, ?, 1)
-        """, (
-            user.id,
-            user.username,
-            user.first_name,
-            user.last_name,
-            now,
-            now
-        ))
+#     if exists:
+#         cursor.execute("""
+#             UPDATE users
+#             SET last_seen = ?, requests_count = requests_count + 1
+#             WHERE user_id = ?
+#         """, (now, user.id))
+#     else:
+#         cursor.execute("""
+#             INSERT INTO users (
+#                 user_id, username, first_name, last_name,
+#                 first_seen, last_seen, requests_count
+#             )
+#             VALUES (?, ?, ?, ?, ?, ?, 1)
+#         """, (
+#             user.id,
+#             user.username,
+#             user.first_name,
+#             user.last_name,
+#             now,
+#             now
+#         ))
 
-    db.commit()
+#     db.commit()
 
-def get_top_users(limit=10):
-    cursor.execute("""
-        SELECT user_id, requests_count
-        FROM users
-        ORDER BY requests_count DESC
-        LIMIT ?
-    """, (limit,))
-    return cursor.fetchall()
+# def get_top_users(limit=10):
+#     cursor.execute("""
+#         SELECT user_id, requests_count
+#         FROM users
+#         ORDER BY requests_count DESC
+#         LIMIT ?
+#     """, (limit,))
+#     return cursor.fetchall()
 
-def get_users_count() -> int:
-    cursor.execute("SELECT COUNT(*) FROM users")
-    return cursor.fetchone()[0]
+# def get_users_count() -> int:
+#     cursor.execute("SELECT COUNT(*) FROM users")
+#     return cursor.fetchone()[0]
 
 
 CHANNEL_USERNAME = "@kinonawe4er"
 
-def get_all_users(limit: int = 20):
-    cursor.execute("""
-        SELECT user_id, username, first_name, last_name, requests_count, last_seen
-        FROM users
-        ORDER BY last_seen DESC
-        LIMIT ?
-    """, (limit,))
-    return cursor.fetchall()
+# def get_all_users(limit: int = 20):
+#     cursor.execute("""
+#         SELECT user_id, username, first_name, last_name, requests_count, last_seen
+#         FROM users
+#         ORDER BY last_seen DESC
+#         LIMIT ?
+#     """, (limit,))
+#     return cursor.fetchall()
 
 async def send_long_text(message, text, chunk_size=3800):
     for i in range(0, len(text), chunk_size):
@@ -91,42 +91,42 @@ async def is_subscribed(user_id: int) -> bool:
     except:
         return False
 
-@dp.message(Command("top"))
-async def top_users(message: types.Message):
-    if not is_admin(message.from_user.id):
-        return
+# @dp.message(Command("top"))
+# async def top_users(message: types.Message):
+#     if not is_admin(message.from_user.id):
+#         return
 
-    users = get_top_users()
+#     users = get_top_users()
 
-    text = "🏆 Топ пользователей\n\n"
-    for i, (uid, count) in enumerate(users, 1):
-        text += f"{i}. {uid} — {count}\n"
+#     text = "🏆 Топ пользователей\n\n"
+#     for i, (uid, count) in enumerate(users, 1):
+#         text += f"{i}. {uid} — {count}\n"
 
-    await message.answer(text)
-
-
-@dp.message(Command("users"))
-async def show_users(message: types.Message):
-    if not is_admin(message.from_user.id):
-        return
-
-    users = get_all_users()
-
-    text = "👥 Пользователи\n\n"
-    for i, (uid, username, first_name, last_name, count, last_seen) in enumerate(users, 1):
-        name = f"{first_name or ''} {last_name or ''}".strip() or username or "Unknown"
-        text += f"{i}. {name} ({uid}) — {count}\n"
-
-    await send_long_text(message, text)
+#     await message.answer(text)
 
 
-@dp.message(Command("stats"))
-async def stats_cmd(message: types.Message):
-    if not is_admin(message.from_user.id):
-        return
+# @dp.message(Command("users"))
+# async def show_users(message: types.Message):
+#     if not is_admin(message.from_user.id):
+#         return
 
-    count = get_users_count()
-    await message.answer(f"Всего пользователей: {count}")
+#     users = get_all_users()
+
+#     text = "👥 Пользователи\n\n"
+#     for i, (uid, username, first_name, last_name, count, last_seen) in enumerate(users, 1):
+#         name = f"{first_name or ''} {last_name or ''}".strip() or username or "Unknown"
+#         text += f"{i}. {name} ({uid}) — {count}\n"
+
+#     await send_long_text(message, text)
+
+
+# @dp.message(Command("stats"))
+# async def stats_cmd(message: types.Message):
+#     if not is_admin(message.from_user.id):
+#         return
+
+#     count = get_users_count()
+#     await message.answer(f"Всего пользователей: {count}")
 
 movies = {
     "001": {
@@ -3799,7 +3799,7 @@ def find_series(query: str):
 
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
-    add_or_update_user(message.from_user)
+    # add_or_update_user(message.from_user)
     await message.answer(
         "<b>Для просмотра введите название ИЛИ код</b>\n\n"
         "<b>Например: «Фокус» ИЛИ же его код «001»</b>\n\n"
@@ -3811,7 +3811,7 @@ async def cmd_start(message: types.Message):
 
 @dp.message(Command("genres"))
 async def cmd_genres(message: types.Message):
-    add_or_update_user(message.from_user)
+    # add_or_update_user(message.from_user)
     await message.answer(
         "<b>🎭 Выберите жанр:</b>",
         reply_markup=genres_keyboard(),
@@ -3833,7 +3833,7 @@ async def get_photo_id(message: types.Message):
 async def handle_message(message: types.Message):
     query = message.text.strip().lower()  # приведение к нижнему регистру
 
-    add_or_update_user(message.from_user)
+    # add_or_update_user(message.from_user)
 
     results = search_all(query)
 
