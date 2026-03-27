@@ -19,7 +19,6 @@ connector = aiohttp.TCPConnector(
     family=2,                    # только IPv4
     ssl=False,                   # временно отключаем проверку SSL (для теста)
     limit=100,
-    ttl_dns_cache=300
 )
 
 session = AiohttpSession(
