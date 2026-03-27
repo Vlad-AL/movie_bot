@@ -11,11 +11,26 @@ import asyncio
 from functools import lru_cache
 import time
 from aiogram.client.session.aiohttp import AiohttpSession
-from aiogram.enums import ParseMode
+import ssl
+import aiohttp
+
+# Жёсткий вариант для проблемных VPS
+connector = aiohttp.TCPConnector(
+    family=2,                    # только IPv4
+    ssl=False,                   # временно отключаем проверку SSL (для теста)
+    limit=100,
+    ttl_dns_cache=300
+)
+
+session = AiohttpSession(
+    timeout=60,
+    connector=connector
+)
+
 
 TOKEN = "8425155912:AAFT4AIwrRphrV8g4IenxwxIL2wSRN95uKA"
 
-bot = Bot(token=TOKEN)
+bot = Bot(token=TOKEN, session=session)
 dp = Dispatcher()
 
 db = sqlite3.connect("users.db", check_same_thread=False)
