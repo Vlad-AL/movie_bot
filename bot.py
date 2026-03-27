@@ -11,20 +11,16 @@ import asyncio
 from functools import lru_cache
 import time
 from aiogram.client.session.aiohttp import AiohttpSession
-from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 
 TOKEN = "8425155912:AAFT4AIwrRphrV8g4IenxwxIL2wSRN95uKA"
 
-session = AiohttpSession(
-    timeout=30,                    # увеличиваем таймаут
-    connector_kwargs={"family": 2} # 2 = только IPv4 (AF_INET)
-)
+session = AiohttpSession(timeout=30)
 
 bot = Bot(
     token=TOKEN,
     session=session,
-    default=DefaultBotProperties(parse_mode=ParseMode.HTML)
+    parse_mode=ParseMode.HTML
 )
 
 dp = Dispatcher()
