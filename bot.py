@@ -10,10 +10,23 @@ from collections import defaultdict
 import asyncio
 from functools import lru_cache
 import time
+from aiogram.client.session.aiohttp import AiohttpSession
+from aiogram.client.default import DefaultBotProperties
+from aiogram.enums import ParseMode
 
 TOKEN = "8425155912:AAFT4AIwrRphrV8g4IenxwxIL2wSRN95uKA"
 
-bot = Bot(token=TOKEN)
+session = AiohttpSession(
+    timeout=30,                    # увеличиваем таймаут
+    connector_kwargs={"family": 2} # 2 = только IPv4 (AF_INET)
+)
+
+bot = Bot(
+    token=TOKEN,
+    session=session,
+    default=DefaultBotProperties(parse_mode=ParseMode.HTML)
+)
+
 dp = Dispatcher()
 
 db = sqlite3.connect("users.db", check_same_thread=False)
