@@ -7,10 +7,15 @@ from aiogram.filters import Command
 from datetime import datetime
 from aiogram import Bot, Dispatcher
 import asyncio
+from aiogram.client.session.aiohttp import AiohttpSession
 
 TOKEN = "8425155912:AAFT4AIwrRphrV8g4IenxwxIL2wSRN95uKA"
 
-bot = Bot(token=TOKEN)
+PROXY_URL = "socks5://r4nygK:A5dXE8@196.19.10.69:8000"
+
+session = AiohttpSession(proxy=PROXY_URL, timeout=60)
+
+bot = Bot(token=TOKEN, session=session)
 dp = Dispatcher()
 
 # db = sqlite3.connect("users.db", check_same_thread=False)
