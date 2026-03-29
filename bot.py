@@ -6,19 +6,16 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.filters import Command
 import asyncio
 from aiogram.client.session.aiohttp import AiohttpSession
-import aiohttp
 import datetime
 
 TOKEN = "8425155912:AAFT4AIwrRphrV8g4IenxwxIL2wSRN95uKA"
 
 PROXY_URL = "http://uapkuolo:00j38yrboe49@31.59.20.176:6754"
 
-connector = aiohttp.TCPConnector(ssl=False)   # отключаем проверку SSL
 
 session = AiohttpSession(
     proxy=PROXY_URL,
     timeout=60,
-    connector=connector
 )
 
 bot = Bot(token=TOKEN, session=session)
