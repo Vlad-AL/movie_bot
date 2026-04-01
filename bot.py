@@ -5,8 +5,8 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.filters import Command
 import asyncio
-from aiogram.client.session.aiohttp import AiohttpSession
 import datetime
+from aiogram.client.session.aiohttp import AiohttpSession
 
 TOKEN = "8425155912:AAFT4AIwrRphrV8g4IenxwxIL2wSRN95uKA"
 
@@ -839,15 +839,6 @@ movies = {
         "director": "Томми Виркола",
         "genres": ["триллер", "детектив", "боевик", "криминал"]    
     },
-    # "000": {
-    #     "title": "",
-    #     "year": ,
-    #     "video": "",
-    #     "description": "",
-    #     "country": "",
-    #     "director": "",
-    #     "genres": [""]    
-    # },
     "092": {
         "title": "Обливион",
         "year": 2013,
@@ -875,6 +866,24 @@ movies = {
         "director": "Пол Фиг",
         "genres": ["триллер", "драма"]    
     },
+    "095": {
+        "title": "Гордость и предубеждение",
+        "year": 2005,
+        "video": "BAACAgIAAxkBAAIYrGnNXafsRJraFgR49g2KRQIblmTfAAJikgACrL9oSsOxGRhjPL8NOgQ",
+        "description": "Англия, конец XVIII века. Родители пятерых сестер Беннет озабочены тем, чтобы удачно выдать дочерей замуж. И потому размеренная жизнь солидного семейства переворачивается вверх дном, когда по соседству появляется молодой джентльмен - мистер Бингли... Своевольная Элизабет знакомится с другом Бингли - красивым и высокомерным мистером Дарси, и между ними разгорается нешуточное противостояние, результатом которого может стать как любовь, так и ненависть...",
+        "country": "Великобритания, Франция, США",
+        "director": "Джо Райт",
+        "genres": ["мелодрама", "драма"]    
+    },
+    # "000": {
+    #     "title": "",
+    #     "year": ,
+    #     "video": "",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
 }
 
 series = {
