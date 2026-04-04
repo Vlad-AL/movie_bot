@@ -875,6 +875,15 @@ movies = {
         "director": "Джо Райт",
         "genres": ["мелодрама", "драма"]    
     },
+    "097": {
+        "title": "По соображениям совести",
+        "year": 2016,
+        "video": "BAACAgIAAxkBAAIY12nRD4nlgnGVB7XsEY73-bsh5m5aAAJTmgACSvOIStuRfu_rA3ueOwQ",
+        "description": "Медик американской армии времён Второй мировой войны Десмонд Досс, который служил во время битвы за Окинаву, отказывается убивать людей и становится первым идейным уклонистом в американской истории, удостоенным Медали Почёта.",
+        "country": "США",
+        "director": "Мэл Гибсон",
+        "genres": ["биография", "история", "военный"]    
+    },
     # "000": {
     #     "title": "",
     #     "year": ,
@@ -3187,6 +3196,42 @@ series = {
                 "video": "BAACAgIAAxkBAAIO5WmEcvLffQTwOrf4txFlvpN8raCyAALbhwAC24kpSHqCUAccqWO8OAQ",
             },
             
+        ]
+    },
+    "096": {
+        "title": "Во всем виновата она",
+        "year": 2025,
+        "episode_counter": "8 серий",
+        "description": "Марисса Ирвин приезжает за сыном, который после школы отправился в гости к новому другу. Дверь ей открывает незнакомая женщина, утверждающая, что она ничего не знает ни о каких мальчиках. Так начинается самый страшный родительский кошмар. Обычный день превращается в цепь лжи, тайн и подозрений.",
+        "poster": "AgACAgIAAxkBAAIY1WnRDizIdJ1qRu4K2R6cUoJ6vHQjAALMFWsbSvOISqdmJAP5u2nEAQADAgADeQADOwQ",
+        "country": "США, Австралия",
+        "director": "Кейт Дэннис, Минки Спиро",
+        "genres": ["триллер", "детектив", "мистика"],
+        "episodes": [
+            {
+                "video": "BAACAgIAAxkBAAIYxWnRDQnjvyIsr_MH4_1Zhjd5jkj3AAI3mgACSvOISsJwT9YmNtjZOwQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIYx2nRDSvJ5DxTJ_rn6ZFHYBn8YXtbAAI4mgACSvOISqSd1iGakaehOwQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIYyWnRDVB_AuZb_ozYcY_bj1GeAYNWAAI5mgACSvOISuAUgxtUXVkYOwQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIYy2nRDXa0IYGawNXxSK4qPA2_PyOYAAI7mgACSvOISs03771WMPnZOwQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIYzWnRDanJZaM_HpatKW90-O5RtXlbAAI9mgACSvOISoEtcZPqD0HFOwQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIYz2nRDcvSlfqi6WO8OCCr5_38-uSlAAI_mgACSvOISgEvzPW6-BF2OwQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIY0WnRDfKZITFyw5tziUg9dmFlRAHgAAJDmgACSvOISuELZvrJLAqoOwQ",
+            },
+            {
+                "video": "BAACAgIAAxkBAAIY02nRDhFHfk334UL1TDED2GDa0CK1AAJFmgACSvOISszsnFNhupsyOwQ",
+            },
         ]
     },
 }
