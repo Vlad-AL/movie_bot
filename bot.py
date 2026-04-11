@@ -347,7 +347,7 @@ movies = {
     "033": {
         "title": "Аватар 3: Пламя и пепел",
         "year": 2025,
-        "video": "BAACAgIAAxkBAAILNGl7mxi83yzts9J5eekKL8Mzub8CAAJ7lAACsvXhS95QFzNqTiZqOAQ",
+        "video": "BAACAgIAAxkBAAIZT2naavZC1Uv4sn_mIfsClRDPF74oAAIWmgACBejRSs3pwR0NCqmeOwQ",
         "description": "Джейк Салли, Нейтири и их дети переживают смерть Нетейама. Противостояние с корпорацией RDA обостряется, и теперь семье предстоит столкнуться с враждебным племенем на’ви во главе с Варанг.",
         "country": "США",
         "director": "Джеймс Кэмерон",
@@ -905,28 +905,6 @@ movies = {
 }
 
 series = {
-    # "000": {
-    #     "title": "",
-    #     "year": 1,
-    #     "episode_counter": "",
-    #     "description": "",
-    #     "poster": "",
-    #     "country": "",
-    #     "director": "",
-    #     "genres": [""],
-    #     "seasons": {
-    #         1: {
-    #             "title" : "Сезон 1",
-    #             "episodes": [
-    #                 {
-    #                     "title": "",
-    #                     "video": "",
-    #                 },
-                    
-    #             ]
-    #         },
-    #     }
-    # },
     "004": {
         "title": "Алиса в пограничье",
         "year": 2020,
@@ -3243,6 +3221,91 @@ series = {
             },
         ]
     },
+    # "000": {
+    #         "title": "Переполненная комната",
+    #         "year": 1,
+    #         "episode_counter": "10 серий",
+    #         "description": "",
+    #         "poster": "",
+    #         "country": "",
+    #         "director": "",
+    #         "genres": [""],
+    #         "episodes": [
+    #                 {
+    #                     "video": "BAACAgIAAxkBAAIZKGnX5NppSLGAZQ2nWZXnQXNNr1jqAAJZjwACUNa4SoKE8r8q0dJfOwQ",
+    #                 },
+    #                 {
+    #                     "video": "BAACAgIAAxkBAAIZKmnX5V2wtHAMHBuiJMFQwFt-nVoiAAJpjwACUNa4SoTugBobLA33OwQ",
+    #                 },
+    #                 {
+    #                     "video": "BAACAgIAAxkBAAIZLGnX5Y7iDC-jOZ3tjPhCfAU88ofpAAJrjwACUNa4SoyGouM5eQEWOwQ",
+    #                 },
+    #                 {
+    #                     "video": "BAACAgIAAxkBAAIZLmnX5bzTxYh_qKx-8YtKVw-KP4piAAJtjwACUNa4SugPNOIOZojxOwQ",
+    #                 },
+    #                 {
+    #                     "video": "BAACAgIAAxkBAAIZMGnX5gYdF4F7MrU-tdCTjP5SirGbAAJujwACUNa4SkavJSxNypMmOwQ",
+    #                 },
+    #                 {
+    #                     "video": "BAACAgIAAxkBAAIZMmnX5kJ_dHs4BFj6HSs_E-Zh9PM1AAJyjwACUNa4SnlY7HT8ZZG_OwQ",
+    #                 },
+    #                 {
+    #                     "video": "BAACAgIAAxkBAAIZNGnX5odZvS-IpMfSDeuGlYFl_LqmAAJ1jwACUNa4SmAVlHe9GnCGOwQ",
+    #                 },
+    #                 {
+    #                     "video": "BAACAgIAAxkBAAIZNmnX5yWo2wV2hQwnF1FEUbBhZV4GAAJ9jwACUNa4Sp1rJ6kyumSsOwQ",
+    #                 },
+    #                 {
+    #                     "video": "BAACAgIAAxkBAAIZOGnX51ikU4FMOuosVtqR00l6kBS-AAKBjwACUNa4Sh9cq-pHAAFCGzsE",
+    #                 },
+    #                 {
+    #                     "video": "BAACAgIAAxkBAAIZOmnX54rqOiuURK0kxMs8mcnNVCw3AAKDjwACUNa4SthYyB0ddT4HOwQ",
+    #                 },
+                    
+    #         ]
+    #     },
+    # "000": {
+    #         "title": "",
+    #         "year": 1,
+    #         "episode_counter": "",
+    #         "description": "",
+    #         "poster": "",
+    #         "country": "",
+    #         "director": "",
+    #         "genres": [""],
+    #         "episodes": [
+    #                 {
+    #                     "video": "",
+    #                 },
+    #         ]
+    #     },
+    # "000": {
+    #         "title": "",
+    #         "year": 1,
+    #         "episode_counter": "",
+    #         "description": "",
+    #         "poster": "",
+    #         "country": "",
+    #         "director": "",
+    #         "genres": [""],
+            # "episodes": [
+            #         {
+            #             "video": "",
+            #         },
+            # ]
+    #         "seasons": {
+    #             1: {
+    #                 "title" : "Сезон 1",
+    #                 "episodes": [
+    #                     {
+    #                         "title": "",
+    #                         "video": "",
+    #                     },
+                        
+    #                 ]
+    #             },
+    #         }
+    #     },
 }
 
 def subscribe_keyboard_movie(code: str):
