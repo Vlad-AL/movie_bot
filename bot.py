@@ -3221,49 +3221,79 @@ series = {
             },
         ]
     },
-    # "000": {
-    #         "title": "Переполненная комната",
-    #         "year": 1,
-    #         "episode_counter": "10 серий",
-    #         "description": "",
-    #         "poster": "",
-    #         "country": "",
-    #         "director": "",
-    #         "genres": [""],
-    #         "episodes": [
-    #                 {
-    #                     "video": "BAACAgIAAxkBAAIZKGnX5NppSLGAZQ2nWZXnQXNNr1jqAAJZjwACUNa4SoKE8r8q0dJfOwQ",
-    #                 },
-    #                 {
-    #                     "video": "BAACAgIAAxkBAAIZKmnX5V2wtHAMHBuiJMFQwFt-nVoiAAJpjwACUNa4SoTugBobLA33OwQ",
-    #                 },
-    #                 {
-    #                     "video": "BAACAgIAAxkBAAIZLGnX5Y7iDC-jOZ3tjPhCfAU88ofpAAJrjwACUNa4SoyGouM5eQEWOwQ",
-    #                 },
-    #                 {
-    #                     "video": "BAACAgIAAxkBAAIZLmnX5bzTxYh_qKx-8YtKVw-KP4piAAJtjwACUNa4SugPNOIOZojxOwQ",
-    #                 },
-    #                 {
-    #                     "video": "BAACAgIAAxkBAAIZMGnX5gYdF4F7MrU-tdCTjP5SirGbAAJujwACUNa4SkavJSxNypMmOwQ",
-    #                 },
-    #                 {
-    #                     "video": "BAACAgIAAxkBAAIZMmnX5kJ_dHs4BFj6HSs_E-Zh9PM1AAJyjwACUNa4SnlY7HT8ZZG_OwQ",
-    #                 },
-    #                 {
-    #                     "video": "BAACAgIAAxkBAAIZNGnX5odZvS-IpMfSDeuGlYFl_LqmAAJ1jwACUNa4SmAVlHe9GnCGOwQ",
-    #                 },
-    #                 {
-    #                     "video": "BAACAgIAAxkBAAIZNmnX5yWo2wV2hQwnF1FEUbBhZV4GAAJ9jwACUNa4Sp1rJ6kyumSsOwQ",
-    #                 },
-    #                 {
-    #                     "video": "BAACAgIAAxkBAAIZOGnX51ikU4FMOuosVtqR00l6kBS-AAKBjwACUNa4Sh9cq-pHAAFCGzsE",
-    #                 },
-    #                 {
-    #                     "video": "BAACAgIAAxkBAAIZOmnX54rqOiuURK0kxMs8mcnNVCw3AAKDjwACUNa4SthYyB0ddT4HOwQ",
-    #                 },
+    "099": {
+            "title": "Маленькие катастрофы",
+            "year": 2025,
+            "episode_counter": "6 серий",
+            "description": "Молодая мама Джесс просыпается ночью от крика её 10-месячной дочери Бетси. Джесс как можно скорее отвозит на дочь на машине в больницу, и дежурным врачом в отделе реанимации оказывается её давняя подруга Лиз. Врач замечает на рентгеновских снимках трещины в черепе малышки и оказывается перед сложным выбором: следовать правилам и обратиться в органы опеки из-за серьёзных травм или утаить происшествие ради подруги. Лиз решает следовать правилам, и это решение подвергает испытанию дружбу в их женской компании и грозит разрушить их семьи.",
+            "poster": "AgACAgIAAxkBAAIbMWndPl2yFsFDsHbT9KFrPvlZ1WuLAAKRF2sbf9rpSkx9Q2_DnV9YAQADAgADeAADOwQ",
+            "country": "Великобритания",
+            "director": "Эва Сигурдардоттир",
+            "genres": ["драма"],
+            "episodes": [
+                    {
+                        "video": "BAACAgIAAxkBAAIbLWndPV-O9286Hi3FDmJx6UDmZSkHAALanAACf9rpSkWs3KVmeQgROwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIbL2ndPl0Eztq8K_Rb24byVRu8V2bbAALdnAACf9rpSpBOy2yWHNzTOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIbO2ndRyMhOKINvjPDK8mRSStl4JUMAAIKnQACf9rpSiPR5DMpN1WkOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIbNWndP7hAZea0SJHzlHb29OkHojC_AALonAACf9rpSt0uL40jfbq0OwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIbN2ndQLY4mja-uWMJIEEuZL5EIjkNAALxnAACf9rpSkHDeEpnLvueOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIbOWndQk_kV2rDG4dRiafXInnHBn3bAAL8nAACf9rpSnW3l1c_hYi5OwQ",
+                    },
+            ]
+        },
+    "101": {
+            "title": "Переполненная комната",
+            "year": 2023,
+            "episode_counter": "10 серий",
+            "description": "Лето 1979 года, Манхэттен. Дэнни Салливана задерживают по обвинению в убийстве. Психолог Риа проводит с Дэнни многочасовые беседы, чтобы понять, какая цепочка событий привела молодого человека к роковому дню.",
+            "poster": "AgACAgIAAxkBAAIbMGndPl0mxH_O9JnLIep-IZ9Chbz-AAKQF2sbf9rpStp6D7HlEQRuAQADAgADeQADOwQ",
+            "country": "США",
+            "director": "Брэди Корбет",
+            "genres": ["биография", "криминал"],
+            "episodes": [
+                    {
+                        "video": "BAACAgIAAxkBAAIZKGnX5NppSLGAZQ2nWZXnQXNNr1jqAAJZjwACUNa4SoKE8r8q0dJfOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIZKmnX5V2wtHAMHBuiJMFQwFt-nVoiAAJpjwACUNa4SoTugBobLA33OwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIZLGnX5Y7iDC-jOZ3tjPhCfAU88ofpAAJrjwACUNa4SoyGouM5eQEWOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIZLmnX5bzTxYh_qKx-8YtKVw-KP4piAAJtjwACUNa4SugPNOIOZojxOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIZMGnX5gYdF4F7MrU-tdCTjP5SirGbAAJujwACUNa4SkavJSxNypMmOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIZMmnX5kJ_dHs4BFj6HSs_E-Zh9PM1AAJyjwACUNa4SnlY7HT8ZZG_OwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIZNGnX5odZvS-IpMfSDeuGlYFl_LqmAAJ1jwACUNa4SmAVlHe9GnCGOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIZNmnX5yWo2wV2hQwnF1FEUbBhZV4GAAJ9jwACUNa4Sp1rJ6kyumSsOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIZOGnX51ikU4FMOuosVtqR00l6kBS-AAKBjwACUNa4Sh9cq-pHAAFCGzsE",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIZOmnX54rqOiuURK0kxMs8mcnNVCw3AAKDjwACUNa4SthYyB0ddT4HOwQ",
+                    },
                     
-    #         ]
-    #     },
+            ]
+        },
     # "000": {
     #         "title": "",
     #         "year": 1,
