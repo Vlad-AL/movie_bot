@@ -860,7 +860,7 @@ movies = {
     "094": {
         "title": "Горничная",
         "year": 2025,
-        "video": "BAACAgIAAxkBAAIX1mnGjOW4W5T-VP5kQ3FBtCedlDezAAJMmgACzVkxSqPRVmhnhEmxOgQ",
+        "video": "BAACAgIAAxkBAAIcuGnjizGQH4i8fPKGHBydD-iQmxAxAAJYnAAC6cgZSxW_6o0ZmOAaOwQ",
         "description": "Милли устраивается прислугой с проживанием к состоятельной семье Винчестер, живущей в загородном особняке. Девушка только что вышла по УДО, и ей необходима эта работа, но находить общий язык с хозяйкой Ниной становится всё сложнее: та заметно не в себе и регулярно к ней цепляется. Зато её супруг Эндрю — само очарование. Мужчина сглаживает любые конфликты и, кажется, положил глаз на Милли.",
         "country": "США",
         "director": "Пол Фиг",
@@ -3294,6 +3294,303 @@ series = {
                     
             ]
         },
+    "000": {
+            "title": "",
+            "year": 1,
+            "episode_counter": "",
+            "description": "",
+            "poster": "",
+            "country": "",
+            "director": "",
+            "genres": [""],
+            "seasons": {
+                1: {
+                    "title" : "Сезон 1",
+                    "episodes": [
+                        {
+                            "video": "BAACAgIAAxkBAAIbeGnfZHtqcE8P8aAhybwlWg3fVxhXAAKqlgAC_8j4SmqMQ5izesWUOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbemnfZTfsx3dJ_H6ngt_wUh2jurVDAAK2lgAC_8j4StkVGpW9zDwfOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbfGnfZe6bh0Sv6P-mcjTZwRkM1IRRAAK7lgAC_8j4Srjv2efWVnx0OwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbfmnfZqLBkr40cFVt8ey6anrtHnT_AALBlgAC_8j4Sl27F3eoiBMtOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbgGnfZ3VuDg8nvKhv6P6ZUm86j1WDAALKlgAC_8j4Sk6tem1nJXkGOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbiGnfaEX78edfJUFwZjZmQ-ttjXDHAALNlgAC_8j4SjkdqujqyoAzOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbimnfaQ-8N7KCj92rJVoaDzZoLP4wAALTlgAC_8j4SmSOI6WkkiqHOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbjGnfadHdNFFjNT8EBy65UsF5GxSJAALVlgAC_8j4SlOGEOO5S64mOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbjmnfapdaHAcmNz9gCA3dxP3IwcXVAALalgAC_8j4Sip0FMN-V5tROwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbkGnfa20C2GAXndvH0eK2ZiTy96MlAALnlgAC_8j4Sjx0__2p3k5uOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbkmnfbFnJPz28Igx_Sk9XyYP961yvAALzlgAC_8j4Sp3z0jZQl29GOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIblGnfbR0nyv8YLb0w6jZ8NW7t9cz4AAL6lgAC_8j4SoLZRCHG2jCeOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIblmnfblT46-89-6pKsCk4L3scC6w_AAOXAAL_yPhKyN8878eOd4A7BA",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbnGnfb2F3BUvkp-xn4HS5nmI0b6rNAAIIlwAC_8j4SrHTy2aIG_TvOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbnmnfcENTwzbcNBdkVtYmoFM161ZgAAIOlwAC_8j4Sl2f_3ZnAjWgOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIboGnfcR7Ny3o3-hedAAG-3ftJTJTNJQACFZcAAv_I-EqE0u0-NKRRBjsE",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbomnfceYt_Sc2xNqeu5XMPPlQPsgQAAIhlwAC_8j4ShK1yV7brdCzOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbpGnfcrBxV-wJJjvDebUowA7djj0vAAIqlwAC_8j4SklWxmkEKDcfOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbpmnfc3R0xY16ejBi6Q8eYbT4ZvciAAI3lwAC_8j4So8n-hBHR9VxOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbqGnfdB5WXcvghtH5_oHk3sfXaUMLAAI_lwAC_8j4SslP6ovxI2X_OwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbqmnfdOC-Ctk6madf81P84GZ2X_JUAAJDlwAC_8j4StdFy09sBNUCOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbrGnfdbxu2TUshGxpRz_8sQZYyfayAAJTlwAC_8j4SjwqZt7qND5zOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbrmnfdoEAAQ9ZLtMG86OeSUAPHok2gwACXpcAAv_I-Ep4noI5HcljnzsE",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbsGnfd1M42ZLgL9FIqeRIxu1Uy878AAJklwAC_8j4Sip7AytM3LOZOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbsmnfeAZwFUlX2awOK6A8mfv-u7oWAAJnlwAC_8j4SqxmTEnTpQzsOwQ",
+                        },
+                    ]
+                },
+                2: {
+                    "title" : "Сезон 2",
+                    "episodes": [
+                        {
+                            "video": "BAACAgIAAxkBAAIbtmnffETvggIlQ0ZLYCx5ILhRbCauAAKblwAC_8j4StrFx70du035OwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbuGnffPevhBA7d4rEjuJkxG04lncLAAKnlwAC_8j4Sk7EJdA1kfd6OwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbumnffeSkXu3z95D7EhFWIxPW6xf3AAKwlwAC_8j4SgSrXYuQU6StOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbvGnffq2M_stxiE_CtV5rY48QxzByAAK2lwAC_8j4SvO3xgqyefrCOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbvmnff4g96HyQuhiBhmKIurmyTCScAAK5lwAC_8j4SnSVS9ViF81rOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbwGnfgFHBM0L7SRfcO1K0ivASayw6AAK9lwAC_8j4SjHpwBq1sRbGOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbwmnfgRF0s4minoEd5uml74OqSnpnAALDlwAC_8j4So2CAAEDAgRJizsE",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbxGnfgdUSdCclVDI-fV7UlE3FLwO3AALLlwAC_8j4SiQ0HQ2ZKNj1OwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbxmnfgqnKvTYyKEpXTdWKugPlU_10AALOlwAC_8j4SvJHrn1VvER2OwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbyGnfg232iRpoouzfgSrZUWjUNGTyAALSlwAC_8j4SjRAAldcj2z0OwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbymnfhE6LiO05WOdayAX_FXDKrhKDAALjlwAC_8j4Susm1XqKcP4iOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIbzGnfhRFO-_NEN9-ro_jzKDas5k2sAALylwAC_8j4SvTaFQMM8BZ5OwQ",
+                        },
+                    ]
+                },
+                3: {
+                    "title" : "Сезон 3",
+                    "episodes": [
+                        {
+                            "video": "BAACAgIAAxkBAAIbzmnfiWcLXPP0FIv0_zOIKlwDUKmnAAItmAAC_8j4SkQJPsZJTRUXOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIb0GnfiiA7cCfl72XfIn2g0e4WqIPtAAIxmAAC_8j4SrIE1hqqFo55OwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIb0mnfitETGDWtFE8k-QkbL0pegdxQAAI5mAAC_8j4SurniLY_2SmqOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIb1Gnfi5QQiEgfhQWXnOYjxE9ChGTuAAI_mAAC_8j4Srv2lPq327hGOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIb1mnfjFizU-cOMrnNPuZQ6IG4SbjMAAJImAAC_8j4Sm_nmsXX4ZxFOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIb2GnfjRbYfSgpmJVeaUCiGLZMjVF-AAJOmAAC_8j4SnIHc6BT0XXSOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIb2mnfjdzDH5eBlNk6Wjb2U067-BHxAAJVmAAC_8j4SkXFcxVqZtRLOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIb3Gnfjpt-utS6UP8gPotmrG783iwAA1qYAAL_yPhKsbZdGFRsOaY7BA",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIb3mnfj1kt2lCQRKDE5cXIJmoO4OHPAAJrmAAC_8j4SoPsrNMBzVIBOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIb4GnfkBOOL6NLUQOCH1Ap5Orx_XFpAAJzmAAC_8j4Sp-9cE9EP9qYOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIb4mnfkMJfspmiPhFln_PvdDTYOgLAAAJ4mAAC_8j4StFgp077Q3fkOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIb5GnfkYpipPUvZtkBhH8schy62Da7AAKEmAAC_8j4StCdJQO4FPfJOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIb5mnfkkCb-DvioEeyyoE2ywRz4nw6AAKPmAAC_8j4SuKv5fkqVJ4eOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIb6GnfkwST2qUFjxpiDY7duB-G6OE5AAKhmAAC_8j4Sgz_C1QJyw__OwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIb6mnfk7-m9-w9yQGyQ4NF3IT1XODWAAKvmAAC_8j4Spj18xlfDiC4OwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIb7GnflHNHRCY4-IQZmSCNYdjuEmHSAALCmAAC_8j4SjgWmtj5Y5QbOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIb7mnflSSXmvPLxrRmD-pDth73zzPNAALPmAAC_8j4SuNnqxicbqc1OwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIb8GnfldU1C_XpNAecIupg-4dN1moAA9eYAAL_yPhKVe7e4LbcA2I7BA",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIb8mnflof5-Ldde5kl-1RbEiM8jtU-AALZmAAC_8j4Soll9r8OSqW3OwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIb9Gnfly97l7aZevl31l2qp3QmvylVAALjmAAC_8j4SiYYt8IIEjnSOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIb9mnfl-EpX_MJVuwuVJW0VZXZcZvTAALpmAAC_8j4SusEmZi747nAOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIb-GnfmPNRp8wrGnQgz-lnAi-vEkp_AALxmAAC_8j4ShNW-P5oo41UOwQ",
+                        },
+                    ]
+                },
+                4: {
+                    "title" : "Сезон 4",
+                    "episodes": [
+                        {
+                            "video": "BAACAgIAAxkBAAIb-mnfmfVwsEeysLDVqUoIBW0di2x-AAL1mAAC_8j4SuPsb2MwlwABVTsE",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIb_GnfmqezRdt0YlGtdLS32hz_PgZLAAOZAAL_yPhKYKOAJwp4yFI7BA",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIb_mnfm0-S9rrX03F5JE6sHON0SQ6BAAIPmQAC_8j4SqB02V8BT33hOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIcAAFp35v3DPNSA_rpd2UVfziLPMqxnQACF5kAAv_I-EpytbsVzxn1hjsE",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIcAmnfnJBjBQknR-SYCCqTjpVymnAkAAIgmQAC_8j4Sj41qfUkPQHfOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIcBGnfnUjHHF1Lp9CspQlsy2lAUfsRAAIrmQAC_8j4SkSv0gUtv4nwOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIcBmnfn6-ZrHF0jgVkP0UsCfV-NrojAAI5mQAC_8j4Slw6LaGHreg5OwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIcCGnfoGFoicwNra7p_0EeFI0Z9ZMyAAI8mQAC_8j4SpPWgcP7fx1dOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIcCmnfoQhK6AKNMMGHIq-4PJdKBNNDAAJDmQAC_8j4SgABYp5V--nETTsE",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIcDGnfobLzrIIb-VULvZNUVkLpi8N-AAJNmQAC_8j4SnjhUO3cxCoOOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIcDmnfokEShcXRwN8IhEc64DKwWp7xAAJQmQAC_8j4SoZVTP8mg9ZhOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIcEGnfotNqxv5QFok_893B7Pg0FUR4AAJSmQAC_8j4Suz2l3dbkxeTOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIcEmnfo2OT3dlI692MhvgjZ0ovrpQSAAJTmQAC_8j4SsMZMCS81rauOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIcFGnfpAKMzQvskVirgV4GfYbHQo52AAJXmQAC_8j4SjKO3Z83tb__OwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIcFmnfpJ7rBwQQhPkMGzL8F35jSoYBAAJomQAC_8j4So5qCjDeJypjOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIcGGnfpSJgg5-hDzOq_NxmUBIQ_WPqAAJ3mQAC_8j4So_O58gP5B6aOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIcGmnfpb3Id64yoHcd7x6M7L767a5qAAJ_mQAC_8j4Sqk57BPq1yGZOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIcHGnfpl9kBaB8VgSlxuZHvLDQyJoIAAKHmQAC_8j4SuzESux1lQjgOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIcHmnfpwJAoX6jnYDb1eHO7SA9xRb-AAKUmQAC_8j4Smt6yk8S2-AUOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIcIGnfp7GkC5ifwycfMDQvd_vGwW5WAAKcmQAC_8j4Sh8rCQLZLkgfOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIcImnfqFUuCTsVRsKcefLmLGjYNgQMAAKjmQAC_8j4SunwclFfn9mdOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIcJGnfqPHRbq2RI8esWFVOsirKDcfOAAK1mQAC_8j4SrGpta7tI1g9OwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIcJmnfqYKSVczp5uQE5SFMkiJuyZ9_AAK9mQAC_8j4SuL_Awh0M7HAOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIcKGnfqhGtTX_ybHQW2Z8Ti8NUJChtAALFmQAC_8j4Si2i4Ku3malGOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIcKmnfqqvLUbewBRkMmQTXmn2pE61lAALKmQAC_8j4SlJVEYhjNnLeOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIcLGnfq1QbThi1_8sl8s_B77KEjUrsAALPmQAC_8j4SvuGfXEd6cacOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIcLmnfq_apjhU83qdlMsJ8K2fT5H9QAALTmQAC_8j4SonZVqKFRsOzOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIcMGnfrKNXy7e0X3Jfg-eWEwL4X24iAALcmQAC_8j4Sg6ltH1VqC1ZOwQ",
+                        },
+                        {
+                            "video": "BAACAgIAAxkBAAIcMmnfrVac-8z2skj753lIxA-ed7EuAALqmQAC_8j4Sg0CbXLvDp9IOwQ",
+                        },
+                        
+                    ]
+                },
+            }
+        },
     # "000": {
     #         "title": "",
     #         "year": 1,
@@ -3318,11 +3615,6 @@ series = {
     #         "country": "",
     #         "director": "",
     #         "genres": [""],
-            # "episodes": [
-            #         {
-            #             "video": "",
-            #         },
-            # ]
     #         "seasons": {
     #             1: {
     #                 "title" : "Сезон 1",
