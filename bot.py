@@ -4669,7 +4669,7 @@ def serial_start_keyboard(code: str):
 
 async def send_serial_card(message: types.Message, code: str):
     serial = series[code]
-    hashtags = " ".join(f"#{g.replace(' ', '_')}@kinonawe4er" for g in movie.get('genres', []))
+    hashtags = " ".join(f"#{g.replace(' ', '_')}@kinonawe4er" for g in serial.get('genres', []))
     text = (
         f"<b>⭐️ «{serial['title']}», {serial['year']}, ({serial['episode_counter']})</b>\n\n"
         f"<i>{serial['description']}</i>\n\n"
