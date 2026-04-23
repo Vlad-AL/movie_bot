@@ -4268,7 +4268,7 @@ series = {
             "description": "Старшекласснику Лайту Ягами в руки попадает тетрадь синигами Рюка. Каждый человек, чьё имя записать в эту тетрадку, умрёт, поэтому Лайт решает бороться со злом на земле.",
             "poster": "AgACAgIAAxkBAAIf5GnpHkO3XDPYNrpPQVPO71fGTr0RAAI9G2sbNx5IS_nXz6T_BjZYAQADAgADeQADOwQ",
             "country": "Япония",
-            "director": "Цугуми Оба",
+            "director": "Madhouse",
             "genres": ["аниме", "детектив", "криминал", "фантастика", "драма"],
             "episodes": [
                     {
@@ -4391,7 +4391,7 @@ series = {
             "description": "В один из летних дней в Токио произошел крупный террористический акт. Виновниками террора, который разбудил самодовольную нацию ото сна, были всего два мальчика. Теперь преступники, известные как группировка «Сфинкс», начали грандиозную игру, которая охватывает всю Японию.",
             "poster": "AgACAgIAAxkBAAIf5mnpHmLTl_7sdUtOt1nKkVFSUrRWAAI-G2sbNx5IS-_U5b9AR1TLAQADAgADeQADOwQ",
             "country": "Япония",
-            "director": "Синъитиро Ватанабэ",
+            "director": "MAPPA",
             "genres": ["аниме", "криминал", "драма", "детектив"],
             "episodes": [
                     {
@@ -4437,7 +4437,7 @@ series = {
             "description": "Малоизвестный Бог Ято не имеет собственного храма, но мечтает стать уважаемым божеством с миллионами верующих. Правда, Ято не особо стремится прилагать усилия для достижения данной цели. Однажды обычная школьница Хиёри спасает его от дорожной аварии ценой собственной жизни",
             "poster": "AgACAgIAAxkBAAIf6GnpIMUVVZsse9gT8EgPqzKdaS-4AAJKG2sbNx5IS8ANlz1Us35iAQADAgADeQADOwQ",
             "country": "Япония",
-            "director": "Адатитока",
+            "director": "Bones",
             "genres": ["аниме", "фантастика", "драма", "комедик", "боевик"],
             "seasons": {
                 1: {
@@ -4536,91 +4536,87 @@ series = {
             "description": "Амано Юкитэру — типичный изгой, одиночка. Все свое время он — безучастный наблюдатель, делающий записи в мобильном дневнике об окружающих событиях. Единственного постоянного собеседника, бога пространства и времени Деуса, Юки считает плодом своей фантазии. Однако всё меняется, когда Деус наделяет Юки, а точнее его дневник, вполне реальным свойством показывать события ближайшего будущего. Парень узнаёт, что подобными дневниками владеют ещё одиннадцать человек, и все вместе они являются участниками жестокой игры, выжить в которой суждено лишь одному.",
             "poster": "AgACAgIAAxkBAAIf6mnpKwEY58tnaf9mDFc8AVKOhtYlAAKPG2sbNx5IS25eYo7nB3ukAQADAgADeQADOwQ",
             "country": "Япония",
-            "director": "Сакаэ Эсуно",
+            "director": "Asread",
             "genres": ["аниме", "фантастика", "драма", "криминал"],
             "episodes": [
                     {
-                        "video": "BAACAgIAAxkBAAIfm2no3wSzQLXHhY-PPMUeynMIaqCGAAKLnAACNx5IS_bSLkM36AiOOwQ",
+                        "video": "BAACAgIAAxkBAAIgGmnqF1-uqJnVt9NpOJy1pKBU_pJ7AAKZnAAC7_9QS1-CdpcXK7kZOwQ",
                     },
                     {
-                        "video": "BAACAgIAAxkBAAIfnWno3080nzzb1smyzmk-6hfNF-TRAAKWnAACNx5IS1ASwXGLGKBCOwQ",
+                        "video": "BAACAgIAAxkBAAIgHGnqF5JHeTu8ixrACW7KRepbiSqNAAKcnAAC7_9QS8ObLmCJJgs2OwQ",
                     },
                     {
-                        "video": "BAACAgIAAxkBAAIfn2no36XUZRWxj8DqhDNuW-qsOD0zAAKinAACNx5IS0RbBcMFny1OOwQ",
+                        "video": "BAACAgIAAxkBAAIgHmnqF8wGaQOXzZu7fjA4GrS8KTqnAAKdnAAC7_9QS5ZRgx7X4OAdOwQ",
                     },
                     {
-                        "video": "BAACAgIAAxkBAAIfoWno3_ga_h9ggQOoj5myI10eanrJAAKpnAACNx5ISxT1zRDj7ezfOwQ",
+                        "video": "BAACAgIAAxkBAAIgIGnqGAYi2uqZi_o4VoEU4Lv6zfa2AAKenAAC7_9QS82oBMe0TkZtOwQ",
                     },
                     {
-                        "video": "BAACAgIAAxkBAAIfo2no4Eggo7k7z5MLjjGlvb-U9-AtAAKynAACNx5IS7GQDqtPTqFMOwQ",
+                        "video": "BAACAgIAAxkBAAIgImnqGEJ43CkO6JOz8tVNf6KiLodqAAKgnAAC7_9QS9c9KfQ01ojtOwQ",
                     },
                     {
-                        "video": "BAACAgIAAxkBAAIfpWno4N62rl_g8ZXeL5LbMn1fUu7bAALBnAACNx5IS-blCvOxyagvOwQ",
+                        "video": "BAACAgIAAxkBAAIgJGnqGHWA5vZFkLmwHsAC0vI2L0NVAAKhnAAC7_9QSxccP5cxDAyBOwQ",
                     },
                     {
-                        "video": "BAACAgIAAxkBAAIfp2no47iq9e_Z3_sW_5lJFgvVwvBtAAIRnQACNx5IS7pzjvHAXJoTOwQ",
+                        "video": "BAACAgIAAxkBAAIgJmnqGIaQftJa4FY4m-dMd59yxx6pAAKinAAC7_9QS9wO7b8YoEP_OwQ",
                     },
                     {
-                        "video": "BAACAgIAAxkBAAIfqWno5AhlZEd6VshFuG4MGOnKJ_rgAAIZnQACNx5ISxd98aQNdQb-OwQ",
+                        "video": "BAACAgIAAxkBAAIgKGnqGJek1pFFcGIdMqlqbTV5QstWAAKjnAAC7_9QS2K1R4-5a0jWOwQ",
                     },
                     {
-                        "video": "BAACAgIAAxkBAAIfq2no5HJzAAErz0vXwIdSYWNlNGnwLAACIp0AAjceSEtRuRJ_XcmDVTsE",
+                        "video": "BAACAgIAAxkBAAIgKmnqGKruoVOQtJXfys6ncyiHoARAAAKknAAC7_9QS9Ot20sk7SVLOwQ",
                     },
                     {
-                        "video": "BAACAgIAAxkBAAIfrWno5s0wWViDZCVEGxaMCwkDt4KWAAJZnQACNx5IS7c72G5qr5FDOwQ",
+                        "video": "BAACAgIAAxkBAAIgLGnqGLtlfqMYk71ogDWCj_wz3Lj4AAKmnAAC7_9QS1dQNAvhQ8JZOwQ",
                     },
                     {
-                        "video": "BAACAgIAAxkBAAIfr2no5yS3tWVpmGnRqFu39RbP0n1-AAJknQACNx5IS7W2mVVB-fT0OwQ",
+                        "video": "BAACAgIAAxkBAAIgLmnqGM3zsVSrtZVsXhCqGvzT5SEpAAKnnAAC7_9QS-Z2Ek85oyOnOwQ",
                     },
                     {
-                        "video": "BAACAgIAAxkBAAIfsWno53enaohx68278pSEyVLUikMzAAJtnQACNx5IS6EnhOs6GrL1OwQ",
+                        "video": "BAACAgIAAxkBAAIgMGnqGN23Dn7FCBY_SZvmwpRddVB8AAKonAAC7_9QS44uiVe3_82XOwQ",
                     },
                     {
-                        "video": "BAACAgIAAxkBAAIfs2no6f6lqo3fDXLB-2CwAUtBdluFAAKWnQACNx5IS1_1NYPwxg6qOwQ",
+                        "video": "BAACAgIAAxkBAAIgMmnqGO9AydTs1LOiXaz0VbLJ-XmxAAKpnAAC7_9QS7X9YHkJINQIOwQ",
                     },
                     {
-                        "video": "BAACAgIAAxkBAAIfuWno6lSbGUiQZLfzWjAhJpac0mtIAAKfnQACNx5IS7GukML5TjEvOwQ",
+                        "video": "BAACAgIAAxkBAAIgNGnqGQABvW64-kEZA2o1E4JFD9gSVAACqpwAAu__UEuEUjtTPD83RzsE",
                     },
                     {
-                        "video": "BAACAgIAAxkBAAIfu2no6vRBA-VFDKlyRq4k8_Z7Z6hrAAKvnQACNx5ISzPRE96oHOO_OwQ",
+                        "video": "BAACAgIAAxkBAAIgNmnqGRE7FuQPxfYyRAsn3sBsWmh6AAKrnAAC7_9QS-2iWUN44qH1OwQ",
                     },
                     {
-                        "video": "BAACAgIAAxkBAAIfvWno7utf3EFxKWf5I_jWsx7A00a6AALknQACNx5IS-Ze-jS4TSToOwQ",
+                        "video": "BAACAgIAAxkBAAIgOGnqGSPPDbUjUSQsnFCU13-4bMNxAAKsnAAC7_9QS12Ut8TrP4FOOwQ",
                     },
                     {
-                        "video": "BAACAgIAAxkBAAIfv2no70EmWcqStZrHCwGJ07ZZ4OO3AALpnQACNx5IS9fG5AUHJ3rwOwQ",
+                        "video": "BAACAgIAAxkBAAIgOmnqGTUX0egpX7kcuusswpJni4irAAKtnAAC7_9QS9W7VO72lA4yOwQ",
                     },
                     {
-                        "video": "BAACAgIAAxkBAAIfwWno75AjxivrO8Q6S7Y53fHH3xjGAALunQACNx5ISxQLpP_J7TEdOwQ",
+                        "video": "BAACAgIAAxkBAAIgPGnqGUc17SKIAAFwwkiwDP2iWb-yAgACsJwAAu__UEvXo6sjnIl8ojsE",
                     },
                     {
-                        "video": "BAACAgIAAxkBAAIfw2no8AwaETpwOfzPrxZqw9XhkWwEAAL2nQACNx5IS6Uv9yPbvh8QOwQ",
+                        "video": "BAACAgIAAxkBAAIgPmnqGVpDsuCArJiUqj37O3sHDGmwAAKynAAC7_9QSyNTQTtoONglOwQ",
                     },
                     {
-                        "video": "BAACAgIAAxkBAAIfxWno8-VIuNk3MejP4Qy9Jt-7cPznAAI1ngACNx5IS2yoPpeVCc69OwQ",
+                        "video": "BAACAgIAAxkBAAIgQGnqGWzgX7lUDm5uqxWooIlfRozVAAKznAAC7_9QS3MjjgOdHm5rOwQ",
                     },
                     {
-                        "video": "BAACAgIAAxkBAAIfx2no9ENqvIEOw31rolO-8UC0avGSAAI8ngACNx5IS2SaLw29x4OlOwQ",
+                        "video": "BAACAgIAAxkBAAIgQmnqGYDZmxohQgbu7WtqT1mlykXsAAK0nAAC7_9QSz9eO7XYDGBMOwQ",
                     },
                     {
-                        "video": "BAACAgIAAxkBAAIfyWno9J3wmdxCAVqfUVM-qrsIfQNuAAJEngACNx5IS4vhOxM2Wg_jOwQ",
+                        "video": "BAACAgIAAxkBAAIgRGnqGZK5MJrHcJ_gT7PokfsFZqJVAAK1nAAC7_9QS_al-9KXg6xxOwQ",
                     },
                     {
-                        "video": "BAACAgIAAxkBAAIfy2no9PSubFgWNeXlObpN2LExht1BAAJIngACNx5IS95fYBaMkZ-kOwQ",
+                        "video": "BAACAgIAAxkBAAIgRmnqGabvgk78h8JOfrQrzmHIRIVQAAK3nAAC7_9QSzb21Yam2VKPOwQ",
                     },
                     {
-                        "video": "BAACAgIAAxkBAAIfzWno9We2ixJ8qrmgftNdM1xphmFwAAJLngACNx5IS5aAhWLrigVdOwQ",
+                        "video": "BAACAgIAAxkBAAIgSGnqGbdJOYysvmdmr-ry3C2G1K_GAAK6nAAC7_9QSz402qjaQ1--OwQ",
                     },
                     {
-                        "video": "BAACAgIAAxkBAAIfz2no9ox8Dsd4mZhltv8XCHJFhspPAAJingACNx5IS8Xk1ca4E-uzOwQ",
+                        "video": "BAACAgIAAxkBAAIgSmnqGceSpelP3dpnvlCrrmcy7xXDAAK7nAAC7_9QS6RK4Gf63PRcOwQ",
                     },
                     {
-                        "video": "BAACAgIAAxkBAAIf0Wno99D8Ll3vv-FMFbSwNZd865diAAJyngACNx5IS7rDvYVBVNMHOwQ",
+                        "video": "BAACAgIAAxkBAAIgTGnqGdmqPkKRqFJ9UCX7Y3z9y1QlAAK8nAAC7_9QSxQ3ojgscTHtOwQ",
                     },
-                    {
-                        "video": "BAACAgIAAxkBAAIf2Wno-UH5-S3_4LwQb8h8NtiJl_iTAAJ-ngACNx5ISw7j5nEzI3eTOwQ",
-                    },
-                    
             ]
         },
     # "000": {
