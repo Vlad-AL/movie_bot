@@ -912,6 +912,78 @@ movies = {
         "genres": ["фантастика", "драма", "семейный"]    
     },
     # "000": {
+    #     "title": "Твоё имя",
+    #     "year": ,
+    #     "video": "BAACAgIAAxkBAAIiHWnxPtoh105TfAcdPWUsGNta0aCzAAJPogACE9CJS2Axq1NT4esnOwQ",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
+    # "000": {
+    #     "title": "Тайна Коко",
+    #     "year": ,
+    #     "video": "BAACAgIAAxkBAAIiH2nxP1y5x5HSUHiAyQLVS4Tu0I6XAAJRogACE9CJS9Q26Lgbd0ilOwQ",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
+    # "000": {
+    #     "title": "Король Лев",
+    #     "year": ,
+    #     "video": "BAACAgIAAxkBAAIiIWnxP7dv0PBy_DHSwKyZOfqdfSoTAAJSogACE9CJS0f3_FBQJbusOwQ",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
+    # "000": {
+    #     "title": "ВАЛЛ-И",
+    #     "year": ,
+    #     "video": "",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
+    # "000": {
+    #     "title": "Алладин",
+    #     "year": ,
+    #     "video": "",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
+    # "000": {
+    #     "title": "Алладин",
+    #     "year": ,
+    #     "video": "",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
+    # "000": {
+    #     "title": "Король Лев",
+    #     "year": ,
+    #     "video": "",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
+    # "000": {
+    #     "title": "10 причин моей ненависти",
+    #     "year": ,
+    #     "video": "",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
+    # "000": {
     #     "title": "",
     #     "year": ,
     #     "video": "",
@@ -4812,7 +4884,7 @@ def search_results_keyboard(results):
         emoji = "🎬" if item_type == "movie" else "📺"
         keyboard.append([
             InlineKeyboardButton(
-                text=f"{emoji} {item['title']}",
+                text=f"{emoji} {item['title']} {(item['year'])}",
                 callback_data=f"open:{item_type}:{code}"
             )
         ])
