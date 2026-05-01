@@ -4537,7 +4537,7 @@ series = {
         "poster": "AgACAgIAAxkBAAIf6GnpIMUVVZsse9gT8EgPqzKdaS-4AAJKG2sbNx5IS8ANlz1Us35iAQADAgADeQADOwQ",
         "country": "Япония",
         "director": "Bones",
-        "genres": ["аниме", "фантастика", "драма", "комедик", "боевик"],
+        "genres": ["аниме", "фантастика", "драма", "комедия", "боевик"],
         "seasons": {
             1: {
                 "title" : "Сезон 1",
