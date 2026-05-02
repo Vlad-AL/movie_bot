@@ -1001,6 +1001,24 @@ movies = {
         "director": "Энди Фикмен",
         "genres": ["мелодрама", "комедия"]    
     },
+    # "121": {
+    #     "title": "21",
+    #     "year": ,
+    #     "video": "BAACAgIAAxkBAAIkf2n13eJwH2m-awN62Ck_8Nmhg4T5AALPlwACe9CoS-UpQ2v5354NOwQ",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
+    # "122": {
+    #     "title": "Блондинка в законе",
+    #     "year": ,
+    #     "video": "BAACAgIAAxkBAAIkgWn13mB0eVpQiqsYuPyhu3gpzaLaAALVlwACe9CoSz3emk5lp6mqOwQ",
+    #     "description": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""]    
+    # },
     # "000": {
     #     "title": "",
     #     "year": ,
@@ -4718,43 +4736,43 @@ series = {
                     },
             ]
         },
-    # "120": {
-    #     "title": "",
-    #     "year": 1,
-    #     "episode_counter": "",
-    #     "description": "",
-    #     "poster": "",
-    #     "country": "",
-    #     "director": "",
-    #     "genres": [""],
-    #     "episodes": [
-    #             {
-    #                 "video": "BAACAgIAAxkBAAIiuWnyFOGeNJ_uPtgK-tIyFQxftb7mAAJNnQACzDeRS3joi5ms0yCsOwQ",
-    #             },
-    #             {
-    #                 "video": "BAACAgIAAxkBAAIiu2nyFRnlncmfBGRo9-UDC_vqSnUGAAJPnQACzDeRS-sjrjr58SleOwQ",
-    #             },
-    #             {
-    #                 "video": "BAACAgIAAxkBAAIivWnyFU_wURuID8cjiGVr_Z5xTQL1AAJUnQACzDeRS_Qwu5lzSNrdOwQ",
-    #             },
-    #             {
-    #                 "video": "BAACAgIAAxkBAAIiv2nyFZmluzXyhpwjm5Kh98bt6RoxAAJYnQACzDeRS-34WTpdGYEcOwQ",
-    #             },
-    #             {
-    #                 "video": "BAACAgIAAxkBAAIiwWnyFcmJBVzpagNgmyv1LTcFpVJTAAJanQACzDeRSxVwYIboLfQEOwQ",
-    #             },
-    #             {
-    #                 "video": "BAACAgIAAxkBAAIiw2nyFfGqw2YmFLImNMWFb55rh75WAAJinQACzDeRSwm1g4kEBluVOwQ",
-    #             },
-    #             {
-    #                 "video": "BAACAgIAAxkBAAIixWnyFh1LOg1YlGmznAO-v_W2_m5hAAJknQACzDeRSwjN0Pw0wuwMOwQ",
-    #             },
-    #             {
-    #                 "video": "BAACAgIAAxkBAAIix2nyFk0R_T312tm9xHKlnfHdQDmwAAJlnQACzDeRS86K6fXNq1P1OwQ",
-    #             },
+    "120": {
+        "title": "В поисках Аляски",
+        "year": 2019,
+        "episode_counter": "8 серий",
+        "description": "Шестнадцатилетний Майлз Холтер оставляет свою скучную жизнь с родителями и отправляется учиться в новую школу Калвер Крик в поисках «Великого „Возможно“». Здесь он находит первых друзей и влюбляется в девушку по имени Аляска Янг, которая переворачивает его жизнь.",
+        "poster": "AgACAgIAAxkBAAIkg2n13n0NGo6L0UiS3Ux5O6xFjBnYAALWFWsbe9CoS5PUdonmNlMeAQADAgADeQADOwQ",
+        "country": "США",
+        "director": "Джон Шварц и др.",
+        "genres": ["драма", "мелодрама"],
+        "episodes": [
+                {
+                    "video": "BAACAgIAAxkBAAIiuWnyFOGeNJ_uPtgK-tIyFQxftb7mAAJNnQACzDeRS3joi5ms0yCsOwQ",
+                },
+                {
+                    "video": "BAACAgIAAxkBAAIiu2nyFRnlncmfBGRo9-UDC_vqSnUGAAJPnQACzDeRS-sjrjr58SleOwQ",
+                },
+                {
+                    "video": "BAACAgIAAxkBAAIivWnyFU_wURuID8cjiGVr_Z5xTQL1AAJUnQACzDeRS_Qwu5lzSNrdOwQ",
+                },
+                {
+                    "video": "BAACAgIAAxkBAAIiv2nyFZmluzXyhpwjm5Kh98bt6RoxAAJYnQACzDeRS-34WTpdGYEcOwQ",
+                },
+                {
+                    "video": "BAACAgIAAxkBAAIiwWnyFcmJBVzpagNgmyv1LTcFpVJTAAJanQACzDeRSxVwYIboLfQEOwQ",
+                },
+                {
+                    "video": "BAACAgIAAxkBAAIiw2nyFfGqw2YmFLImNMWFb55rh75WAAJinQACzDeRSwm1g4kEBluVOwQ",
+                },
+                {
+                    "video": "BAACAgIAAxkBAAIixWnyFh1LOg1YlGmznAO-v_W2_m5hAAJknQACzDeRSwjN0Pw0wuwMOwQ",
+                },
+                {
+                    "video": "BAACAgIAAxkBAAIix2nyFk0R_T312tm9xHKlnfHdQDmwAAJlnQACzDeRS86K6fXNq1P1OwQ",
+                },
                 
-    #     ]
-    # },
+        ]
+    },
     # "000": {
     #     "title": "",
     #     "year": 1,
