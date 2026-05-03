@@ -42,7 +42,11 @@ ADMIN_ID = 666877639
 def is_admin(user_id: int) -> bool:
     return user_id == ADMIN_ID
 
+db = sqlite3.connect("users.db", isolation_level=None)
+
 def add_or_update_user(user):
+    cursor = db.cursor()
+
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     cursor.execute("SELECT user_id FROM users WHERE user_id = ?", (user.id,))
@@ -69,8 +73,6 @@ def add_or_update_user(user):
             now,
             now
         ))
-
-    db.commit()
 
 def get_top_users(limit=10):
     cursor.execute("""
@@ -5457,7 +5459,7 @@ def find_series(query: str):
 
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
-    # add_or_update_user(message.from_user)
+    add_or_update_user(message.from_user)
     await message.answer(
         "<b>Для просмотра введите название ИЛИ код</b>\n\n"
         "<b>Например: «Фокус» ИЛИ же его код «001»</b>\n\n"
@@ -5470,7 +5472,7 @@ async def cmd_start(message: types.Message):
 
 @dp.message(Command("genres"))
 async def cmd_genres(message: types.Message):
-    # add_or_update_user(message.from_user)
+    add_or_update_user(message.from_user)
     await message.answer(
         "<b>🎭 Выберите жанр:</b>",
         reply_markup=genres_keyboard(),
@@ -5570,7 +5572,7 @@ async def handle_message(message: types.Message):
 
     query = message.text.strip().lower()  # приведение к нижнему регистру
 
-    # add_or_update_user(message.from_user)
+    add_or_update_user(message.from_user)
 
     results = search_all(query)
 
