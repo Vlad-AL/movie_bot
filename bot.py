@@ -13,6 +13,7 @@ from aiogram.types import ReplyKeyboardRemove
 from aiogram.types import MenuButtonDefault
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
+import logging
 
 load_dotenv()                    # загружает .env файл
 TOKEN = os.getenv("TOKEN")
@@ -43,6 +44,13 @@ def is_admin(user_id: int) -> bool:
     return user_id == ADMIN_ID
 
 db = sqlite3.connect("users.db", isolation_level=None)
+
+logging.basicConfig(
+    filename="bot.log",
+    level=logging.INFO,
+    format="%(asctime)s | %(levelname)s | %(message)s",
+    encoding="utf-8"
+)
 
 def add_or_update_user(user):
     cursor = db.cursor()
@@ -5567,12 +5575,14 @@ async def get_photo_id(message: types.Message):
 
 @dp.message(lambda m: m.text)
 async def handle_message(message: types.Message):
-    if message.reply_markup:  # если есть клавиатура
-        await message.answer("🔄", reply_markup=ReplyKeyboardRemove())
+    user = message.from_user
+    name = user.username or f"{user.first_name or ''} {user.last_name or ''}".strip()
 
-    query = message.text.strip().lower()  # приведение к нижнему регистру
+    logging.info(
+        f"MSG | ID:{user.id} | USER:{name} | USERNAME:@{user.username} | TEXT:{message.text}"
+    )
 
-    add_or_update_user(message.from_user)
+    query = message.text.strip().lower()
 
     results = search_all(query)
 
@@ -5631,6 +5641,13 @@ async def handle_message(message: types.Message):
 
 @dp.callback_query()
 async def handle_callbacks(callback: types.CallbackQuery):
+    user = callback.from_user
+    name = user.username or f"{user.first_name or ''} {user.last_name or ''}".strip()
+
+    logging.info(
+        f"BTN | ID:{user.id} | USER:{name} | USERNAME:@{user.username} | DATA:{callback.data}"
+    )
+    
     data = callback.data.split(":")
     action = data[0]
 
