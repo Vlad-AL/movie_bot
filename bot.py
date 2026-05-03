@@ -9,6 +9,8 @@ import datetime
 from aiogram.client.session.aiohttp import AiohttpSession
 from dotenv import load_dotenv
 import os
+from aiogram.types import ReplyKeyboardRemove
+from aiogram.types import MenuButtonDefault
 
 load_dotenv()                    # загружает .env файл
 TOKEN = os.getenv("TOKEN")
@@ -5460,7 +5462,8 @@ async def cmd_start(message: types.Message):
         "<b>https://t.me/kinonawe4er - наш канал ✨</b>\n\n"
         "<b>/genres - сортировка по жанрам</b>",
         parse_mode="HTML",
-        disable_web_page_preview=True
+        disable_web_page_preview=True,
+        reply_markup=ReplyKeyboardRemove()
     )
 
 @dp.message(Command("genres"))
@@ -5603,6 +5606,8 @@ async def handle_callbacks(callback: types.CallbackQuery):
 
 # Запуск бота
 async def main():
+    await bot.set_chat_menu_button(menu_button=MenuButtonDefault())
+
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
