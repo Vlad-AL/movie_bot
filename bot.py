@@ -5488,6 +5488,9 @@ async def get_photo_id(message: types.Message):
 
 @dp.message(lambda m: m.text)
 async def handle_message(message: types.Message):
+    if message.reply_markup:  # если есть клавиатура
+        await message.answer("🔄", reply_markup=ReplyKeyboardRemove())
+        
     query = message.text.strip().lower()  # приведение к нижнему регистру
 
     # add_or_update_user(message.from_user)
