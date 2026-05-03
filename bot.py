@@ -14,6 +14,7 @@ from aiogram.types import MenuButtonDefault
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 import logging
+from aiogram.types import FSInputFile
 
 load_dotenv()                    # загружает .env файл
 TOKEN = os.getenv("TOKEN")
@@ -5703,15 +5704,19 @@ async def handle_callbacks(callback: types.CallbackQuery):
     await callback.answer()
 
 @dp.message(Command("log"))
-async def get_log(message: types.Message):
+async def log_cmd(message: types.Message):
     if message.from_user.id != ADMIN_ID:
         return
 
-    try:
-        with open("/root/movie_bot/bot.log", "rb") as f:
-            await message.answer_document(f)
-    except Exception as e:
-        await message.answer(f"Ошибка: {e}")
+    file_path = "bot.log"
+
+    if not os.path.exists(file_path):
+        await message.answer("Лог файл не найден")
+        return
+
+    file = FSInputFile(file_path)
+
+    await message.answer_document(file)
 
 
 # Запуск бота
