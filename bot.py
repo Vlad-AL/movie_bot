@@ -7,8 +7,14 @@ from aiogram.filters import Command
 import asyncio
 import datetime
 from aiogram.client.session.aiohttp import AiohttpSession
+from dotenv import load_dotenv
+import os
 
-TOKEN = "8425155912:AAEnVOcpXrk6EE11APIFgTemWhtXTCVgrHs"
+load_dotenv()                    # загружает .env файл
+TOKEN = os.getenv("TOKEN")
+
+if not TOKEN:
+    raise ValueError("Токен не найден в .env файле!")
 
 PROXY_URL = "http://uapkuolo:00j38yrboe49@31.59.20.176:6754"
 

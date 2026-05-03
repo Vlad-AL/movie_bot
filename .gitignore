@@ -1,0 +1,12 @@
+# Секреты
+.env
+*.env
+.env.local
+.env.production
+.env.development
+
+# Другие возможные файлы с токенами
+config.secret.py
+secrets.json
+credentials.py
+token.txt
