@@ -5603,6 +5603,8 @@ async def handle_callbacks(callback: types.CallbackQuery):
 
 # Запуск бота
 async def main():
+    await bot.delete_my_commands()
+    
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
