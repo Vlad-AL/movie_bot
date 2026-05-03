@@ -11,6 +11,8 @@ from dotenv import load_dotenv
 import os
 from aiogram.types import ReplyKeyboardRemove
 from aiogram.types import MenuButtonDefault
+from aiogram.fsm.context import FSMContext
+from aiogram.fsm.state import State, StatesGroup
 
 load_dotenv()                    # загружает .env файл
 TOKEN = os.getenv("TOKEN")
@@ -5475,36 +5477,80 @@ async def cmd_genres(message: types.Message):
         parse_mode="HTML"
     )
 
+# ==================== РАССЫЛКА ====================
+class BroadcastState(StatesGroup):
+    waiting_for_confirm = State()
+
+
 @dp.message(Command("broadcast"))
-async def broadcast_command(message: types.Message):
+async def broadcast_start(message: types.Message, state: FSMContext):
     if not is_admin(message.from_user.id):
-        await message.answer("Нет доступа.")
         return
-
-    # Получаем текст после команды
-    text = message.text.partition(" ")[2]  # всё после /broadcast
-
+    
+    text = message.text.partition(" ")[2].strip()
+    
     if not text:
-        await message.answer("Использование: /broadcast <текст сообщения>")
+        await message.answer("❌ Использование:\n`/broadcast Текст сообщения`", parse_mode="Markdown")
         return
 
-    users = get_all_users(limit=999999)  # получаем всех пользователей
+    await state.update_data(broadcast_text=text)
+    users_count = get_users_count()
+
+    await message.answer(
+        f"⚠️ <b>Подтверждение рассылки</b>\n\n"
+        f"Получателей: <b>{users_count}</b>\n\n"
+        f"Сообщение:\n{text}\n\n"
+        f"Напиши <b>Да</b> — чтобы отправить\n"
+        f"Напиши <b>/cancel</b> — чтобы отменить",
+        parse_mode="HTML"
+    )
+    
+    await state.set_state(BroadcastState.waiting_for_confirm)
+
+
+@dp.message(Command("cancel"))
+async def cancel_broadcast(message: types.Message, state: FSMContext):
+    await state.clear()
+    await message.answer("✅ Рассылка отменена.")
+
+
+@dp.message(BroadcastState.waiting_for_confirm)
+async def broadcast_confirm(message: types.Message, state: FSMContext):
+    if message.text.lower() not in ["да", "yes"]:
+        await message.answer("Рассылка отменена.")
+        await state.clear()
+        return
+
+    data = await state.get_data()
+    text = data.get("broadcast_text")
+
+    users = get_all_users(limit=999999)
     success = 0
     failed = 0
 
+    status_msg = await message.answer("⏳ Начинаю рассылку...")
+
     for user_id, *_ in users:
         try:
-            await bot.send_message(user_id, text, parse_mode="HTML")
+            await bot.send_message(
+                user_id, 
+                text, 
+                parse_mode="HTML",
+                disable_web_page_preview=True
+            )
             success += 1
-        except Exception:
+        except:
             failed += 1
 
-    await message.answer(
-        f"✅ Рассылка завершена!\n\n"
-        f"Успешно: {success}\n"
-        f"Ошибок: {failed}\n"
-        f"Всего в базе: {len(users)}"
+    await status_msg.edit_text(
+        f"✅ <b>Рассылка завершена!</b>\n\n"
+        f"✅ Доставлено: <b>{success}</b>\n"
+        f"❌ Ошибок: <b>{failed}</b>\n"
+        f"📊 Всего в базе: <b>{len(users)}</b>",
+        parse_mode="HTML"
     )
+    
+    await state.clear()
 
 # # Основной хендлер сообщений
 
