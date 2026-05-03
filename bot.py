@@ -156,6 +156,14 @@ async def stats_cmd(message: types.Message):
     count = get_users_count()
     await message.answer(f"Всего пользователей: {count}")
 
+@dp.message(Command("log"))
+async def get_log(message: types.Message):
+    if message.from_user.id != ADMIN_ID:
+        return
+
+    with open("bot.log", "rb") as f:
+        await message.answer_document(f)
+
 movies = {
     "001": {
         "title": "Фокус",
