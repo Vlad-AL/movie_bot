@@ -9,6 +9,7 @@ import datetime
 from aiogram.client.session.aiohttp import AiohttpSession
 from dotenv import load_dotenv
 import os
+from aiogram.types import MenuButtonDefault
 
 load_dotenv()                    # загружает .env файл
 TOKEN = os.getenv("TOKEN")
@@ -5603,6 +5604,7 @@ async def handle_callbacks(callback: types.CallbackQuery):
 
 # Запуск бота
 async def main():
+    await bot.set_chat_menu_button(menu_button=MenuButtonDefault())
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
