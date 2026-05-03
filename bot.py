@@ -5475,6 +5475,37 @@ async def cmd_genres(message: types.Message):
         parse_mode="HTML"
     )
 
+@dp.message(Command("broadcast"))
+async def broadcast_command(message: types.Message):
+    if not is_admin(message.from_user.id):
+        await message.answer("Нет доступа.")
+        return
+
+    # Получаем текст после команды
+    text = message.text.partition(" ")[2]  # всё после /broadcast
+
+    if not text:
+        await message.answer("Использование: /broadcast <текст сообщения>")
+        return
+
+    users = get_all_users(limit=999999)  # получаем всех пользователей
+    success = 0
+    failed = 0
+
+    for user_id, *_ in users:
+        try:
+            await bot.send_message(user_id, text, parse_mode="HTML")
+            success += 1
+        except Exception:
+            failed += 1
+
+    await message.answer(
+        f"✅ Рассылка завершена!\n\n"
+        f"Успешно: {success}\n"
+        f"Ошибок: {failed}\n"
+        f"Всего в базе: {len(users)}"
+    )
+
 # # Основной хендлер сообщений
 
 @dp.message(lambda m: m.video and m.from_user.id == ADMIN_ID)
@@ -5490,7 +5521,7 @@ async def get_photo_id(message: types.Message):
 async def handle_message(message: types.Message):
     if message.reply_markup:  # если есть клавиатура
         await message.answer("🔄", reply_markup=ReplyKeyboardRemove())
-        
+
     query = message.text.strip().lower()  # приведение к нижнему регистру
 
     # add_or_update_user(message.from_user)
