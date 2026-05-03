@@ -5,7 +5,7 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.filters import Command
 import asyncio
-from datetime import datetime
+import datetime
 from aiogram.client.session.aiohttp import AiohttpSession
 from dotenv import load_dotenv
 import os
@@ -5457,7 +5457,7 @@ def find_series(query: str):
 
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
-    add_or_update_user(message.from_user)
+    # add_or_update_user(message.from_user)
     await message.answer(
         "<b>Для просмотра введите название ИЛИ код</b>\n\n"
         "<b>Например: «Фокус» ИЛИ же его код «001»</b>\n\n"
@@ -5470,7 +5470,7 @@ async def cmd_start(message: types.Message):
 
 @dp.message(Command("genres"))
 async def cmd_genres(message: types.Message):
-    add_or_update_user(message.from_user)
+    # add_or_update_user(message.from_user)
     await message.answer(
         "<b>🎭 Выберите жанр:</b>",
         reply_markup=genres_keyboard(),
@@ -5570,7 +5570,7 @@ async def handle_message(message: types.Message):
 
     query = message.text.strip().lower()  # приведение к нижнему регистру
 
-    add_or_update_user(message.from_user)
+    # add_or_update_user(message.from_user)
 
     results = search_all(query)
 
