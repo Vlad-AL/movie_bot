@@ -8,7 +8,7 @@ import asyncio
 import datetime
 from aiogram.client.session.aiohttp import AiohttpSession
 
-TOKEN = "8425155912:AAFQpxuCDa7fSizeY4W3c39dzsE2YRzVnAQ"
+TOKEN = "8425155912:AAEnVOcpXrk6EE11APIFgTemWhtXTCVgrHs"
 
 PROXY_URL = "http://uapkuolo:00j38yrboe49@31.59.20.176:6754"
 
