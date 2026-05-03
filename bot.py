@@ -5573,7 +5573,7 @@ async def get_video_id(message: types.Message):
 async def get_photo_id(message: types.Message):
     await message.answer(message.photo[-1].file_id)
 
-@dp.message(lambda m: m.text)
+@dp.message(lambda m: m.text and not m.text.startswith("/"))
 async def handle_message(message: types.Message):
     user = message.from_user
     name = user.username or f"{user.first_name or ''} {user.last_name or ''}".strip()
