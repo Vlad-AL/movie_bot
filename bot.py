@@ -46,9 +46,9 @@ def is_admin(user_id: int) -> bool:
 db = sqlite3.connect("users.db", isolation_level=None)
 
 logging.basicConfig(
-    filename="bot.log",
+    filename="/root/movie_bot/bot.log",
     level=logging.INFO,
-    format="%(asctime)s | %(levelname)s | %(message)s",
+    format="%(asctime)s | %(message)s",
     encoding="utf-8"
 )
 
@@ -5707,8 +5707,11 @@ async def get_log(message: types.Message):
     if message.from_user.id != ADMIN_ID:
         return
 
-    with open("bot.log", "rb") as f:
-        await message.answer_document(f)
+    try:
+        with open("/root/movie_bot/bot.log", "rb") as f:
+            await message.answer_document(f)
+    except Exception as e:
+        await message.answer(f"Ошибка: {e}")
 
 
 # Запуск бота
