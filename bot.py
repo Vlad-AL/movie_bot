@@ -52,7 +52,7 @@ def load_media_data():
     movies.clear()
     series.clear()
 
-    # Фильмы
+    # === ФИЛЬМЫ ===
     media_cursor.execute("""
         SELECT code, title, year, video, description, country, director, genres 
         FROM movies
@@ -69,9 +69,9 @@ def load_media_data():
             "genres": [g.strip() for g in str(row[7]).split(',')] if row[7] else []
         }
 
-    # Сериалы
+    # === СЕРИАЛЫ (правильный порядок колонок) ===
     media_cursor.execute("""
-        SELECT code, title, year, poster, description, country, director, genres, episode_counter 
+        SELECT code, title, year, episode_counter, description, poster, country, director, genres 
         FROM series
     """)
     for row in media_cursor.fetchall():
@@ -79,21 +79,28 @@ def load_media_data():
         series[code] = {
             "title": row[1],
             "year": row[2],
-            "poster": row[3],
+            "episode_counter": row[3] or "",
             "description": row[4],
-            "country": row[5],
-            "director": row[6],
-            "genres": [g.strip() for g in str(row[7]).split(',')] if row[7] else [],
-            "episode_counter": row[8] or "",
+            "poster": row[5],
+            "country": row[6],
+            "director": row[7],
+            "genres": [g.strip() for g in str(row[8]).split(',')] if row[8] else [],
             "seasons": {}
         }
 
-    # Сезоны и эпизоды
+    # === СЕЗОНЫ И ЭПИЗОДЫ ===
     for code in list(series.keys()):
-        media_cursor.execute("SELECT season_number, title FROM seasons WHERE series_code = ? ORDER BY season_number", (code,))
+        # Сезоны
+        media_cursor.execute("""
+            SELECT season_number, title 
+            FROM seasons 
+            WHERE series_code = ? 
+            ORDER BY season_number
+        """, (code,))
         for s_num, s_title in media_cursor.fetchall():
             series[code]["seasons"][s_num] = {"title": s_title or f"Сезон {s_num}", "episodes": []}
 
+        # Эпизоды
         media_cursor.execute("""
             SELECT season_number, episode_number, title, video 
             FROM episodes 
