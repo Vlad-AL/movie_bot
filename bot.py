@@ -127,6 +127,12 @@ def load_media_data():
                 })
 
     print(f"✅ Загружено: {len(movies)} фильмов | {len(series)} сериалов")
+    # Временная отладка
+    if movies:
+        print("Пример фильма:", list(movies.keys())[:3])
+        print("Пример данных:", list(movies.values())[0] if movies else None)
+    if series:
+        print("Пример сериала:", list(series.keys())[:2])
 
 users_cursor.execute("PRAGMA journal_mode=WAL;")
 users_cursor.execute("PRAGMA synchronous=NORMAL;")
