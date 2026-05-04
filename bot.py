@@ -2,7 +2,7 @@ import asyncio
 import sqlite3
 import re
 from aiogram import Bot, Dispatcher, types
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.types import InputMediaVideo, InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.filters import Command
 import asyncio
 from datetime import datetime
@@ -34,6 +34,7 @@ bot = Bot(token=TOKEN, session=session)
 dp = Dispatcher()
 
 db = sqlite3.connect("users.db", check_same_thread=False)
+db.isolation_level = None
 cursor = db.cursor()
 
 db_media = sqlite3.connect("media.db")
@@ -134,8 +135,6 @@ ADMIN_ID = 666877639
 
 def is_admin(user_id: int) -> bool:
     return user_id == ADMIN_ID
-
-db = sqlite3.connect("users.db", isolation_level=None)
 
 logging.basicConfig(
     filename="/root/movie_bot/bot.log",
@@ -309,8 +308,8 @@ async def season_selected(callback: types.CallbackQuery):
     await callback.answer()
 
 
-def has_only_warning(item: dict) -> bool:
-    return "warning" in item and len(item.keys()) == 1
+def has_only_warning(item) -> bool:
+    return isinstance(item, dict) and "warning" in item and len(item) == 1
 
 def normalize(text: str) -> str:
     text = text.lower().replace("ё", "е")
@@ -326,19 +325,12 @@ def has_seasons(code: str) -> bool:
     return cursor_media.fetchone()[0] > 0
 
 
-def get_episodes(serial: dict, season: int | None = None):
-    if has_seasons(serial):
-        if season is None:
-            season = min(serial["seasons"].keys())
-        return serial["seasons"][season]["episodes"]
-    else:
-        return serial["episodes"]
-
 def search_movies(query: str):
-    query = normalize(query.strip())
+    query = normalize((query or "").strip())
     results = []
 
-    for movie in get_all_movies():
+    movies = get_all_movies()
+    for movie in movies:
         code = movie["code"]
         title = normalize(movie.get("title", ""))
         if query in title:
@@ -347,7 +339,7 @@ def search_movies(query: str):
     return results
 
 def search_series(query: str):
-    query = normalize(query.strip())
+    query = normalize((query or "").strip())
     results = []
 
     for serial in get_all_series():
@@ -375,7 +367,8 @@ def search_by_title(query: str):
     query = normalize(query)
     results = []
 
-    for movie in get_all_movies():
+    movies = get_all_movies()
+    for movie in movies:
         code = movie["code"]
         if query in normalize(movie.get("title", "")):
             results.append(("movie", code, movie))
@@ -419,7 +412,8 @@ def get_all_genres():
     genres = set()
 
     # фильмы
-    for movie in get_all_movies():
+    movies = get_all_movies()
+    for movie in movies:
         genres.update(movie.get("genres", []))
 
     # сериалы
@@ -447,7 +441,8 @@ def genres_keyboard():
 def find_by_genre(genre: str):
     results = []
 
-    for movie in get_all_movies():
+    movies = get_all_movies()
+    for movie in movies:
         code = movie["code"]
         if genre in movie.get("genres", []):
             results.append(("movie", code, movie))
@@ -541,6 +536,8 @@ async def open_item(callback: types.CallbackQuery):
             return
         movie = get_movie(code)  # создаем movie первым!
 
+        if not movie:
+            return
         if has_only_warning(movie):
             await callback.message.answer(
                 f"<b>{movie['warning']}</b>",
@@ -583,6 +580,8 @@ async def check_movie_callback(callback: types.CallbackQuery):
         await callback.answer("❌ Фильм не найден", show_alert=True)
         return
 
+    if not movie:
+        return
     if has_only_warning(movie):
         await callback.message.answer(
             f"<b>{movie['warning']}</b>",
@@ -782,50 +781,70 @@ def series_menu_keyboard(code: str, page: int = 0, season: int | None = None):
 
 
 async def send_episode(
-    target,
+    target: types.Message | types.CallbackQuery,
     code: str,
     episode_index: int,
     season: int | None = None
 ):
-    user_id = target.from_user.id if isinstance(target, types.CallbackQuery) else target.chat.id
+    # ----------------------------
+    # Унифицированный bot + user
+    # ----------------------------
+    if isinstance(target, types.CallbackQuery):
+        message = target.message
+        user_id = target.from_user.id
+    else:
+        message = target
+        user_id = target.from_user.id
 
+    # ----------------------------
+    # Проверка подписки
+    # ----------------------------
     if not await is_subscribed(user_id):
         keyboard = InlineKeyboardMarkup(inline_keyboard=[
-            [InlineKeyboardButton(text="📍 Подписаться", url="https://t.me/kinonawe4er")],
+            [InlineKeyboardButton(
+                text="📍 Подписаться",
+                url="https://t.me/kinonawe4er"
+            )],
             [InlineKeyboardButton(
                 text="🔎 Проверить",
                 callback_data=f"check_sub:{code}:{episode_index}"
             )]
         ])
 
-        await target.message.answer(
+        await message.answer(
             "Для просмотра серии подпишитесь на канал @kinonawe4er",
             reply_markup=keyboard
         )
         return
 
+    # ----------------------------
+    # Получаем сериал
+    # ----------------------------
     serial = get_series(code)
+    if not serial:
+        await message.answer("❌ Сериал не найден")
+        return
+
     episodes = get_episodes(serial, season)
-    total = len(episodes)
+
+    if not episodes:
+        await message.answer("❌ Серии не найдены")
+        return
+
+    # защита от выхода за индекс
+    if episode_index < 0 or episode_index >= len(episodes):
+        return
+
     episode = episodes[episode_index]
-    episode_title = episode.get("title")
+    total = len(episodes)
 
-    # ---- Название сезона ----
-    season_text = ""
-    if has_seasons(serial) and season is not None:
-        season_title = serial["seasons"][season].get("title")
-        if season_title:
-            season_text = f"{season_title}, "
-        else:
-            season_text = f"Сезон {season}, "
-
-    if episode_title:
-        episode_line = f"{season_text}серия {episode_index + 1} из {total} «{episode_title}»"
-    else:
-        episode_line = f"{season_text}серия {episode_index + 1} из {total}"
+    # ----------------------------
+    # Формируем текст серии
+    # ----------------------------
+    episode_line = f"серия {episode_index + 1} из {total}"
 
     caption = (
-        f"<b>⭐️ «{serial['title']}», {serial['year']}, ({serial['episode_counter']})</b>\n\n"
+        f"<b>⭐️ «{serial['title']}», {serial['year']}</b>\n\n"
         f"{episode_line}\n\n"
         f"Смотреть бесплатно фильмы и сериалы 👉🏻 @kinonawe4er_bot\n"
         f"Наш канал @kinonawe4er ✨"
@@ -833,20 +852,30 @@ async def send_episode(
 
     keyboard = episode_keyboard(code, episode_index, total, season)
 
-    if isinstance(target, types.CallbackQuery):
-        await target.message.edit_media(
-            media=types.InputMediaVideo(
-                media=episode["video"],
+    # ----------------------------
+    # Отправка / редактирование
+    # ----------------------------
+    try:
+        if isinstance(target, types.CallbackQuery):
+            await message.edit_media(
+                media=InputMediaVideo(
+                    media=episode["video"],
+                    caption=caption
+                ),
+                reply_markup=keyboard
+            )
+        else:
+            await message.answer_video(
+                video=episode["video"],
                 caption=caption,
-                parse_mode="HTML"
-            ),
-            reply_markup=keyboard
-        )
-    else:
-        await target.answer_video(
+                reply_markup=keyboard
+            )
+
+    except Exception:
+        # fallback если edit_media не работает
+        await message.answer_video(
             video=episode["video"],
             caption=caption,
-            parse_mode="HTML",
             reply_markup=keyboard
         )
 
@@ -859,7 +888,7 @@ async def check_sub_callback(callback: types.CallbackQuery):
 
 # Функция для поиска фильма по коду или названию
 def find_movie(query: str):
-    query = normalize(query.strip())
+    query = normalize((query or "").strip())
 
     movies = get_all_movies()
 
@@ -875,7 +904,7 @@ def find_movie(query: str):
 
 
 def find_series(query: str):
-    query = normalize(query.strip())
+    query = normalize((query or "").strip())
 
     for serial in get_all_series():
         code = serial["code"]
@@ -1028,6 +1057,8 @@ async def handle_message(message: types.Message):
                 return
             movie = get_movie(code)
 
+            if not movie:
+                return
             if has_only_warning(movie):
                 await message.answer(
                     f"<b>{movie['warning']}</b>",
