@@ -69,7 +69,7 @@ def load_media_data():
             "genres": [g.strip() for g in str(row[7]).split(',')] if row[7] else []
         }
 
-    # === СЕРИАЛЫ (правильный порядок колонок) ===
+    # === СЕРИАЛЫ ===
     media_cursor.execute("""
         SELECT code, title, year, episode_counter, description, poster, country, director, genres 
         FROM series
