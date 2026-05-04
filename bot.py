@@ -314,10 +314,12 @@ def has_only_warning(item: dict) -> bool:
     return "warning" in item and len(item.keys()) == 1
 
 def normalize(text: str) -> str:
+    if not text:
+        return ""
     text = text.lower().replace("ё", "е")
-    text = re.sub(r"[^\w\s]", "", text)  # удаляет знаки препинания
-    text = text.replace(" ", "")
-    return text
+    text = re.sub(r"[^\w\s]", "", text)   # убираем знаки
+    text = re.sub(r"\s+", "", text)       # убираем все пробелы
+    return text.strip()
 
 def has_seasons(serial: dict) -> bool:
     return "seasons" in serial
@@ -379,11 +381,34 @@ def search_by_title(query: str):
     return results
 
 def search_all(query: str):
-    by_code = search_by_code(query)
-    if by_code:
-        return by_code
+    if not query:
+        return []
+    
+    query_norm = normalize(query)
+    
+    results = []
 
-    return search_by_title(query)
+    # Поиск по коду
+    if query in movies:
+        results.append(("movie", query, movies[query]))
+    if query in series:
+        results.append(("series", query, series[query]))
+
+    if results:
+        return results
+
+    # Поиск по названию
+    for code, movie in movies.items():
+        title_norm = normalize(movie.get("title", ""))
+        if query_norm in title_norm or title_norm in query_norm:
+            results.append(("movie", code, movie))
+
+    for code, serial in series.items():
+        title_norm = normalize(serial.get("title", ""))
+        if query_norm in title_norm or title_norm in query_norm:
+            results.append(("series", code, serial))
+
+    return results
 
 
 def search_results_keyboard(results):
