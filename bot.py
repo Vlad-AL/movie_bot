@@ -33,11 +33,19 @@ session = AiohttpSession(
 bot = Bot(token=TOKEN, session=session)
 dp = Dispatcher()
 
-db = sqlite3.connect("users.db", check_same_thread=False)
-cursor = db.cursor()
+users_db = sqlite3.connect("users.db", check_same_thread=False)
+users_cursor = users_db.cursor()
 
-cursor.execute("PRAGMA journal_mode=WAL;")
-cursor.execute("PRAGMA synchronous=NORMAL;")
+users_cursor.execute("PRAGMA journal_mode=WAL;")
+users_cursor.execute("PRAGMA synchronous=NORMAL;")
+
+
+# ===== MEDIA DB =====
+media_db = sqlite3.connect("media.db", check_same_thread=False)
+media_cursor = media_db.cursor()
+
+media_cursor.execute("PRAGMA journal_mode=WAL;")
+media_cursor.execute("PRAGMA synchronous=NORMAL;")
 
 ADMIN_ID = 666877639
 
@@ -84,29 +92,29 @@ def add_or_update_user(user):
         ))
 
 def get_top_users(limit=10):
-    cursor.execute("""
+    users_cursor.execute("""
         SELECT user_id, requests_count
         FROM users
         ORDER BY requests_count DESC
         LIMIT ?
     """, (limit,))
-    return cursor.fetchall()
+    return users_cursor.fetchall()
 
 def get_users_count() -> int:
-    cursor.execute("SELECT COUNT(*) FROM users")
-    return cursor.fetchone()[0]
+    users_cursor.execute("SELECT COUNT(*) FROM users")
+    return users_cursor.fetchone()[0]
 
 
 CHANNEL_USERNAME = "@kinonawe4er"
 
 def get_all_users(limit: int = 20):
-    cursor.execute("""
+    users_cursor.execute("""
         SELECT user_id, username, first_name, last_name, requests_count, last_seen
         FROM users
         ORDER BY last_seen DESC
         LIMIT ?
     """, (limit,))
-    return cursor.fetchall()
+    return users_cursor.fetchall()
 
 async def send_long_text(message, text, chunk_size=3800):
     for i in range(0, len(text), chunk_size):
