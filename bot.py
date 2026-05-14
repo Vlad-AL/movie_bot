@@ -22,7 +22,7 @@ TOKEN = os.getenv("TOKEN")
 if not TOKEN:
     raise ValueError("Токен не найден в .env файле!")
 
-PROXY_URL = "http://uapkuolo:00j38yrboe49@31.59.20.176:6754"
+PROXY_URL = "http://uapkuolo:00j38yrboe49@142.111.48.253:7030"
 
 
 session = AiohttpSession(
