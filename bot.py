@@ -4848,6 +4848,117 @@ series = {
                 
         ]
     },
+    "129": {
+        "title": "Энн",
+        "year": 2017,
+        "episode_counter": "27 серий",
+        "description": "Энн — тринадцатилетняя сирота. Девочка рано лишилась родителей и с тех пор живёт в детском приюте. Жизнь героини резко меняется, когда в результате ошибки она попадает к новым приёмным родителям, старой деве и её младшему брату.",
+        "poster": "AgACAgIAAxkBAAIqhWoWDkvLSkMHEBU4B1j_MHmT0yI_AAIFG2sbrVywSPWGWZ3g-BjYAQADAgADeQADOwQ",
+        "country": "Канада",
+        "director": "Ники Каро и др.",
+        "genres": ["драма", "семейный"],
+        "seasons": {
+            1: {
+                "title" : "Сезон 1",
+                "episodes": [
+                    {
+                        "video": "BAACAgIAAxkBAAIqTWoWCaaN9ploffitpg2NC88jeuicAALLmAACrVywSCBW98aDTXP2OwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIqT2oWCcfJLcJtK6-ILBj1HwNbno_zAALOmAACrVywSE4B3u6dUoHVOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIqUWoWCerpdSud-7CyTAV3DgTZAAGdewACz5gAAq1csEjs05_P3AG2ZTsE",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIqU2oWCg7D7K_8J3qeApZ4xcPabsmHAALQmAACrVywSPiNdHwmkEP-OwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIqV2oWCjEvcyDzz1XJvCOZenpSXz8QAALSmAACrVywSFfyVjvshYhKOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIqWWoWClLu_hWhEG6-kzL-AAGuqQMydAAC05gAAq1csEhD5DNFtRKYmjsE",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIqW2oWCnXUBSujyu64CcBPx5y1MZeGAALVmAACrVywSF6413Vdfqx-OwQ",
+                    },
+                    
+                ]
+            },
+            2: {
+                "title" : "Сезон 2",
+                "episodes": [
+                    {
+                        "video": "BAACAgIAAxkBAAIqXWoWCpkbbTtrfgdi4L4lU_AbCEFuAALXmAACrVywSJG9rkQVKBG8OwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIqX2oWCrxtOeMSEZy4un8_OoM0AhtFAALZmAACrVywSENK1veIFM4TOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIqYWoWCt_3mmraVYEByfK7SEixWosnAALbmAACrVywSBz9c1mQ1w2hOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIqY2oWCwKyqgm4boJ5ULy0rRZqLQNhAALcmAACrVywSIqcfjUg2ouCOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIqZWoWCyXWDUixRiQWPT3N0AABKe8RbAAC3ZgAAq1csEilOPrNd1PtvzsE",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIqZ2oWC0dXGgqtL6Lp1xxGhsT3nNehAALemAACrVywSGTFyOCVA7GuOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIqaWoWC2xgMumR6VyRFGCcPiwUwhpkAALgmAACrVywSNlfy245nIWFOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIqa2oWC5AKLqXrV_28LKtSoswD3ioUAALimAACrVywSDF95y76fQv1OwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIqbWoWC7M1_v8hHH3cCLSQiZ3fN8xUAALjmAACrVywSB3kzD64lQfuOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIqb2oWC9bUbcqIe89rH-OPFnvuiPL4AALlmAACrVywSDTt-20v7SATOwQ",
+                    },
+                    
+                ]
+            },
+            3: {
+                "title" : "Сезон 3",
+                "episodes": [
+                    {
+                        "video": "BAACAgIAAxkBAAIqcWoWC_hVQ-_1BOfiM-UvacvkFmDiAALpmAACrVywSA-DtAMjV6gsOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIqc2oWDBytUtKfKrMjAbNQQaY30ZvrAALqmAACrVywSDJxRCxMsC1UOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIqdWoWDD5Etv4S2EX1CyIb0d6KnTLOAALrmAACrVywSNopvzc4B_HmOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIqd2oWDGKdWo4Uxmc_KarmBPssoYJVAALsmAACrVywSDUjRK1ChZ4nOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIqeWoWDIWcm8RvlGxu6rkirehapA2pAALvmAACrVywSIhKdeHtArTYOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIqe2oWDKcZI_EtgKNprAV48uA2lippAALxmAACrVywSAN9MEt-efDqOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIqfWoWDMo_HHZbfdBMboymLCixb0I8AALymAACrVywSI3BofXEO68jOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIqf2oWDO4us4vkzFEJ5FlmU6bOH6wYAAL1mAACrVywSLEjnwLDk1EhOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIqgWoWDRLpcI4uDTNJ9BxA-UwO4YEYAAL6mAACrVywSOy2Y0E6X2MbOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIqg2oWDTXrE2m1GRC6f2BJT-V85jOJAAL9mAACrVywSLYCgbXgBSEKOwQ",
+                    },
+                    
+                ]
+            },
+        }
+    },
     # "000": {
     #     "title": "",
     #     "year": 1,
