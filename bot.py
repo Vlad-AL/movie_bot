@@ -4997,6 +4997,108 @@ series = {
     #         },
     #     }
     # },
+    "000": {
+        "title": "",
+        "year": 1,
+        "episode_counter": "24 серии",
+        "description": "",
+        "poster": "",
+        "country": "",
+        "director": "",
+        "genres": [""],
+        "seasons": {
+            1: {
+                "title" : "Сезон 1",
+                "episodes": [
+                    {
+                        "video": "BAACAgIAAxkBAAIrYGohaueDeXi1ARsqnn7m4oZd8i2vAAISmQACSqsQSem8c1D46qU8OwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIrYmoha2ZedtoH1yGwnFB6N5fsSjv4AAIYmQACSqsQSeEvzYCyTUYMOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIrZGoha92gYIpG96jn3MegmMs6P7L2AAIemQACSqsQSZP6_SpOBjutOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIrZmohbFGY4fK8JOdBiwTn4Bb-ytAEAAIimQACSqsQSQYz6Yn9FOD2OwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIraGohbLwiCwAB3OGeUagfVgdn7HsS0wACKJkAAkqrEEnSW9Gi2RDEOTsE",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIramohbSj48JCOCeEkj4t7YAXqa80UAAIqmQACSqsQScBV1nWDOSkROwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIrbGohbaGpcznRKYJBv2anLu2Nadt7AAIumQACSqsQSc9yYexmxk41OwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIrbmohbikYPgfvobhaXXs447_2uiSEAAI2mQACSqsQSaHQWesiNomxOwQ",
+                    },
+                    
+                ]
+            },
+            2: {
+                "title" : "Сезон 2",
+                "episodes": [
+                    {
+                        "video": "BAACAgIAAxkBAAIrcGohbqXvmTwdYxue61f_6tZCIF-gAAI4mQACSqsQSSrafC9nw1NqOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIrcmohbxubzuk1Abu1IkgtJOEzy6Z9AAI6mQACSqsQSTcwPYwaaeScOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIrdGohb5jKnIftTcZhNaUAAXUBD-Ix0gACR5kAAkqrEEmjPPCCOGl59jsE",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIrdmohcD4GYyE3gNbMBe4n6wMruAFdAAJQmQACSqsQSU66F0s3IyPIOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIreGohcOiOiXdCs2nYsvn_23kuHYkAA1aZAAJKqxBJPBtadPnYs4Y7BA",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIremohcaYl1f-0rLQEjMbNJYDBJ9ioAAJcmQACSqsQSSbLgi-g6fQPOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIrfGohclqb-oZFmw6pH3TFUJDJxOncAAJomQACSqsQScdaDY4aWxSvOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIrfmohcqvYnc0HJOSemV9ecHHMsgc1AAJqmQACSqsQSUO_0rOAZxPTOwQ",
+                    },
+                    
+                ]
+            },
+            3: {
+                "title" : "Сезон 3",
+                "episodes": [
+                    {
+                        "video": "BAACAgIAAxkBAAIrgGohc3qxU2rrE819dGESd2CEalWHAAJzmQACSqsQSUsf3TGqFWtAOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIrgmohdD36C76apL5nZ2iK10ompitnAAJ6mQACSqsQSY2GhclipDs4OwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIrhGohdQZrklX-5y3tX78Pl02QenNoAAKDmQACSqsQSZ7lz7SFu_C6OwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIrhmohdc3TSPwyfxrxfeYotW60niWMAAKFmQACSqsQSeTl_98tjl8ZOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIriGohdpnCC6PpBaoMHqtEAAEW1pwRmgACipkAAkqrEEl5ECYfKBL-KDsE",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIrimohd10QddHwd4oBvl4_0IdI24dfAAKSmQACSqsQSWzczfoT2bFOOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIrjGoheGbtkrXag9xrZLmwJLgLpg07AAKbmQACSqsQSbrQyuJ--kQXOwQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIrjmoheZlLqigdeDHYXa6PT6PovLRCAAKfmQACSqsQSd8gCUeLPySXOwQ",
+                    },
+                    
+                ]
+            },
+        }
+    },
 }
 
 def subscribe_keyboard_movie(code: str):
