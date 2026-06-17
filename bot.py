@@ -4959,44 +4959,6 @@ series = {
             },
         }
     },
-    # "000": {
-    #     "title": "",
-    #     "year": 1,
-    #     "episode_counter": "",
-    #     "description": "",
-    #     "poster": "",
-    #     "country": "",
-    #     "director": "",
-    #     "genres": [""],
-    #     "episodes": [
-    #             {
-    #                 "video": "",
-    #             },
-
-    #     ]
-    # },
-    # "000": {
-    #     "title": "",
-    #     "year": 1,
-    #     "episode_counter": "",
-    #     "description": "",
-    #     "poster": "",
-    #     "country": "",
-    #     "director": "",
-    #     "genres": [""],
-    #     "seasons": {
-    #         1: {
-    #             "title" : "Сезон 1",
-    #             "episodes": [
-    #                 {
-    #                     "title": "",
-    #                     "video": "",
-    #                 },
-                    
-    #             ]
-    #         },
-    #     }
-    # },
     "130": {
         "title": "Эйфория",
         "year": 2019,
@@ -5099,6 +5061,188 @@ series = {
             },
         }
     },
+    "131": {
+        "title": "Извне",
+        "year": 2022,
+        "episode_counter": "37 серий, онгоинг",
+        "description": "Затерянный в лесу городок пленяет каждого, кому не посчастливилось туда попасть — покинуть это место невозможно. Днем невольные жители пытаются выстроить подобие нормального быта и найти способ выбраться, а по ночам спасаются от страшных лесных обитателей, которые приходят навестить горожан сразу после захода солнца.",
+        "poster": "AgACAgIAAxkBAAIslmoyhUwijrIEhDtVfIS7qtlpfCKQAAJwHGsbEiuZSRUMu-DtUZxYAQADAgADeQADPAQ",
+        "country": "США",
+        "director": "Джек Бендер и др.",
+        "genres": ["детектив", "драма", "триллер", "ужасы"],
+        "seasons": {
+            1: {
+                "title" : "Сезон 1",
+                "episodes": [
+                    {
+                        "video": "BAACAgIAAxkBAAIsMmoxLCw4Ch-pEDH6N2Jr8dSixE2XAAI3ogACcHOISWdI8WvBhFlxPAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsNGoxLE3ciO-iD9mxLuQYczts31dbAAI4ogACcHOISRIol-EceppfPAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsNmoxLHDV39HOwH6-gqShWlpLRiwNAAI6ogACcHOISc1MEj86Tb28PAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsOGoxLI0Fn96yvANDMZ13TvSpp_RDAAI8ogACcHOISXOK-gdkIRVcPAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsOmoxLKu0Q5gl2cmz6606-6FQ5hvYAAI-ogACcHOISRne-b0BQs-6PAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsPGoxLMMgVPrCKLPCpdPQFgABP0ts5QACP6IAAnBziEmbR12XZPaGVDwE",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsPmoxLOTOR7g8mFgtoyHhFy0ax4WRAAJBogACcHOISdvx6tVVCPrRPAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsQGoxLQNJmFA5uzMdnqJxgXzYnPTWAAJDogACcHOISTGRqdU2iRmWPAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsQmoxLSgwmzPiDWgQZ4hEZ499ioL5AAJIogACcHOISWz7zfjDz7OuPAQ",
+                    },
+                    
+                ]
+            },
+            2: {
+                "title" : "Сезон 2",
+                "episodes": [
+                    {
+                        "video": "BAACAgIAAxkBAAIsRGoxLUZ3HMz4MV5q02dsTaNozKP8AAJJogACcHOISXIFDOEd4AJbPAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsRmoxLV1YLJCQ3CUBTJVtorwjPeW7AAJMogACcHOISeKB-D2FlfrvPAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsSGoxLX42eP4zfksjgQ8UhodDWwYhAAJOogACcHOISYWXuQAB2a6rlDwE",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsSmoxLZYWJLAzoqXHIcOhIVrc4OsnAAJQogACcHOISdAyO8cHYot0PAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsTGoxLb14DpyPBOwVrNxHZ8dmYc61AAJSogACcHOISeD7deq-pvu2PAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsTmoxLdp8DSEJuqikYm_aXNpUddTjAAJWogACcHOISVfI69vDlZ7zPAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsUGoxLfq1l3USx6IdLJT7dCn7mSPkAAJXogACcHOISVVuNhLr9jv7PAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsUmoxLhZJ4YjlvbizVX6bGmAYpMaNAAJbogACcHOISe05Ksx9YjsqPAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsVGoxLi0HEDCg3yTwv_utsx4Z21kAA12iAAJwc4hJLwyJdnMvB2w8BA",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsVmoxLlnEyf8d8WRGogX2PGEDpkdHAAJiogACcHOISQyKOH0w6rGdPAQ",
+                    },
+                    
+                ]
+            },
+            3: {
+                "title" : "Сезон 3",
+                "episodes": [
+                    {
+                        "video": "BAACAgIAAxkBAAIsWGoxLnxkyUKqayaG8p30SWtls1sUAAJlogACcHOISb-CooEFQMxLPAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsWmoxLqFDOS410kjlZHY88OlPsNygAAJmogACcHOISZ97CriX8SGdPAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsXGoxLsQB8vd-yW_F9LQMTCwOlTiSAAJnogACcHOISVM0pdVyBzbXPAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsXmoxLttzSi5gA3GYqJcLYlSqSZDtAAJoogACcHOISQSacsrIz3TtPAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsYGoxLvi1UNjxh8Jz0YYOGikR7fz4AAJpogACcHOIScHT_8csAcptPAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsYmoxLxScVVFECPgNDoBpaDGKdJWNAAJqogACcHOISQQydbckW6M_PAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsZGoxLzHjwBQTtgdV7c1kqiQxK3JIAAJsogACcHOIScoTfrZMdiRGPAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsZmoxL0qmZIrAU9NFjNGi5A9iTb4KAAJuogACcHOISZ_OKS7wshKqPAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsaGoxL3caN94D2OYFinLtlk3GoTFxAAJvogACcHOISZOGkMYf-wx8PAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsamoxL6aV4zdrqAQaUERTbBt3nEo-AAJxogACcHOISQmPIwHBCVF5PAQ",
+                    },
+                    
+                ]
+            },
+            4: {
+                "title" : "Сезон 4",
+                "episodes": [
+                    {
+                        "video": "BAACAgIAAxkBAAIsbGoxL8gW9cRpNr98GTxK9QY5Yup0AAJzogACcHOISQvqJ0Q04-JKPAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsbmoxL_F7xqSs5QaQU0g8OzeojJS1AAJ1ogACcHOISXWPauduc-UwPAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIscGoxMBi-qWye8gHlDkPhqqEGUpoWAAJ2ogACcHOISZcl-kkVeEqGPAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIscmoxMD3OyqZQAhlFDVFJiEsivlR7AAJ3ogACcHOISecyTqP-Q4x9PAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsdGoxMGt6OOzFdUbejF2E-8nP6UF2AAJ5ogACcHOISS2gnGI32bCcPAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIsdmoxMImZpe8-oj756yhfdVJAYUPrAAJ9ogACcHOISa8YM8SCI6ABPAQ",
+                    },
+                    {
+                        "video": "BAACAgIAAxkBAAIseGoxMKb_npMcxnKIGyEvHvEapBDIAAKBogACcHOISd3KefIseNshPAQ",
+                    },
+                    
+                ]
+            },
+        }
+    },
+    # "000": {
+    #     "title": "",
+    #     "year": 1,
+    #     "episode_counter": "",
+    #     "description": "",
+    #     "poster": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""],
+    #     "episodes": [
+    #             {
+    #                 "video": "",
+    #             },
+
+    #     ]
+    # },
+    # "000": {
+    #     "title": "",
+    #     "year": 1,
+    #     "episode_counter": "",
+    #     "description": "",
+    #     "poster": "",
+    #     "country": "",
+    #     "director": "",
+    #     "genres": [""],
+    #     "seasons": {
+    #         1: {
+    #             "title" : "Сезон 1",
+    #             "episodes": [
+    #                 {
+    #                     "title": "",
+    #                     "video": "",
+    #                 },
+                    
+    #             ]
+    #         },
+    #     }
+    # },
 }
 
 def subscribe_keyboard_movie(code: str):
