@@ -1160,11 +1160,20 @@ movies = {
     "139": {
         "title": "Царство 4: Возвращение великого генерала",
         "year": 2024,
-        "video": "BAACAgIAAxkBAAItv2pLkYGGzP1YUd6SHf7XahR_IE1CAAJjlQACBiZhSrrMheM4o5sWPAQ",
+        "video": "BAACAgIAAxkBAAIuCmpM1sGb_KJBuLs-sVRa7-d1bjy2AAIFpwAC2XhhStpJUsQ75EVNPAQ",
         "description": "Проявив себя в битве с армией Чжао, отряд Синя сталкивается с могучим воином Пан Нуанем, так называемым богом войны, который оказывается главнокомандующим противника. Половина отряда убита, самого командира без сознания боевые товарищи еле успевают унести подальше от вражеских сил. Придя в себя, Синь с оставшимся отрядом готовится снова вступить в бой, а тем временим к правителю Ин Чжэну приходит Ян Дуаньхэ и сообщает, что у Чжао на севере есть ещё одна армия.",
         "country": "Япония",
         "director": "Синсуке Сато",
         "genres": ["боевик", "драма"]      
+    },
+    "141": {
+        "title": "Человек-бензопила: История Резе",
+        "year": 2025,
+        "video": "BAACAgIAAxkBAAIuBGpM1iQetCUgJBAW0DuEkbIW_mz5AAL0pgAC2XhhSp_x-LqUi8KCPAQ",
+        "description": "Сходив на свидание с Макимой, Дэндзи решает, что отныне его сердце будет принадлежать только ей. Но парень попадает под дождь и прячется в телефонной будке, где укрывается и милая девушка Резе. Она улыбается и приглашает Дэндзи в кафе, где сама работает, а тот, не в силах сопротивляться, начинает заходить туда каждый день и всё больше влюбляется в новую знакомую.",
+        "country": "Япония",
+        "director": "Тацуя Ёсихара (MAPPA)",
+        "genres": ["боевик", "фантастика", "аниме", "драма", "комедия"]    
     },
     # "000": {
     #     "title": "",
@@ -5276,6 +5285,54 @@ series = {
                 ]
             },
         }
+    },
+    "140": {
+        "title": "Человек-бензопила",
+        "year": 2022,
+        "episode_counter": "12 серий",
+        "description": "Подросток Дэндзи всего лишь хотел жить обычной жизнью и есть досыта, но оставшиеся после смерти отца долги вынуждают парня влачить полуголодное существование. Чтобы расплатиться с якудза, он уже продал некоторые свои органы и даже промышляет нелегальной охотой на демонов, в чём ему помогает необычный питомец Потита, демоническое существо с бензопилой. Однажды коварные бандиты заманивают Дэндзи в ловушку и приносят в жертву, но Потита не даёт парню умереть.",
+        "poster": "AgACAgIAAxkBAAIuDGpM1zVRPeGoQkBGsW5o5zzXGPeOAAJ5G2sb2XhhSoZOysmgPIfDAQADAgADeQADPAQ",
+        "country": "Япония",
+        "director": "Тацуя Ёсихара (MAPPA)",
+        "genres": ["боевик", "фантастика", "аниме", "драма", "комедия"],
+        "episodes": [
+                {
+                    "video": "BAACAgIAAxkBAAItzGpLxwoENLSslCxNKNxNDQeHsrvVAALXoQAC2XhZStxgkIRCjYvMPAQ",
+                },
+                {
+                    "video": "BAACAgIAAxkBAAItzmpLx0KpCfHWMHz8CROHzAUm0wgsAALboQAC2XhZSraZTHltMUcSPAQ",
+                },
+                {
+                    "video": "BAACAgIAAxkBAAIt0GpLx3jB5lAfWLNO13uMaXwoUF4wAALfoQAC2XhZShCEB25BvQxPPAQ",
+                },
+                {
+                    "video": "BAACAgIAAxkBAAIt0mpLx7hH517bOONCuPCD5czt_zMMAALloQAC2XhZSj-bLu_RFjsKPAQ",
+                },
+                {
+                    "video": "BAACAgIAAxkBAAIt1GpLyUKlZulUZut_yGWpRiq7ykW7AAL5oQAC2XhZSsQ8bZDiHYLsPAQ",
+                },
+                {
+                    "video": "BAACAgIAAxkBAAIt2GpLys5_0s6k4bV9npL3QE4r3DQdAAIIogAC2XhZStElRPjjaulrPAQ",
+                },
+                {
+                    "video": "BAACAgIAAxkBAAIt2mpLzGZmDUwoCj29k_76bfwov8QyAAITogAC2XhZSgWg9qVrVKkWPAQ",
+                },
+                {
+                    "video": "BAACAgIAAxkBAAIt3GpLzitkYXXoYj6klLCedEvqSdeAAAIkogAC2XhZSssXxkCam2RUPAQ",
+                },
+                {
+                    "video": "BAACAgIAAxkBAAIt3mpLz_trLX2S3NTDQQ5MiTSfls7vAAJAogAC2XhZSt4lEs_mgJL8PAQ",
+                },
+                {
+                    "video": "BAACAgIAAxkBAAIt4GpL0ezjzTouGbLd2JZCOXqihlPWAAJTogAC2XhZSkE8SWQnTYlxPAQ",
+                },
+                {
+                    "video": "BAACAgIAAxkBAAIuAAFqTNVangzxQfzoUzy2XSYnGPUBowAC56YAAtl4YUoYExjbG8pTaDwE",
+                },
+                {
+                    "video": "BAACAgIAAxkBAAIuAmpM1ZILCYoq3M9em8ikUaB1cxS8AALtpgAC2XhhShbWq9-9d6U3PAQ",
+                },                
+        ]
     },
     # "000": {
     #     "title": "",
