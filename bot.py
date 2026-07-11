@@ -16,7 +16,7 @@ from aiogram.fsm.state import State, StatesGroup
 import logging
 from aiogram.types import FSInputFile
 
-load_dotenv()                    # загружает .env файл
+load_dotenv()
 TOKEN = os.getenv("TOKEN")
 
 if not TOKEN:
@@ -1174,6 +1174,15 @@ movies = {
         "country": "Япония",
         "director": "Тацуя Ёсихара (MAPPA)",
         "genres": ["боевик", "фантастика", "аниме", "драма", "комедия"]    
+    },
+    "142": {
+        "title": "Джанго освобожденный",
+        "year": 2012,
+        "video": "BAACAgIAAxkBAAIuI2pNIQ5qUJ-u_AOxfOeFqBIDclnOAAKQpQAC2XhpSk-ro-uD7Jh1PAQ",
+        "description": "Шульц — эксцентричный охотник за головами, который выслеживает и отстреливает самых опасных преступников. Он освобождает раба по имени Джанго, поскольку тот может помочь ему в поисках трёх бандитов. Джанго знает этих парней в лицо, ведь у него с ними свои счёты.",
+        "country": "США",
+        "director": "Квентин Тарантино",
+        "genres": ["боевик", "комедия", "драма"]    
     },
     # "000": {
     #     "title": "",
